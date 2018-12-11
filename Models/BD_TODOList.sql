@@ -1,4 +1,4 @@
--- jmarquez - 11/11/2018
+﻿-- jmarquez - 11/11/2018asdasd
 -- script de creación de la bd, usuario, asignación de privilegios a ese usuario sobre la bd
 -- creación de tabla e insert sobre la misma.
 --
