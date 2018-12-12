@@ -8,7 +8,7 @@ Si no existe redirige a la pagina de login
 Si existe comprueba si el usuario tiene permisos para ejecutar la accion de ese controlador
 */
 function IsAuthenticated(){
-	if (!isset($_SESSION['login'])){
+	if (!isset($_SESSION['email'])){
 		//header('Location:USUARIOS_Controller.php?accion=Login');	
 		return false;
 	}
@@ -20,5 +20,24 @@ function IsAuthenticated(){
 		return true;
 	}
 } //end of function IsAuthenticated()
+
+function esAdmin(){	
+	include_once '../Models/USUARIOS_Model.php';
+	
+	if(!autenticado()){
+		return false;
+	}
+	
+	$usuario = new USUARIOS_Model('','','','','','','');
+	
+	$usuario = $usuario->RellenaDatos($_SESSION['email']);
+	if ($usuario->getTipo() == 'ADMIN') {
+		return true;		
+	}
+	else{
+		return false;
+	}
+	
+}
 ?>
 

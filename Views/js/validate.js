@@ -182,7 +182,7 @@ function comprobarLogin(form)
         return false;
     }
     //comprueba los formatos
-    if (comprobarAlfanum(log) === false || comprobarAlfanum(pass,20) === false){
+    if (comprobarCorreo(log, 60) === false || comprobarAlfanum(pass,20) === false){
        return false;
    }
        
