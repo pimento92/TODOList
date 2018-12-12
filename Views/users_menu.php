@@ -1,7 +1,9 @@
 <!-- Muestra el menu horizontal 
 	autor:  t45qxz 
 	12/11/2018 -->
-
+<?php
+include_once '../Functions/Authentication.php';
+?>
 <div class="menu">
 	<nav>
 		<ul class="nav">
