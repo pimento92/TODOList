@@ -21,8 +21,8 @@
 			<form class="login" name = 'Form' action='../Controllers/Login_Controller.php' method='post' onsubmit="return comprobarLogin(this);">
 				<div class="bloque">
 					<div class="campo">
-						<label>Login : </label>
-						<input type = 'text' name = 'login' placeholder =" <?php echo $strings['Letras y números']; ?>" size = '16' value = '' onblur="return comprobarAlfanum(this,15);"  ><br>
+						<label>E-mail : </label>
+						<input type = 'text' name = 'login' placeholder =" <?php echo $strings['Introduzca su e-mail']; ?>" size = '30' value = '' onblur="return comprobarAlfanum(this,15);"  ><br>
 						<p class="invalid" id="invalidlogin"><?php echo $strings['Formato no válido'];?></p>
 					</div>
 					<div class="campo">

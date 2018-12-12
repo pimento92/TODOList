@@ -4,7 +4,11 @@
 *12-11-2018*/
 $strings = 
 array(
-	'Portal de Gestión' => 'Loteria IU',
+	'TODOList' => 'TODOList',
+	'Login' => 'Login',
+	'Usuario no autenticado' => 'Usuario non autenticado',
+	'E-mail' => 'E-mail',
+	'Introduzca su e-mail' => 'Introduzca o seu e-mail'
 ) 
 ;
 ?>

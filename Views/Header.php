@@ -17,7 +17,7 @@
 	</title>
 	<meta charset="UTF-8">
 	<title>
-		<?php echo $strings['Lotería IU']; ?>
+		<?php echo $strings['TODOList']; ?>
 	</title>
 	<!-- JavaScript -->
 	<script type="text/javascript" src="../Views/js/validate.js"></script> 
@@ -48,7 +48,7 @@
 	<div class="d-flex align-items-center">
 		<div class="p-2 flex-grow-1">
 				<h1 class="titulo">
-					<?php echo $strings['Portal de Gestión']; ?>
+					<?php echo $strings['TODOList']; ?>
 				</h1>
 		</div>
 <?php
