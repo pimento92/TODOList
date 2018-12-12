@@ -1,28 +1,28 @@
 <?php
 /**
  * Clase para realizar el login
- *	autor:  t45qxz 
- *	12/11/2018 
+ *	autor:  t45qxz
+ *	12/11/2018
  */
 	class Login{
 
 
-		function __construct(){	
+		function __construct(){
 			$this->render();
 		}
 
 		function render(){
 
-			include '../Views/Header.php'; 
+			include '../Views/Header.php';
 ?>
 		<div class="col-md-3 col-lg-4"></div>
 		<div class="col-md-5 col-lg-3 contenido">
-			<h1><?php echo $strings['Login']; ?></h1>	 
+			<h1><?php echo $strings['Login']; ?></h1>
 			<form class="login" name = 'Form' action='../Controllers/Login_Controller.php' method='post' onsubmit="return comprobarLogin(this);">
 				<div class="bloque">
 					<div class="campo">
-						<label>Login : </label>
-						<input type = 'text' name = 'login' placeholder =" <?php echo $strings['Letras y números']; ?>" size = '16' value = '' onblur="return comprobarAlfanum(this,15);"  ><br>
+						<label>Email : </label>
+						<input type = 'text' name = 'email' placeholder =" <?php echo $strings['email']; ?>" size = '16' value = '' onblur="return comprobarAlfanum(this,15);"  ><br>
 						<p class="invalid" id="invalidlogin"><?php echo $strings['Formato no válido'];?></p>
 					</div>
 					<div class="campo">
