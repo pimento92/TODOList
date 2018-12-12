@@ -35,6 +35,10 @@ function __construct($nombre,$apellidos,$telefono,$email,$password,$fecha,$tipo)
 	$this->mysqli = ConnectDB();
 }
 
+function getTipo(){
+	return $this->tipo;
+}
+
 
 
 //Metodo ADD
