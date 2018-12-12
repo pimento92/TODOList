@@ -85,8 +85,24 @@ CREATE TABLE IF NOT EXISTS `FASE` (
   CONSTRAINT pk_fase PRIMARY KEY (`tarea_fas`,`id_fas`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `POSEE` (
+  `id_fas` int NOT NULL,
+  `email_con` varchar(60) NOT NULL,
+  FOREIGN KEY (`id_fas`) REFERENCES FASE(`id_fas`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  FOREIGN KEY (`email_con`) REFERENCES CONTACTO(`email_con`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT pk_posee PRIMARY KEY (`id_fas`,`email_con`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `ADJUNTA` (
+  `id_fas` int NOT NULL,
+  `id_arch` int NOT NULL,
+  FOREIGN KEY (`id_fas`) REFERENCES FASE(`id_fas`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  FOREIGN KEY (`id_arch`) REFERENCES ARCHIVO(`id_arch`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT pk_adjunta PRIMARY KEY (`id_fas`,`id_arch`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 --
--- creamos a los admins
+-- creamos a los admins e inserciones de prueba
 --
 
 INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('jmrod92@gmail.com','calacu2018','Juan','Márquez Rodríguez','1992-02-21','669811012','ADMIN');
@@ -102,6 +118,10 @@ INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('jr
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-08','ABIERTA', 'Pajilla nocturna con gordibuenas', 'jmrod92@gmail.com', '1', '1');
 
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Pillar lubricante del bueno en la farmacia de la dependienta cachonda', '1');
+
+INSERT INTO POSEE (`id_fas`,`email_con`) VALUES ('1','jriglesias@esei.uvigo.es');
+
+INSERT INTO ADJUNTA(`id_fas`,`id_arch`) VALUES ('1','1');
 
 --
 -- Índices para tablas volcadas
