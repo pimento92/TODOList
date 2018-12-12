@@ -20,8 +20,8 @@ class MESSAGE{
 		include '../Locales/Strings_'.$_SESSION['idioma'].'.php';
 		include '../Views/Header.php';
 ?>
-		
-				<div class="col-md-12 contenido articulo">
+				<div class="col-md-3"></div>
+				<div class="col-md-6 contenido articulo">
 				<p><H3><?php echo $strings[$this->string];?></H3></p>
 			
 		<br>

@@ -13,7 +13,24 @@ array(
 	'Letras y números' => 'Letras e números',
 	'Mostrar contraseña' => 'Amosar contrasinal',
 	'Hoy es' => 'Hoxe é',
-	'Grupo' => 'Grupo'
+	'Grupo' => 'Grupo',
+	'Registro' 	=> 'Rexistro',
+	'Nombre'	=> 'Nome',
+	'Sólo letras' => 'Sólo letras',
+	'Apellidos'	=> 'Apelidos',
+	'Teléfono'	=> 'Teléfono',
+	'Fecha de nacimiento' => 'Fecha de nacemento',
+	'Error en la inserción' => 'Error na inserción',
+	'Debe rellenar todos los campos' => 'Debe rechear todos os campos',
+	'El usuario no existe' => 'O usuario non existe',
+	'La password para este usuario no es correcta' => 'A password para este usuario non é correcta',
+	'Usuario'	=> 'Usuario',
+	'Inicio'	=> 'Inicio',
+	'Tareas'	=> 'Tarefas',
+	'Añadir tarea' => 'Engadir tarefa',
+	'Buscar tarea' => 'Buscar tarefa',
+	'Mostrar tareas' => 'Amosar tarefas'
+
 ) 
 ;
 ?>

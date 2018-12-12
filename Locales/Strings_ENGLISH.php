@@ -13,7 +13,24 @@ array(
 	'Letras y números' => 'Letters and numbers',
 	'Mostrar contraseña' => 'Show password',
 	'Hoy es' => 'Today is',
-	'Grupo' => 'Group'
+	'Grupo' => 'Group',
+	'Registro' 	=> 'Register',
+	'Nombre'	=> 'Name',
+	'Sólo letras' => 'Only letter',
+	'Apellidos'	=> 'Surname',
+	'Teléfono'	=> 'Phone number',
+	'Fecha de nacimiento' => 'Birth date',
+	'Error en la inserción' => 'Insertion error',
+	'Debe rellenar todos los campos' => 'Must fill all the fields',
+	'El usuario no existe' => 'The user does not exists',
+	'La password para este usuario no es correcta' => 'The password for this user is not correct',
+	'Usuario'	=> 'User',
+	'Inicio'	=> 'Home',
+	'Tareas'	=> 'Tasks',
+	'Añadir tarea' => 'Add task',
+	'Buscar tarea' => 'Search task',
+	'Mostrar tareas' => 'Show tasks'
+
  )
 ;
  ?>

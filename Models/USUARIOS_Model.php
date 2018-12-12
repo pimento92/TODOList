@@ -122,11 +122,11 @@ function login(){
 
 	$resultado = $this->mysqli->query($sql);
 	if ($resultado->num_rows == 0){
-		return 'El login no existe';
+		return 'El usuario no existe';
 	}
 	else{
 		$tupla = $resultado->fetch_array();
-		if ($tupla[`pass_usr`] == $this->password){
+		if ($tupla[pass_usr] == $this->password){
 			return true;
 		}
 		else{

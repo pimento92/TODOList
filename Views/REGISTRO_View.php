@@ -20,7 +20,17 @@
 				<h1><?php echo $strings['Registro']; ?></h1>
 				<form name = 'Form' enctype="multipart/form-data" action='../Controllers/Registro_Controller.php' method='post' onsubmit="return comprobarRegistro(this)">
 				<div class="bloque">
-
+				<div class="campo">
+						<label>E-mail : </label>
+						<input type = 'text' name = 'email' id = 'email' size = '22' value = '' onblur="comprobarCorreo(this,60)" ><br>
+						<p class="invalid" id="invalidemail"><?php echo $strings['E-mail incorrecto'];?></p>
+					</div>
+					<div class="campo">
+						<label>Password : </label>
+						<input type = 'password' name = 'password' id = 'password' placeholder = '<?php echo $strings['Letras y números']?>' size = '16' value = '' onblur="return comprobarAlfanum(this,20)" ><br>
+						<input name="show" type="checkbox" onclick="mostrarContraseña()"><small><?php echo '   ' .  $strings['Mostrar contraseña'];?></small>
+						<p class="invalid" id="invalidpassword"><?php echo $strings['Formato no válido'];?></p>
+					</div>
 					<div class="campo">
 						<label><?php echo $strings['Nombre']?> : </label>
 						<input type = 'text' name = 'nombre' id = 'nombre' placeholder = '<?php echo $strings['Sólo letras']?>' size = '14' value = '' onblur="comprobarAlfabetico(this,25)" ><br>
@@ -37,40 +47,16 @@
 						<p class="invalid" id="invalidtelefono"><?php echo $strings['Teléfono incorrecto'];?></p>
 					</div>
 					<div class="campo">
-						<label>E-mail : </label>
-						<input type = 'text' name = 'email' id = 'email' size = '22' value = '' onblur="comprobarCorreo(this,60)" ><br>
-						<p class="invalid" id="invalidemail"><?php echo $strings['E-mail incorrecto'];?></p>
-					</div>
-					<div class="campo">
-						<label>Password : </label>
-						<input type = 'password' name = 'password' id = 'password' placeholder = '<?php echo $strings['Letras y números']?>' size = '16' value = '' onblur="return comprobarAlfanum(this,20)" ><br>
-						<input name="show" type="checkbox" onclick="mostrarContraseña()"><small><?php echo '   ' .  $strings['Mostrar contraseña'];?></small>
-						<p class="invalid" id="invalidpassword"><?php echo $strings['Formato no válido'];?></p>
-					</div>
-					<div class="campo">
 						<label><?php echo $strings['Fecha de nacimiento']?> :</label>
 						<input type = 'date' name = 'fecha' onkeydown="return false"><br>
-					</div>
-					<div class="campo">
-						<label><?php echo $strings['Tipo']?> : </label>
-						<select name="tipo" >
-					        <option value="BASICO"> </option>
-							<option value="ADMIN"><?php echo $strings['ADMIN']; ?></option>
-					    <option value="BASICO"><?php echo $strings['BASICO']; ?></option>
-						</select>
 					</div>
 				</div >
 				<p class="invalid" id="invalidform"><?php echo $strings['Debe rellenar todos los campos'];?></p>
 					<button class="buttoncustom" type='submit' name='action' value='REGISTER'><i class="fas fa-check"></i></button>
-
-					<button class="buttoncustom" onclick="window.location='../Controllers/Index_Controller.php';" ><i class="fas fa-times"></i></button>
+					<button class="buttoncustom" onclick="window.location='../Controllers/Login_Controller.php';" ><i class="fas fa-times"></i></button>
 			</form>
-
 			</div>
-
 		</div>
-
-
 		<?php
 			include '../Views/Footer.php';
 		} //fin metodo render

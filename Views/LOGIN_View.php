@@ -22,7 +22,7 @@
 				<div class="bloque">
 					<div class="campo">
 						<label>E-mail : </label>
-						<input type = 'text' name = 'login' placeholder =" <?php echo $strings['Introduzca su e-mail']; ?>" size = '30' value = '' onblur="return comprobarCorreo(this,60);"  ><br>
+						<input type = 'text' name = 'email' placeholder =" <?php echo $strings['Introduzca su e-mail']; ?>" size = '30' value = '' onblur="return comprobarCorreo(this,60);"  ><br>
 						<p class="invalid" id="invalidlogin"><?php echo $strings['Formato no válido'];?></p>
 					</div>
 					<div class="campo">

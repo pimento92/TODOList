@@ -58,7 +58,7 @@
 ?>
 <div  class="p-2">
 <?php
-		echo $strings['Usuario'] . ' : ' . $_SESSION['login'] . '<br>';
+		echo $strings['Usuario'] . ' : ' . $_SESSION['email'] . '<br>';
 ?>			
 	</div>
 	<div class=" p-2 logout">
