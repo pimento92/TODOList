@@ -9,10 +9,11 @@ header{
     min-height: 80px;
     padding-top: 10px;
     height:10%;
-    background-color: #4abdac;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(53, 53, 53);
     font-weight: bold;
     padding-bottom: 30px;
+    border-bottom: 2px solid rgb(53, 53, 53);
 }
 .row{
 align-items: flex-start;
