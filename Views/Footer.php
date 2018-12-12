@@ -15,7 +15,7 @@
 			<?php echo $strings['Hoy es']?> <?php echo date("d-M-Y", time()); ?>
 		</div>
 		<div class="p-2">
-			<?php echo $strings['Autor']?>:  t45qxz 
+			<?php echo $strings['Grupo']?>:  IU_4_burton 
 		</div>
 	</div>
 </footer>

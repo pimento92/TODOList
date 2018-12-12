@@ -11,7 +11,9 @@ array(
 	'Introduzca su e-mail' => 'Enter your e-mail',
 	'Contraseña' => 'Password',
 	'Letras y números' => 'Letters and numbers',
-	'Mosrtar contraseña' => 'Show password'
+	'Mostrar contraseña' => 'Show password',
+	'Hoy es' => 'Today is',
+	'Grupo' => 'Group'
  )
 ;
  ?>
