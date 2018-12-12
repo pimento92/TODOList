@@ -8,7 +8,10 @@ array(
 	'Login' => 'Login',
 	'Usuario no autenticado' => 'Usuario non autenticado',
 	'E-mail' => 'E-mail',
-	'Introduzca su e-mail' => 'Introduzca o seu e-mail'
+	'Introduzca su e-mail' => 'Introduzca o seu e-mail',
+	'Contraseña' => 'Contrasinal',
+	'Letras y números' => 'Letras e números',
+	'Mosrtar contraseña' => 'Amosar contrasinal'
 ) 
 ;
 ?>
