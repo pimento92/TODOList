@@ -1,6 +1,6 @@
 <?php
 /**Controlador para el REGISTRO
- * autor:  t45qxz 
+ * autor:  t45qxz
  * 12-11-2018
  */
 session_start();
@@ -11,24 +11,16 @@ if(!isset($_POST['action'])){
 	include '../Views/REGISTRO_View.php';
 	$register = new REGISTRO();
 }
-else{		
-		
+else{
+
 	include '../Models/USUARIOS_Model.php';
-	$usuario = new USUARIOS_Model($_POST['log'],$_POST['password'],$_POST['DNI'],
-	$_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],
-	$_POST['fecha'],$_FILES['file']['name'],$_POST['sexo']);
-	
+	$usuario = new USUARIOS_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],
+	$_POST['password'],$_POST['fecha'],$_POST['tipo']);
+
 	$respuesta = $usuario->Register();
 	if ($respuesta == 'true'){
 		$respuesta = $usuario->registrar();
-		if(isset($_FILES['file']))
-                    {
-                        $name_file = $_FILES['file']['name'];
-                        $tmp_name = $_FILES['file']['tmp_name'];
-                        $local_image = "../Files/ProfilePics/";
-                        move_uploaded_file($tmp_name, $local_image.$name_file);
-					}
-		
+
 		Include '../Views/MESSAGE.php';
 		new MESSAGE($respuesta, './Login_Controller.php');
 	}
@@ -40,4 +32,3 @@ else{
 }
 
 ?>
-
