@@ -1,10 +1,10 @@
 <?php
 /**
- * Clase para realizar el SHOWCURRENT en prioridad, recibe una tupla para mostrar
+ * Clase para realizar el SHOWCURRENT en Categoria, recibe una tupla para mostrar
  *	autor:  Juan Márquez 
  *	12/12/2018 
  */
-	class Prioridad_SHOWCURRENT{
+	class Categoria_SHOWCURRENT{
 
 
 		function __construct($datos){	
@@ -16,7 +16,7 @@
             <div class="col-md-3"></div>
     <div class="col-md-5 contenido articulo">
     <fieldset class="sc">
-            <legend><?php echo $strings['Datos de prioridad'];?></legend>  
+            <legend><?php echo $strings['Datos de categoría'];?></legend>  
             <!-- Foto de perfil -->
             <!--Contenedor con botones de adición y búsqueda  -->
                     <table class="tab-twocol shadow showtable">
@@ -28,19 +28,15 @@
                     </thead>
                     <tr>
                         <th><?php echo $strings['Nombre'];?></th>
-                        <td><?php echo $datos['nom_pri']; ?></td>
+                        <td><?php echo $datos['nom_cat']; ?></td>
                     </tr>
                     <tr>
                         <th><?php echo $strings['Descripción'];?></th>
-                        <td><?php echo $datos['desc_pri']; ?></td>
-                    </tr>
-                    <tr>
-                        <th><?php echo $strings['Color'];?></th>
-                        <td style="background-color:<?php echo $datos['codcolor_pri']; ?>"></td>
+                        <td><?php echo $datos['desc_cat']; ?></td>
                     </tr>
                 </table>
             <div class="container-showall-btn">
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Prioridad_Controller.php?accion=SHOWALL'"><i class="fas fa-arrow-left"></i>
+                <button class="form-btn" type="button" role="link" onclick="window.location='./Categoria_Controller.php?accion=SHOWALL'"><i class="fas fa-arrow-left"></i>
             </div>
         </fieldset>
 </div>

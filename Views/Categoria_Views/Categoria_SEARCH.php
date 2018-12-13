@@ -14,7 +14,7 @@
 		function render(){
             include '../Views/Header.php';?>
 <div class="col-md-4"></div>
-<div class="col-md-5 contenido articulo">
+<div class="col-md-4 contenido articulo">
     <form name="search" id="search"  action='../Controllers/Categoria_Controller.php?accion=SEARCH' method='post' >
         <legend><?php echo $strings['Búsqueda de categorías'];?></legend>
         <div class="bloque">
@@ -36,8 +36,8 @@
             <!-- Contenedor de los iconos: aceptar, voler y vaciar-->
             <div class="container-btn col-md-12">
                 <button class="form-btn" name="submit" type="submit"><i class="fas fa-search"></i> 
+                <button class="form-btn" type="button" role="link" onclick="window.location='./Categoria_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
                 <button class="form-btn" type="reset"><i class="fas fa-undo-alt"></i>
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Prioridad_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
             </div>
         
     </form> 

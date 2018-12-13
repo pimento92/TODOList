@@ -1,10 +1,10 @@
 <?php
 /**
- * Clase para realizar el DELETE en prioridad, recibe una tupla para mostrar y eliminar
+ * Clase para realizar el DELETE en Categoria, recibe una tupla para mostrar y eliminar
  *	autor:  Juan Márquez 
  *	12/12/2018 
  */
-	class Prioridad_DELETE{
+	class Categoria_DELETE{
 
 
 		function __construct($datos){	
@@ -27,22 +27,18 @@
                     </thead>
                     <tr>
                         <th><?php echo $strings['Nombre'];?></th>
-                        <td><?php echo $datos['nom_pri']; ?></td>
+                        <td><?php echo $datos['nom_cat']; ?></td>
                     </tr>
                     <tr>
                         <th><?php echo $strings['Descripción'];?></th>
-                        <td><?php echo $datos['desc_pri']; ?></td>
-                    </tr>
-                    <tr>
-                        <th><?php echo $strings['Color'];?></th>
-                        <td style="background-color:<?php echo $datos['codcolor_pri']; ?>"></td>
+                        <td><?php echo $datos['desc_cat']; ?></td>
                     </tr>
                 </table>
             <div class="container-showall-btn">
-                <p><?php echo $strings['¿Confirma el borrado de esta prioridad?'];?><p>
-                <form id="delete"action='./Prioridad_Controller.php?accion=delete&param=<?php echo $datos['id_pri'];?>' method='post'>
-                <button name="submit" class="form-btn" type="submit"><i class="fas        fa-check"></i></button>
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Prioridad_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
+                <p><?php echo $strings['¿Confirma el borrado de esta categoría?'];?><p>
+                <form id="delete"action='./Categoria_Controller.php?accion=delete&param=<?php echo $datos['id_cat'];?>' method='post'>
+                <button name="submit" class="form-btn" type="submit"><i class="fas fa-check"></i></button>
+                <button class="form-btn" type="button" role="link" onclick="window.location='./Categoria_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
             </div>
         </fieldset>
 </div>

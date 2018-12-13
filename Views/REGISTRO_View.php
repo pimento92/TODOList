@@ -15,8 +15,8 @@
 
 			include '../Views/Header.php'; //header necesita los strings
 		?>
-			<div class="col-md-2 col-lg-3"></div>
-			<div class="col-md-7 col-lg-4 contenido">
+			<div class="col-md-3 col-lg-4"></div>
+			<div class="col-md-6 col-lg-3 contenido">
 				<h1><?php echo $strings['Registro']; ?></h1>
 				<form name = 'Form' enctype="multipart/form-data" action='../Controllers/Registro_Controller.php' method='post' onsubmit="return comprobarRegistro(this)">
 				<div class="bloque">
@@ -53,7 +53,7 @@
 				</div >
 				<p class="invalid" id="invalidform"><?php echo $strings['Debe rellenar todos los campos'];?></p>
 					<button class="buttoncustom" type='submit' name='action' value='REGISTER'><i class="fas fa-check"></i></button>
-					<button class="buttoncustom" onclick="window.location='../Controllers/Login_Controller.php';" ><i class="fas fa-times"></i></button>
+					<button class="buttoncustom" type="button" role="link" onclick="window.location='../Controllers/Login_Controller.php';" ><i class="fas fa-times"></i></button>
 			</form>
 			</div>
 		</div>

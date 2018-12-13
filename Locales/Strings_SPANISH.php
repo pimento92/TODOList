@@ -74,6 +74,7 @@ array(
 	'Error en el borrado' => 'Error en el borrado',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
+	'Búsqueda de categorías' => 'Búsqueda de categorías',
 	'No se han encontrado coincidencias' => 'No se han encontrado coincidencias'
 
 ) 

@@ -96,16 +96,15 @@ else{
         if(!isset($_POST['submit']))
         {
             include '../Models/Categoria_Model.php';
-            $Categoria = new Categoria_Model($clave, '','');
-            $datos = $Categoria->SEARCH();
+            $categoria = new Categoria_Model($clave, '','');
+            $datos = $categoria->SEARCH();
             include '../Views/Categoria_Views/Categoria_EDIT.php';
             new Categoria_EDIT($datos);
 
         }else{
             include '../Models/Categoria_Model.php';
-            $boleto = new Categoria_Model($_POST['id'],$_POST['nombre'],$_POST['desc']);
-
-            $respuesta = $boleto->EDIT($clave);
+            $categoria = new Categoria_Model($_POST['id'],$_POST['nombre'],$_POST['desc']);
+            $respuesta = $categoria->Edit($clave);
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Categoria_Controller.php?accion=SHOWALL');
          

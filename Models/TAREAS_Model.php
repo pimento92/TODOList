@@ -1,4 +1,3 @@
-
 <?php
 class USUARIOS_Model {
 

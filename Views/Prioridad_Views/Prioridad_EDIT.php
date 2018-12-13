@@ -1,8 +1,8 @@
 <?php
 /**
  * Clase para realizar el EDIT en prioridad, recibe una tupla para mostrar y editar
- *	autor:  t45qxz 
- *	12/11/2018
+ *	autor:  Juan Márquez 
+ *	12/12/2018
  */
 	class Prioridad_EDIT{
 
@@ -18,7 +18,7 @@
 
         <form name="edit" id="edit" enctype="multipart/form-data" onsubmit="return comprobarForm(this)" action='./Prioridad_Controller.php?accion=EDIT&param=<?php echo $datos['id_pri'];?>' method='post'>
         <legend><?php echo $strings['Edición de prioridad'];?></legend>
-		<p class="invalid iform" id="invalidform"><?php echo $strings['Debe rellenar todos los campos a excepción de ingresado, premio y pagado'];?></p>
+		<p class="invalid iform" id="invalidform"><?php echo $strings['Debe rellenar todos los campos'];?></p>
         <div class="bloque">
 	   		<div class="campo">
 				<label><?php echo $strings['Nombre'];?></label>

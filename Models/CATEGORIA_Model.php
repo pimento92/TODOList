@@ -107,7 +107,6 @@ class CATEGORIA_Model {
 	$opt = implode(' AND ', $stmt);
 	//sentencia creada
 	$sql = "SELECT * FROM CATEGORIA WHERE " . $opt;
-	echo $sql;
 	//Si no se introducen campos devuelve todas las tuplas
 	if($sql == "SELECT * FROM CATEGORIA WHERE "){
 		return $this->SHOWALL();
@@ -131,8 +130,8 @@ class CATEGORIA_Model {
 
   function Edit(){
     $sql = "UPDATE CATEGORIA SET `nom_cat` = '$this->nombre',
-            `desc_cat` = '$this->desc',
-            WHERE(`id_cat` = '$this->id');";
+            `desc_cat` = '$this->desc'
+						WHERE(`id_cat` = '$this->id');";
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
     }
