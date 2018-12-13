@@ -33,7 +33,11 @@ array(
 	'Contactos'	=> 'Contacts',
 	'Prioridades'	=> 'Priorities',
 	'Categorías'	=> 'Tags',
-	'Usuarios'	=> 'Users'
+	'Usuarios'	=> 'Users',
+	'Color' => 'Colour',
+	'Descripción' => 'Description',
+	'Acción' => 'Action',
+	'No hay prioridades registradas'	=> 'No priorities found'
 
  )
 ;

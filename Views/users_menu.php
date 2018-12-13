@@ -31,7 +31,7 @@ include_once '../Functions/Authentication.php';
 					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Categorías']; ?></a>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Prioridades']; ?></a>
+					<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Prioridades']; ?></a>
 				</li>
 				<li class="nav-item ">
 					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Usuarios']; ?></a>

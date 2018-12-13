@@ -128,6 +128,7 @@ function login(){
 		$tupla = $resultado->fetch_array();
 		if ($tupla['pass_usr'] == $this->password){
 			$_SESSION['tipo'] = $tupla['tipo_usr'];
+			$_SESSION['nombre'] = $tupla['nom_usr'];
 			return true;
 		}
 		else{

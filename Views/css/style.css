@@ -159,7 +159,6 @@ a:hover{
     margin-left: 0px;
     width:100px;
     box-shadow: 2px 2px rgb(121, 121, 121);
-
 }
 .articulo .intropic{
     border-radius: 15px;
@@ -240,8 +239,8 @@ a:hover{
 .form-btn .fas{
     margin-left: 5px;
     font-size: 30px;
-    color: #ff6c43;
-    text-shadow: 2px 2px #d63204;
+    color: rgb(153, 153, 153);
+    text-shadow: 2px 2px rgb(121, 121, 121);
 }
 
 .form-btn:hover .fas{
@@ -268,7 +267,6 @@ table{
     border-left: 3px solid white;
     border-bottom: 3px solid rgb(197, 197, 197);
     border-right: 3px solid rgb(197, 197, 197);
-    border-radius: 10px;
 }
 
 tr{
@@ -280,7 +278,10 @@ td{
     border: 1px solid white;
     padding-left: 10px;
     padding-right:10px;
-    background-color: #eba71f;
+    background-color: rgb(156, 156, 156);
+}
+td:hover{
+    background-color: rgb(226, 72, 0);
 }
 
 th{
@@ -288,7 +289,7 @@ th{
     border: 1px solid white;
     padding-left: 10px;
     padding-right:10px;
-    background-color: #ec6d33;
+    background-color: rgb(90, 90, 90);
 }
 
 .tb-btn{
@@ -310,14 +311,14 @@ th{
 }
 
 .editbtn:hover .fas{
-    color: rgb(226, 72, 0);
+    color: rgb(255, 255, 255);
     text-shadow: none;
 }
 
 .editbtn .fas{
     font-size: 22px;
-    color: #ff6c43;
-    text-shadow: 1px 1px #cc5017;
+    color: rgb(70, 70, 70);
+    text-shadow: 2px 2px rgb(121, 121, 121);
 }
 
 .container-showall-btn .form-btn .fas{
@@ -512,7 +513,7 @@ table{
     border-left: 2px solid rgb(82, 82, 82);
     border-bottom: 2px solid rgb(119, 119, 119);
     border-right: 2px solid rgb(119, 119, 119);
-    background-color: rgb(94, 94, 94);
+    background-color: rgb(139, 139, 139);
     padding-right: 20px;
 }
 .carta{

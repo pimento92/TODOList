@@ -111,7 +111,9 @@ INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`t
 
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('HOGAR','Tarea relativa a trabajo en el hogar');
 
-INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('MÁXIMA URGENCIA','Prioridad máxima de ejecución', '#000000');
+INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA ALTA','Grado alto de urgencia', '#ff0000');
+INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA MEDIA','Grado medio de urgencia', '#ffff00');
+INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA BAJA','Grado bajo de urgencia', '#00ff00');
 
 INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('/porn/BBW/gordibuena.wmv','Archivo íntimo de uso recreativo');
 

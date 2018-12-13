@@ -55,9 +55,11 @@
 	if (IsAuthenticated()){
 ?>
 <div  class="p-2">
+		<h4>
 <?php
-		echo $strings['Usuario'] . ' : ' . $_SESSION['email'] . '<br>';
+		echo  $_SESSION['nombre'] . '<br>';
 ?>			
+		</h4>
 	</div>
 	<div class=" p-2 logout">
 		<a href='../Functions/Desconectar.php'>
