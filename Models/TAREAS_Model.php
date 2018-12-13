@@ -50,9 +50,13 @@ class USUARIOS_Model {
   }
 
   function Search(){
-    $sql = "SELECT * FROM TAREA WHERE(`id_tar` = '$this->id')";
+    $sql = "SELECT * FROM TAREA WHERE (`pri_tar` LIKE '%$this->prioridad%' AND `id_tar` LIKE '%$this->id%'
+            AND `fecha_tar` LIKE '%$this->fecha%' AND `estado_tar` LIKE '%$this->estado%'
+            AND `desc_tar` LIKE '%$this->descripcion%' AND `creador_tar` LIKE '%$this->creador%'
+            AND `cat_tar` LIKE '%$this->categoria%');";
+
     if(!$resultado = $this->mysqli->query($sql)){
-      return 'No es posible conectarse a la BD';
+      return 'Error en la consulta';
     }
     else{
 
