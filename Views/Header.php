@@ -47,9 +47,7 @@
 <header>
 	<div class="d-flex align-items-center">
 		<div class="p-2 flex-grow-1">
-				<h1 class="titulo">
-					<?php echo $strings['TODOList']; ?>
-				</h1>
+				<img src="../Locales/images/logo.png" height="80">
 		</div>
 <?php
 

@@ -8,13 +8,14 @@ body{
     background-color: rgb(189, 189, 189);
 }
 header{
-    min-height: 80px;
-    padding-top: 10px;
+    min-height: 100px;
     height:10%;
     background-color: #ffffff;
     color: rgb(53, 53, 53);
     font-weight: bold;
     padding-bottom: 30px;
+    padding-left: 23px;
+    padding-right: 23px;
     border: 2px solid rgb(53, 53, 53);
     border-radius: 5px;
     box-shadow: 3px 3px rgb(121, 121, 121);
@@ -32,8 +33,7 @@ align-items: flex-start;
     font-family: 'Acme', sans-serif;
     margin-left: 15px;
     font-weight: bold;
-    font-size: 50px;
-    text-shadow: 0 0 8px rgb(226, 72, 0);
+    font-size: 20px;
 }
 
 footer{
@@ -101,7 +101,7 @@ input:focus{
 .fas{
     margin-left: 5px;
     font-size: 30px;
-    color: rgb(122, 122, 122);
+    color: rgb(153, 153, 153);
     text-shadow: 2px 2px rgb(121, 121, 121);
 }
 
@@ -134,6 +134,8 @@ a:hover{
     padding-left: 0;
     margin-top: 5px;
     height: 43px;
+    box-shadow: 3px 3px rgb(121, 121, 121);
+
 }
 
 .menu a{
@@ -156,7 +158,8 @@ a:hover{
 .articulo{
     margin-left: 0px;
     width:100px;
-    box-shadow: 3px 3px rgb(121, 121, 121);
+    box-shadow: 2px 2px rgb(121, 121, 121);
+
 }
 .articulo .intropic{
     border-radius: 15px;
@@ -175,6 +178,8 @@ a:hover{
     background-color: white;
     border: 2px solid rgb(53, 53, 53);
     min-width: 0px !important;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.26);
+
 }
 
 .dropdown-item:hover{
@@ -509,7 +514,6 @@ table{
     border-right: 2px solid rgb(119, 119, 119);
     background-color: rgb(94, 94, 94);
     padding-right: 20px;
-    margin-bottom: 18px;
 }
 .carta{
     background-image: linear-gradient(to bottom,  #ffffff, #ecc576, #f7aa10, #f7aa10, #f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10, #ecc576, #ffffff);
