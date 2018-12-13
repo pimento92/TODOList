@@ -28,36 +28,21 @@ else{
     function ADD(){
         if(!isset($_POST['submit']))
         {
-            include '../Views/Prioridad_ADD.php';
-            new LoteriaIU_ADD();
+            include '../Views/Prioridad_Views/Prioridad_ADD.php';
+            new Prioridad_ADD();
 
         }else{
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new LOTERIAIU_Model($_POST['email'],$_POST['nombre'],$_POST['apellidos'],$_POST['participacion'],$_FILES['file']['name'],$_POST['ingresado'],$_POST['premio'],$_POST['pagado']);
+            $prioridad = new PRIORIDAD_Model('',$_POST['nombre'],$_POST['color'],$_POST['desc']);
 
-            $respuesta = $boleto->Register($_POST['email']);
+            $respuesta = $prioridad->Exists();
             if($respuesta === true)
             {
-                $respuesta = $boleto->ADD();
-                if($respuesta === true)
-                {
-                    
-                    if(isset($_FILES['file']))
-                    {
-                        $name_file = $_FILES['file']['name'];
-                        $tmp_name = $_FILES['file']['tmp_name'];
-                        $local_image = "../Files/Resguardos/";
-                        move_uploaded_file($tmp_name, $local_image.$_POST['email']."-".$name_file);
-                    }
-                    $respuesta = 'Inserción realizada con éxito';
-                    include '../Views/MESSAGE.php';
-                    new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
+                $prioridad->ADD();
+                $respuesta = 'Inserción realizada con éxito';
+                include '../Views/MESSAGE.php';
+                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
 
-                }else{
-                    $respuesta = 'Error en la inserción';
-                    include '../Views/MESSAGE.php';
-                    new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
-                }
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
@@ -70,16 +55,16 @@ else{
     function SEARCH(){
         if(!isset($_POST['submit']))
         {
-            include '../Views/PRIORIDAD_SEARCH.php';
-            new LoteriaIU_SEARCH();
+            include '../Views//Prioridad_Views/Prioridad_SEARCH.php';
+            new Prioridad_SEARCH();
 
         }else{
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new LOTERIAIU_Model($_POST['email'],$_POST['nombre'],$_POST['apellidos'],$_POST['participacion'],$_POST['file'],$_POST['ingresado'],$_POST['premio'],$_POST['pagado']);
+            $boleto = new PRIORIDAD_Model('',$_POST['nombre'],$_POST['desc'],'');
             $datos = $boleto->SEARCH();
             if(is_array($datos) === true){
-                include '../Views/Prioridad_SHOWALL.php';
-                new LoteriaIU_SHOWALL($datos);
+                include '../Views/Prioridad_Views/Prioridad_SHOWALL.php';
+                new Prioridad_SHOWALL($datos);
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($datos, './Prioridad_Controller.php?accion=SEARCH');
@@ -91,25 +76,17 @@ else{
      //$clave: PK de la tupla
      function DELETE($clave){
         include '../Models/PRIORIDAD_Model.php';
-        $boleto = new LOTERIAIU_Model($clave,'','','','','','','');
+        $prioridad = new Prioridad_Model($clave,'','','');
         if(!isset($_POST['submit']))
         {
-            $datos = $boleto->SEARCH();
-            include '../Views/LoteriaIU_DELETE.php';
-            new LoteriaIU_DELETE($datos);
+            $datos = $prioridad->SEARCH();
+            include '../Views/Prioridad_Views/Prioridad_DELETE.php';
+            new Prioridad_DELETE($datos);
         }else{
-            $respuesta = $boleto->DELETE($clave);
-            if($respuesta === true){
-
-                $mensaje = 'Borrado realizado con éxito';
+            $respuesta = $prioridad->DELETE($clave);
                 include '../Views/MESSAGE.php';
-                new MESSAGE($mensaje, './LoteriaIU_Controller.php?accion=SHOWALL');
-            }else{
+                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=SHOWALL');
 
-                $mensaje = 'Error en el borrado';
-                include '../Views/MESSAGE.php';
-                new MESSAGE($mensaje, './LoteriaIU_Controller.php?accion=SHOWALL');
-            }
         }
     }
 
@@ -119,34 +96,19 @@ else{
         if(!isset($_POST['submit']))
         {
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new LOTERIAIU_Model($clave,'','','','','','','');
-            $datos = $boleto->SEARCH();
-            include '../Views/LPrioridad_EDIT.php';
-            new LoteriaIU_EDIT($datos);
+            $prioridad = new PRIORIDAD_Model($clave, '','','');
+            $datos = $prioridad->SEARCH();
+            include '../Views/Prioridad_Views/Prioridad_EDIT.php';
+            new Prioridad_EDIT($datos);
 
         }else{
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new LOTERIAIU_Model($_POST['email'],$_POST['nombre'],$_POST['apellidos'],$_POST['participacion'],$_FILES['file']['name'],$_POST['ingresado'],$_POST['premio'],$_POST['pagado']);
+            $boleto = new PRIORIDAD_Model($_POST['id'],$_POST['nombre'],$_POST['color'],$_POST['desc']);
 
             $respuesta = $boleto->EDIT($clave);
-            if($respuesta === true)
-            {
-                if(isset($_FILES['file']))
-                {
-                    $name_file = $_FILES['file']['name'];
-                    $tmp_name = $_FILES['file']['tmp_name'];
-                    $local_image = "../Files/Resguardos/";
-                    move_uploaded_file($tmp_name, $local_image.$_POST['email']."-".$name_file);
-                }
-                $respuesta = 'Edición realizada con éxito';
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Prioridad_Controller.php?accion=SHOWALL');
-
-            }else{
-                $respuesta = 'Error en la edición';
-                include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=SHOWALL');
-            }
+         
         }
     }
 
@@ -154,10 +116,10 @@ else{
      //$clave: PK de la tupla
      function SHOWCURRENT($clave){
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new LOTERIAIU_Model($clave,'','','','','','','');
-            $datos = $boleto->SEARCH();
-            include '../Views/Prioridad_SHOWCURRENT.php';
-            new LoteriaIU_SHOWCURRENT($datos);
+            $prioridad = new PRIORIDAD_Model($clave,'','','');
+            $datos = $prioridad->SEARCH();
+            include '../Views/Prioridad_Views/Prioridad_SHOWCURRENT.php';
+            new Prioridad_SHOWCURRENT($datos);
     }
 
     //método que muestra todos los boletos
@@ -168,7 +130,7 @@ else{
             $datos = $prioridad->Showall();
             if(sizeof($datos) != 0)
             {
-                include '../Views/Prioridad_SHOWALL.php';
+                include '../Views/Prioridad_Views/Prioridad_SHOWALL.php';
                 new  Prioridad_SHOWALL($datos);
             }else{
                 $mens = "No hay prioridades registradas";

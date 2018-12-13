@@ -9,9 +9,9 @@ class PRIORIDAD_Model {
 
   //Constructor de la clase
   //
-  function __construct($id, $nombre, $desc, $color){
+  function __construct($id, $nombre, $color, $desc){
+		$this->id = $id;
     $this->nombre = $nombre;
-    $this->id = $id;
     $this->desc = $desc;
     $this->color = $color;
 
@@ -19,22 +19,39 @@ class PRIORIDAD_Model {
     $this->mysqli = ConnectDB();
   }
 
+	function Exists(){
+
+		$sql = "select * from PRIORIDAD where `nom_pri` = '".$this->nombre."'";
+		$sql2 = "select * from PRIORIDAD where `codcolor_pri` = '".$this->color."'";
+		$sql3 = "select * from PRIORIDAD where `desc_pri` = '".$this->desc."'";
+		$result = $this->mysqli->query($sql);
+		$result2 = $this->mysqli->query($sql2);
+		$result3 = $this->mysqli->query($sql3);
+		if ($result->num_rows == 1 || $result2->num_rows == 1 || $result3->num_rows == 1 ){  // existe el usuario
+				return 'La prioridad ya existe';
+			}
+		else{
+	    		return true; //no existe el usuario
+		}
+
+	}
   function ADD(){
     $sql = "SELECT * FROM PRIORIDAD WHERE(`nom_pri` = '$this->nombre')";
-    $result;
+		$result;
+		
     if(!$result = $this->mysqli->query($sql)){
       return 'No es posible conectarse a la BD';
     }
     else{
       if($result->num_rows == 0){
         $sql = "INSERT INTO PRIORIDAD (`nom_pri`, `desc_pri`, `codcolor_pri`)
-        VALUES ('".$this->nombre."', '".$this->desc."', '".$this->color."')";
+				VALUES ('".$this->nombre."', '".$this->desc."', '".$this->color."')";
 
           if (!$this->mysqli->query($sql)) {
-            return 'Error en la inserción';
+            return 'Inserción realizada con éxito';
           }
           else{
-            return 'Inserción realizada con éxito'; //operacion de insertado correcta
+            return 'Error en la inserción'; //operacion de insertado correcta
           }
       }
       else {
@@ -46,12 +63,14 @@ class PRIORIDAD_Model {
   function Search(){
     	//datos introducidos
 	$datos=[
+		'id'	=> $this->id,
 		'nombre' =>$this->nombre,
 		'desc' =>$this->desc,
 		'color' =>$this->color
 	];
 	//datos introducidos no vacíos
 	$datosNotNull=[
+		'id' => '',
 		'nombre' =>  '',
 		'desc' =>  '',
 		'color' =>   ''
@@ -67,10 +86,18 @@ class PRIORIDAD_Model {
 
 	//crear lasentencia con los datos no vacíos, LIKE para datos parciales
 	$stmt = array();
+	if($datosNotNull['id']!= '')
+	{
+		$ids = array();
+		array_push($ids, "`id_pri` LIKE '%");
+		array_push($ids, $datosNotNull['id']);
+		array_push($ids, "%'");
+		array_push($stmt, implode("", $ids));
+	}
 	if($datosNotNull['nombre']!= '')
 	{
 		$nom = array();
-		array_push($nom, "`bom_pri` LIKE '%");
+		array_push($nom, "`nom_pri` LIKE '%");
 		array_push($nom, $datosNotNull['nombre']);
 		array_push($nom, "%'");
 		array_push($stmt, implode("", $nom));
@@ -94,11 +121,11 @@ class PRIORIDAD_Model {
 
 	
 	$opt = implode(' AND ', $stmt);
+	echo $opt;
 	//sentencia creada
-	$sql = "SELECT * FROM LOTERIAIU WHERE " . $opt;
-
+	$sql = "SELECT * FROM PRIORIDAD WHERE " . $opt;
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM LOTERIAIU WHERE "){
+	if($sql == "SELECT * FROM PRIORIDAD WHERE "){
 		return $this->SHOWALL();
 	}else{
 	//Si no hay coincidencias devuelve un mensaje
@@ -123,12 +150,11 @@ class PRIORIDAD_Model {
             `desc_pri` = '$this->desc',
             `codcolor_pri` = '$this->color'
             WHERE(`id_pri` = '$this->id');";
-
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
     }
     else{
-      return 'Edición completa';
+      return 'Edición realizada con éxito';
     }
   }
   function Showall(){
@@ -137,12 +163,12 @@ class PRIORIDAD_Model {
   }
 
   function Delete(){
-    $sql = "DELETE FROM PRIORIDAD WHERE `id_pri` = '$this->id'";
+		$sql = "DELETE FROM PRIORIDAD WHERE `id_pri` = '$this->id'";
   	if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}
   	else{
-  		return 'Borrado exitosamente';
+  		return 'Borrado realizado con éxito';
   	}
   }
 
