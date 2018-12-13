@@ -49,7 +49,7 @@ array(
 	'Color' => 'Color',
 	'Descripción' => 'Descripción',
 	'Acción' => 'Acción',
-	'No hay prioridades registradas'	=> 'No hay prioridades registradas'
+	'No hay prioridades registradas'	=> 'No hay prioridades registradas',
 	'La prioridad ya existe' => 'La prioridad ya existe',
 	'El contacto ya existe' => 'El contacto ya existe',
 	'La categoría ya existe' => 'La categoría ya existe',

@@ -1,19 +1,16 @@
-
 <?php
-class PRIORIDAD_Model {
-		var $id;
+class CATEGORIA_Model {
+	var $id;
   	var $nombre;
     var $desc;
-    var $color;
 
 
   //Constructor de la clase
   //
-  function __construct($id, $nombre, $color, $desc){
+  function __construct($id, $nombre, $desc){
 		$this->id = $id;
     $this->nombre = $nombre;
     $this->desc = $desc;
-    $this->color = $color;
 
     include_once '../Models/Access_DB.php';
     $this->mysqli = ConnectDB();
@@ -21,14 +18,12 @@ class PRIORIDAD_Model {
 
 	function Exists(){
 
-		$sql = "select * from PRIORIDAD where `nom_pri` = '".$this->nombre."'";
-		$sql2 = "select * from PRIORIDAD where `codcolor_pri` = '".$this->color."'";
-		$sql3 = "select * from PRIORIDAD where `desc_pri` = '".$this->desc."'";
+		$sql = "select * from CATEGORIA where `nom_cat` = '".$this->nombre."'";
+		$sql3 = "select * from CATEGORIA where `desc_cat` = '".$this->desc."'";
 		$result = $this->mysqli->query($sql);
-		$result2 = $this->mysqli->query($sql2);
 		$result3 = $this->mysqli->query($sql3);
-		if ($result->num_rows == 1 || $result2->num_rows == 1 || $result3->num_rows == 1 ){  // existe el usuario
-				return 'La prioridad ya existe';
+		if ($result->num_rows == 1 || $result3->num_rows == 1 ){  // existe el usuario
+				return 'La categoria ya existe';
 			}
 		else{
 	    		return true; //no existe el usuario
@@ -36,7 +31,7 @@ class PRIORIDAD_Model {
 
 	}
   function ADD(){
-    $sql = "SELECT * FROM PRIORIDAD WHERE(`nom_pri` = '$this->nombre')";
+    $sql = "SELECT * FROM categoria WHERE(`nom_cat` = '$this->nombre')";
 		$result;
 		
     if(!$result = $this->mysqli->query($sql)){
@@ -44,8 +39,8 @@ class PRIORIDAD_Model {
     }
     else{
       if($result->num_rows == 0){
-        $sql = "INSERT INTO PRIORIDAD (`nom_pri`, `desc_pri`, `codcolor_pri`)
-				VALUES ('".$this->nombre."', '".$this->desc."', '".$this->color."')";
+        $sql = "INSERT INTO CATEGORIA (`nom_cat`, `desc_cat`)
+				VALUES ('".$this->nombre."', '".$this->desc."')";
 
           if (!$this->mysqli->query($sql)) {
             return 'Inserción realizada con éxito';
@@ -66,14 +61,12 @@ class PRIORIDAD_Model {
 		'id'	=> $this->id,
 		'nombre' =>$this->nombre,
 		'desc' =>$this->desc,
-		'color' =>$this->color
 	];
 	//datos introducidos no vacíos
 	$datosNotNull=[
 		'id' => '',
 		'nombre' =>  '',
 		'desc' =>  '',
-		'color' =>   ''
 	];
 	//meter los post no vacíos en el array de no vacíos
 	foreach($datos as $dat => $valor)
@@ -89,7 +82,7 @@ class PRIORIDAD_Model {
 	if($datosNotNull['id']!= '')
 	{
 		$ids = array();
-		array_push($ids, "`id_pri` LIKE '%");
+		array_push($ids, "`id_cat` LIKE '%");
 		array_push($ids, $datosNotNull['id']);
 		array_push($ids, "%'");
 		array_push($stmt, implode("", $ids));
@@ -97,7 +90,7 @@ class PRIORIDAD_Model {
 	if($datosNotNull['nombre']!= '')
 	{
 		$nom = array();
-		array_push($nom, "`nom_pri` LIKE '%");
+		array_push($nom, "`nom_cat` LIKE '%");
 		array_push($nom, $datosNotNull['nombre']);
 		array_push($nom, "%'");
 		array_push($stmt, implode("", $nom));
@@ -105,25 +98,18 @@ class PRIORIDAD_Model {
 	if($datosNotNull['desc']!= '')
 	{
 		$des = array();
-		array_push($des, "`desc_pri` LIKE '%");
+		array_push($des, "`desc_cat` LIKE '%");
 		array_push($des, $datosNotNull['desc']);
 		array_push($des, "%'");
 		array_push($stmt, implode("", $des));
 	}
-	if($datosNotNull['color']!= '')
-	{
-		$col = array();
-		array_push($col, "`codcolor_pri` LIKE '%");
-		array_push($col, $datosNotNull['color']);
-		array_push($col, "%'");
-		array_push($stmt, implode("", $col));
-	}
-
+	
 	$opt = implode(' AND ', $stmt);
 	//sentencia creada
-	$sql = "SELECT * FROM PRIORIDAD WHERE " . $opt;
+	$sql = "SELECT * FROM CATEGORIA WHERE " . $opt;
+	echo $sql;
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM PRIORIDAD WHERE "){
+	if($sql == "SELECT * FROM CATEGORIA WHERE "){
 		return $this->SHOWALL();
 	}else{
 	//Si no hay coincidencias devuelve un mensaje
@@ -144,10 +130,9 @@ class PRIORIDAD_Model {
 }
 
   function Edit(){
-    $sql = "UPDATE PRIORIDAD SET `nom_pri` = '$this->nombre',
-            `desc_pri` = '$this->desc',
-            `codcolor_pri` = '$this->color'
-            WHERE(`id_pri` = '$this->id');";
+    $sql = "UPDATE CATEGORIA SET `nom_cat` = '$this->nombre',
+            `desc_cat` = '$this->desc',
+            WHERE(`id_cat` = '$this->id');";
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
     }
@@ -156,12 +141,12 @@ class PRIORIDAD_Model {
     }
   }
   function Showall(){
-		$result = $this->mysqli->query("SELECT * FROM PRIORIDAD");
+		$result = $this->mysqli->query("SELECT * FROM CATEGORIA");
 		return mysqli_fetch_all($result, MYSQLI_ASSOC);
   }
 
   function Delete(){
-		$sql = "DELETE FROM PRIORIDAD WHERE `id_pri` = '$this->id'";
+		$sql = "DELETE FROM CATEGORIA WHERE `id_cat` = '$this->id'";
   	if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}

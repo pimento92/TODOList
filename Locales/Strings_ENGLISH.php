@@ -74,6 +74,7 @@ array(
 	'Error en el borrado' => 'Deleting error',
 	'Borrado realizado con éxito' => 'Successfull delete',
 	'Búsqueda de prioridades' => "Priority's search",
+	'Búsqueda de categorías' => "Category's search",
 	'No se han encontrado coincidencias' => 'No matches found'
  )
 ;

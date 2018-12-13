@@ -110,6 +110,7 @@ INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`t
 INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('asd@gmail.com','asd','dsa','dsa asd','1992-02-21','655555555','BASICO');
 
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('HOGAR','Tarea relativa a trabajo en el hogar');
+INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('ESEI','Tarea relativa a trabajo en la universidad');
 
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA ALTA','Grado alto de urgencia', '#ff0000');
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA MEDIA','Grado medio de urgencia', '#ffff00');

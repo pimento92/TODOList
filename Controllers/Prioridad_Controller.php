@@ -60,7 +60,7 @@ else{
 
         }else{
             include '../Models/PRIORIDAD_Model.php';
-            $boleto = new PRIORIDAD_Model('',$_POST['nombre'],$_POST['desc'],'');
+            $boleto = new PRIORIDAD_Model('',$_POST['nombre'],'',$_POST['desc']);
             $datos = $boleto->SEARCH();
             if(is_array($datos) === true){
                 include '../Views/Prioridad_Views/Prioridad_SHOWALL.php';

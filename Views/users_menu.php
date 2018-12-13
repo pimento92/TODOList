@@ -21,20 +21,20 @@ include_once '../Functions/Authentication.php';
 					</div>	
 				</li>	
 				<li class="nav-item ">
-					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Contactos']; ?></a>
-¡				</li>
+				<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Contactos']; ?></a>
+				</li>
 				<?php			
 					if ($_SESSION['tipo'] == 'ADMIN')
 					{
 				?>
 				<li class="nav-item ">
-					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Categorías']; ?></a>
+				<a class="nav-link " href="../Controllers/Categoria_Controller.php?accion=SHOWALL"><?php echo $strings['Categorías'];?></a>
 				</li>
 				<li class="nav-item ">
 					<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Prioridades']; ?></a>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Usuarios']; ?></a>
+				<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Usuarios']; ?></a>
 				</li>
 				<?php
 					}
