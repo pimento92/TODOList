@@ -19,7 +19,26 @@ include_once '../Functions/Authentication.php';
 						<a class="dropdown-item" href="../Controllers/LoteriaIU_Controller.php?accion=SEARCH"><?php echo $strings['Buscar tarea']; ?></a>
 						<a class="dropdown-item" href="../Controllers/LoteriaIU_Controller.php?accion=SHOWALL"><?php echo $strings['Mostrar tareas']; ?></a>
 					</div>	
-				</li>				
+				</li>	
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Contactos']; ?></a>
+¡				</li>
+				<?php			
+					if ($_SESSION['tipo'] == 'ADMIN')
+					{
+				?>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Categorías']; ?></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Prioridades']; ?></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $strings['Usuarios']; ?></a>
+				</li>
+				<?php
+					}
+				?>
 		</ul>
 		
 	</nav>

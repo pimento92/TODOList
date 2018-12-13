@@ -29,7 +29,11 @@ array(
 	'Tareas'	=> 'Tareas',
 	'Añadir tarea' => 'Añadir tarea',
 	'Buscar tarea' => 'Buscar tarea',
-	'Mostrar tareas' => 'Mostrar tareas'
+	'Mostrar tareas' => 'Mostrar tareas',
+	'Contactos'	=> 'Contactos',
+	'Prioridades'	=> 'Prioridades',
+	'Categorías'	=> 'Categorías',
+	'Usuarios'	=> 'Usuarios'
 ) 
 ;
 ?>
