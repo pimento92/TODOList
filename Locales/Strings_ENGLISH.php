@@ -19,6 +19,8 @@ array(
 	'Sólo letras' => 'Only letter',
 	'Apellidos'	=> 'Surname',
 	'Teléfono'	=> 'Phone number',
+	'Administrador' => 'Administrator',
+	'Básico' => 'Regular',
 	'Fecha de nacimiento' => 'Birth date',
 	'Error en la inserción' => 'Insertion error',
 	'Debe rellenar todos los campos' => 'Must fill all the fields',
@@ -47,6 +49,7 @@ array(
 	'Editar usuario' => 'Edit user',
 	'Eliminar usuario' => 'Delete users',
 	'Color' => 'Colour',
+	'Tipo' => 'Type',
 	'Descripción' => 'Description',
 	'Acción' => 'Action',
 	'No hay prioridades registradas'	=> 'No priorities found',
@@ -75,7 +78,14 @@ array(
 	'Borrado realizado con éxito' => 'Successfull delete',
 	'Búsqueda de prioridades' => "Priority's search",
 	'Búsqueda de categorías' => "Category's search",
-	'No se han encontrado coincidencias' => 'No matches found'
- )
+	'No se han encontrado coincidencias' => 'No matches found',
+	'No es posible conectarse a la BD' => 'DB conection error',
+	'E-mail incorrecto' => 'Invalid e-mail',
+	'No hay prioridades registradas'	=> 'No priorities registered',
+	"No hay categorías registrados" => "No categories registered",
+	"No hay tareas registrados" => "No tasks registered",
+	"No hay contactos registrados" => "No contacts registered",
+	"No hay usuarios registrados" => "No users registered"
+	 )
 ;
  ?>

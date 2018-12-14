@@ -337,6 +337,37 @@ function comprobarForm(form){
     }
 }
 
+//Función para comprobar formularios
+//form: formulario a validar
+function comprobarFormAddCon(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[1],
+        form.elements[2],
+        form.elements[3]
+    ];
+
+    //comprueba que no sean vacíos
+    for(var i=0;i<4;i++)
+    {
+        if(comprobarVacio(array[i]) === false)
+        {
+            //Párrafo que muestra el error
+            document.getElementById("invalidform").style.display = "block";
+
+            return false;
+        }
+    }
+    //comprueba su formato
+    if(comprobarCorreo(array[0],60) === false || comprobarAlfabetico(array[1],20) || comprobarAlfabetico(array[2],150) ===false || comprobarTelf(array[3]) === false)
+    {
+        return false;
+    }
+}
+
 //comprueba el largo del archivo pasado por argumentos
 function comprobarArchivo(campo)
 {

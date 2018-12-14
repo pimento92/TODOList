@@ -13,8 +13,8 @@ else{
 
 	include '../Models/Access_DB.php';
 
-	include '../Models/USUARIOS_Model.php';
-	$usuario = new USUARIOS_Model('','','',$_REQUEST['email'],$_REQUEST['password'],'','');
+	include '../Models/USUARIO_Model.php';
+	$usuario = new USUARIO_Model('','','',$_REQUEST['email'],$_REQUEST['password'],'','');
 	$respuesta = $usuario->login();
 
 	if ($respuesta == 'true'){

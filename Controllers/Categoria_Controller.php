@@ -132,7 +132,7 @@ else{
                 include '../Views/Categoria_Views/Categoria_SHOWALL.php';
                 new  Categoria_SHOWALL($datos);
             }else{
-                $mens = "No hay Categoriaes registradas";
+                $mens = "No hay Categorias registradas";
                 include '../Views/MESSAGE.php';
                 new MESSAGE($mens, '../Controllers/Index_Controller.php');
             }

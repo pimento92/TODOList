@@ -13,8 +13,8 @@ if(!isset($_POST['action'])){
 }
 else{
 
-	include '../Models/USUARIOS_Model.php';
-	$usuario = new USUARIOS_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],
+	include '../Models/USUARIO_Model.php';
+	$usuario = new USUARIO_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],
 	$_POST['password'],$_POST['fecha'],$_POST['tipo']);
 
 	$respuesta = $usuario->Register();

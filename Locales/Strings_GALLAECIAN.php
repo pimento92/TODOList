@@ -19,6 +19,8 @@ array(
 	'Sólo letras' => 'Sólo letras',
 	'Apellidos'	=> 'Apelidos',
 	'Teléfono'	=> 'Teléfono',
+	'Administrador' => 'Administrador',
+	'Básico' => 'Básico',
 	'Fecha de nacimiento' => 'Fecha de nacemento',
 	'Error en la inserción' => 'Error na inserción',
 	'Debe rellenar todos los campos' => 'Debe rechear todos os campos',
@@ -47,9 +49,9 @@ array(
 	'Editar usuario' => 'Editar usuario',
 	'Eliminar usuario' => 'Eliminar usuario',
 	'Color' => 'Color',
+	'Tipo' => 'Tipo',
 	'Descripción' => 'Descripción',
 	'Acción' => 'Acción',
-	'No hay prioridades registradas'	=> 'Non hai prioridades rexistradas',
 	'La prioridad ya existe' => 'A prioridade xa existe',
 	'El contacto ya existe' => 'O contacto xa existe',
 	'La categoría ya existe' => 'A categoría xa existe',
@@ -75,7 +77,14 @@ array(
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
 	'Búsqueda de categorías' => 'Búsqueda de categorías',
-	'No se han encontrado coincidencias' => 'Non se atoparon coincidencias'
+	'No se han encontrado coincidencias' => 'Non se atoparon coincidencias',
+	'No es posible conectarse a la BD' => 'Non é posible conectarse á BD',
+	'E-mail incorrecto' => 'E-mail incorrecto',
+	'No hay prioridades registradas'	=> 'Non hai prioridades rexistradas',
+	"No hay categorías registrados" => "Non hai categorías rexistradas",
+	"No hay tareas registrados" => "Non hai tareas rexistradas",
+	"No hay contactos registrados" => "Non hai contactos rexistrados",
+	"No hay usuarios registrados" => "Non hai usuarios rexistrados"
 
 ) 
 ;

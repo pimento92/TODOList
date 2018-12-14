@@ -21,7 +21,7 @@ include_once '../Functions/Authentication.php';
 					</div>	
 				</li>	
 				<li class="nav-item ">
-				<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Contactos']; ?></a>
+				<a class="nav-link " href="../Controllers/Contacto_Controller.php?accion=SHOWALL"><?php echo $strings['Contactos']; ?></a>
 				</li>
 				<?php			
 					if ($_SESSION['tipo'] == 'ADMIN')
@@ -34,7 +34,7 @@ include_once '../Functions/Authentication.php';
 					<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Prioridades']; ?></a>
 				</li>
 				<li class="nav-item ">
-				<a class="nav-link " href="../Controllers/Prioridad_Controller.php?accion=SHOWALL"><?php echo $strings['Usuarios']; ?></a>
+				<a class="nav-link " href="../Controllers/Usuario_Controller.php?accion=SHOWALL"><?php echo $strings['Usuarios']; ?></a>
 				</li>
 				<?php
 					}
