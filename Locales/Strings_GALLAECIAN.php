@@ -23,6 +23,7 @@ array(
 	'Básico' => 'Básico',
 	'Fecha de nacimiento' => 'Fecha de nacemento',
 	'Error en la inserción' => 'Error na inserción',
+	'Formato no válido' => 'Formato non válido',
 	'Debe rellenar todos los campos' => 'Debe rechear todos os campos',
 	'El usuario no existe' => 'O usuario non existe',
 	'La password para este usuario no es correcta' => 'A password para este usuario non é correcta',
@@ -77,6 +78,7 @@ array(
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
 	'Búsqueda de categorías' => 'Búsqueda de categorías',
+	'Búsqueda de usuarios' => 'Búsqueda de usuarios',
 	'No se han encontrado coincidencias' => 'Non se atoparon coincidencias',
 	'No es posible conectarse a la BD' => 'Non é posible conectarse á BD',
 	'E-mail incorrecto' => 'E-mail incorrecto',
@@ -84,7 +86,16 @@ array(
 	"No hay categorías registrados" => "Non hai categorías rexistradas",
 	"No hay tareas registrados" => "Non hai tareas rexistradas",
 	"No hay contactos registrados" => "Non hai contactos rexistrados",
-	"No hay usuarios registrados" => "Non hai usuarios rexistrados"
+	"No hay usuarios registrados" => "Non hai usuarios rexistrados",
+	'SIN PRIORIDAD' => 'SEN PRIORIDADE',
+	'SIN CATEGORÍA' => 'SEN CATEGORÍA',
+	'Tarea sin prioridad asignada'=> 'Tarea sen prioridade asignada',
+	'Tarea sin categoría asignada'=> 'Tarea sen categoría asignada',
+	'Prioridad' => 'Prioridade',
+	'Categoría' => 'Categoría',
+	'Estado' => 'Estado',
+	'Creador' => 'Creador',
+	'Fecha' => 'Fecha'
 
 ) 
 ;

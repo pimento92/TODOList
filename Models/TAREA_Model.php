@@ -1,5 +1,5 @@
 <?php
-class USUARIOS_Model {
+class TAREA_Model {
 
   	var $prioridad;
     var $id;
@@ -19,7 +19,7 @@ class USUARIOS_Model {
     $this->descripcion = $descripcion;
     $this->creador = $creador;
     $this->categoria = $categoria;
-    include_once '../Models/Access_DB';
+    include_once '../Models/Access_DB.php';
     $this->mysqli = ConnectDB();
   }
 
@@ -79,13 +79,13 @@ class USUARIOS_Model {
     }
   }
   function Showall(){
-    $sql = "SELECT * FROM TAREA";
-    $resultado;
+    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat`";
+    $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
     }
     else{
-      $result = $resultado;
+      $result =  mysqli_fetch_all($resultado, MYSQLI_ASSOC);
       return $result;
     }
   }

@@ -41,11 +41,11 @@ else{
                 $prioridad->ADD();
                 $respuesta = 'Inserción realizada con éxito';
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
+                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=SHOWALL');
 
             }else{
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=ADD');
+                new MESSAGE($respuesta, './Prioridad_Controller.php?accion=SHOWALL');
             }
         }
     }

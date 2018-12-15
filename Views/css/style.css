@@ -265,14 +265,10 @@ a:hover{
 table{
     margin-top: 10px;
     color: white;
-    border-top: 3px solid white;
-    border-left: 3px solid white;
-    border-bottom: 3px solid rgb(197, 197, 197);
-    border-right: 3px solid rgb(197, 197, 197);
 }
 
 tr{
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 td{
@@ -300,6 +296,13 @@ th{
     padding:0;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+table tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
 }
 
 .editbtn{
@@ -446,19 +449,20 @@ th{
     opacity: 0;
   }
   select{
-      background-color: #f0dcb5;
+    background-color: #c2c2c2;
       border-radius: 5px;
-      color: #942203;
+      color: rgb(53, 53, 53);
       border:none;
-      border-bottom: 2px solid #ec6d33;
       padding: 3px 10px;
       width: 152px;
 
   }
 
   select:hover{
-    background-color: white;
+    background-color: rgb(226, 72, 0);
+    color: white;
 }
+
 .linkfoto{
     color: white;
 }
@@ -503,7 +507,12 @@ legend{
 table{
     margin-bottom: 20px;
 }
- 
+table thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+table thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
 .langbtn{
     background-color: rgba(0,0,0,0);
     border: none;
@@ -520,12 +529,7 @@ table{
     background-color: rgb(139, 139, 139);
     padding-right: 20px;
 }
-.carta{
-    background-image: linear-gradient(to bottom,  #ffffff, #ecc576, #f7aa10, #f7aa10, #f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10,#f7aa10, #ecc576, #ffffff);
-    color: white;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-}
+
 .btnintro{
     background-color: rgba(0,0,0,0);
     border:none;
@@ -573,4 +577,10 @@ border: none;
     padding: 0;
     height: 40px;
     width: 80px;
+}
+.disable:hover{
+    background-color: rgb(156, 156, 156);
+}
+.disable:hover .fas{
+    color: rgb(53, 53, 53);
 }

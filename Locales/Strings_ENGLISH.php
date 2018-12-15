@@ -23,6 +23,7 @@ array(
 	'Básico' => 'Regular',
 	'Fecha de nacimiento' => 'Birth date',
 	'Error en la inserción' => 'Insertion error',
+	'Formato no válido' => 'Invalid format',
 	'Debe rellenar todos los campos' => 'Must fill all the fields',
 	'El usuario no existe' => 'The user does not exists',
 	'La password para este usuario no es correcta' => 'The password for this user is not correct',
@@ -78,6 +79,7 @@ array(
 	'Borrado realizado con éxito' => 'Successfull delete',
 	'Búsqueda de prioridades' => "Priority's search",
 	'Búsqueda de categorías' => "Category's search",
+	'Búsqueda de usuarios' => "User's search",
 	'No se han encontrado coincidencias' => 'No matches found',
 	'No es posible conectarse a la BD' => 'DB conection error',
 	'E-mail incorrecto' => 'Invalid e-mail',
@@ -85,7 +87,16 @@ array(
 	"No hay categorías registrados" => "No categories registered",
 	"No hay tareas registrados" => "No tasks registered",
 	"No hay contactos registrados" => "No contacts registered",
-	"No hay usuarios registrados" => "No users registered"
+	"No hay usuarios registrados" => "No users registered",
+	'SIN PRIORIDAD' => 'NO PRIORITY',
+	'SIN CATEGORÍA' => 'NO TAG',
+	'Tarea sin prioridad asignada'=> 'Task with unassigned priority',
+	'Tarea sin categoría asignada'=> 'Task with unassigned tag',
+	'Prioridad' => 'Priority',
+	'Categoría' => 'Tag',
+	'Estado' => 'Status',
+	'Creador' => 'Creator',
+	'Fecha' => 'Date'
 	 )
 ;
  ?>

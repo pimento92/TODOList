@@ -23,6 +23,7 @@ array(
 	'Básico' => 'Básico',
 	'Fecha de nacimiento' => 'Fecha de nacimiento',
 	'Error en la inserción' => 'Error en la inserción',
+	'Formato no válido' => 'Formato no válido',
 	'Debe rellenar todos los campos' => 'Debe rellenar todos los campos',
 	'El usuario no existe' => 'El usuario no existe',
 	'La password para este usuario no es correcta' => 'La password para este usuario no es correcta',
@@ -45,6 +46,7 @@ array(
 	'Añadir usuario' => 'Añadir usuario',
 	'Añadir contacto' => 'Añadir contacto',
 	'Buscar tarea' => 'Buscar tarea',
+	'Búsqueda de usuarios' => 'Búsqueda de usuarios',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
 	'Búsqueda de categorías' => 'Búsqueda de categorías',
 	'Mostrar tareas' => 'Mostrar tareas',
@@ -80,7 +82,17 @@ array(
 	"No hay categorías registrados" => "No hay categorías registradas",
 	"No hay tareas registrados" => "No hay tareas registradas",
 	"No hay contactos registrados" => "No hay contactos registrados",
-	"No hay usuarios registrados" => "No hay usuarios registrados"
+	"No hay usuarios registrados" => "No hay usuarios registrados",
+	'SIN PRIORIDAD' => 'SIN PRIORIDAD',
+	'SIN CATEGORÍA' => 'SIN CATEGORÍA',
+	'Tarea sin prioridad asignada'=> 'Tarea sin prioridad asignada',
+	'Tarea sin categoría asignada'=> 'Tarea sin categoría asignada',
+	'Prioridad' => 'Prioridad',
+	'Categoría' => 'Categoría',
+	'Estado' => 'Estado',
+	'Creador' => 'Creador',
+	'Fecha' => 'Fecha'
 ) 
 ;
 ?>
+ 

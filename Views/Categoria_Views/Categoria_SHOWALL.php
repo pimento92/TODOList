@@ -13,8 +13,8 @@
 
 		function render($datos){
             include '../Views/Header.php';?>
-<div class="col-md-3"></div>
-<div class="col-md-6 contenido articulo">
+<div class="col-md-4"></div>
+<div class="col-md-4 contenido articulo">
     <fieldset id="showall">
         <legend><?php echo $strings['Categorías'];?></legend>  
     
@@ -37,24 +37,52 @@
             <?php if(count($datos, COUNT_RECURSIVE)!= 3){
                     foreach($datos as $datos) :
                     ?>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_cat']."\n"; ?></td>
+
+                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+                    <td><?php echo $strings[$datos['nom_cat']]."\n"; ?></td>
+                    <td><?php echo $strings[$datos['desc_cat']]."\n"; ?></td>
+                <?php }else{?>
+                    <td><?php echo $datos['nom_cat']."\n"; ?></td>
+                    <td><?php echo $datos['desc_cat']."\n"; ?></td>
+                <?php }?>
 
 
+                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>
+                <?php }else{?>
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=EDIT&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=DELETE&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                
+
+                <?php }?>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-eye"></i></button></td>
             </tr>
             <?php endforeach;}else{?>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_cat']."\n"; ?></td>
+                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+                    <td><?php echo $strings[$datos['nom_cat']]."\n"; ?></td>
+                    <td><?php echo $strings[$datos['desc_cat']]."\n"; ?></td>
+                <?php }else{?>
+                    <td><?php echo $datos['nom_cat']."\n"; ?></td>
+                    <td><?php echo $datos['desc_cat']."\n"; ?></td>
+                <?php }?>
 
 
+                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>
+                <?php }else{?>
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=EDIT&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=DELETE&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                
+
+                <?php }?>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-eye"></i></button></td>
+            </tr>
             <?php };?>
             </table>
 

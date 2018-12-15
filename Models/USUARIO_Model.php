@@ -47,7 +47,27 @@ function getTipo(){
 //existe ya en la tabla
 function ADD()
 {
-
+    $sql = "SELECT * FROM USUARIO WHERE(`email_usr` = '$this->email')";
+		$result ;
+		
+    if(!$result = $this->mysqli->query($sql)){
+      return 'No es posible conectarse a la BD';
+    }
+    else{
+      if($result->num_rows == 0){
+        $sql = "INSERT INTO USUARIO (`nom_usr`, `apel_usr`, `telf_usr`, `email_usr`, `pass_usr`, `fechna_usr`, `tipo_usr`)
+				VALUES ('".$this->nombre."', '".$this->apellidos."', '".$this->telefono."', '".$this->email."', '".$this->password."', '".$this->fecha."', '".$this->tipo."')";
+          if ($this->mysqli->query($sql)) {
+            return 'Inserción realizada con éxito';
+          }
+          else{
+            return 'Error en la inserción'; //operacion de insertado correcta
+          }
+      }
+      else {
+        return 'Ya esta en la base de datos';
+      }
+    }
 }
 
 //funcion de destrucción del objeto: se ejecuta automaticamente
@@ -198,12 +218,12 @@ function RellenaDatos($clave)
 // funcion Edit: realizar el update de una tupla despues de comprobar que existe
 function EDIT($clave)
 {
-	$sql = "UPDATE USUARIO SET `nom_usr`='$this->nombre', `apel_usr`='$this->apellidos', `telf_usr`='$this->telefono', `email_usr`='$this->email', `pass_usr`='$this->password', `fechna_usr`='$this->fecha', `tipo_usr`='$this->tipo'";
+	$sql = "UPDATE USUARIO SET `nom_usr`='$this->nombre', `apel_usr`='$this->apellidos', `telf_usr`='$this->telefono', `email_usr`='$this->email', `pass_usr`='$this->password', `fechna_usr`='$this->fecha', `tipo_usr`='$this->tipo' WHERE (`email_usr`='$this->email')";
 	if(!$this->mysqli->query($sql)){
 		return 'Error en la edición';
 	}
 	else{
-		return 'Edición completa';
+		return 'Edición realizada con éxito';
 	}
 
 }
@@ -289,7 +309,7 @@ function rows($sql)
 }
 
 function Showall(){
-	$result = $this->mysqli->query("SELECT * FROM USUARIO");
+	$result = $this->mysqli->query("SELECT * FROM USUARIO ORDER BY tipo_usr DESC, nom_usr");
 	return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 

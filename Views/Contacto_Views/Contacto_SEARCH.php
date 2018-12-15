@@ -1,6 +1,6 @@
 <?php
 /**
- * Clase para realizar el SEARCH en prioridad
+ * Clase para realizar el SEARCH en contacto
  *	autor:  Juan Márquez 
  *	12/12/2018 
  */

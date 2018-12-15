@@ -39,25 +39,46 @@
                     foreach($datos as $datos) :
                     ?>
                 <td style="background-color:<?php echo $datos['codcolor_pri']; ?>;"></td>
-                <td><?php echo $datos['nom_pri']."\n"; ?></td>
-                <td><?php echo $datos['desc_pri']."\n"; ?></td>
+                <?php if($datos['nom_pri'] == 'SIN PRIORIDAD'){?>
+                    <td><?php echo $strings[$datos['nom_pri']]."\n"; ?></td>
+                    <td><?php echo $strings[$datos['desc_pri']]."\n"; ?></td>
+                <?php }else{?>
+                    <td><?php echo $datos['nom_pri']."\n"; ?></td>
+                    <td><?php echo $datos['desc_pri']."\n"; ?></td>
+                <?php }?>
 
 
+                <?php if($datos['nom_pri'] == 'SIN PRIORIDAD'){?>
+
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>
+                <?php }else{?>
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=EDIT&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=DELETE&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                <?php }?>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-eye"></i></button></td>
             </tr>
             <?php endforeach;}else{?>
                 <td style="background-color:<?php echo $datos['codcolor_pri']; ?>;"></td>
-                <td><?php echo $datos['nom_pri']."\n"; ?></td>
-                <td><?php echo $datos['desc_pri']."\n"; ?></td>
+                <?php if($datos['nom_pri'] == 'SIN PRIORIDAD'){?>
+                    <td><?php echo $strings[ $datos['nom_pri']]."\n"; ?></td>
+                    <td><?php echo $strings[ $datos['desc_pri']]."\n"; ?></td>
+                <?php }else{?>
+                    <td><?php echo $datos['nom_pri']."\n"; ?></td>
+                    <td><?php echo $datos['desc_pri']."\n"; ?></td>
+                <?php }?>
 
 
+                <?php if($datos['nom_pri'] == 'SIN PRIORIDAD'){?>
+
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>
+                <?php }else{?>
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=EDIT&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=DELETE&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Prioridad_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_pri']?>';"><i class="fas fa-eye"></i></button></td>
+                <?php }?>
             <?php };?>
             </table>
 

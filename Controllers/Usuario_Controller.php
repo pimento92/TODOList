@@ -33,19 +33,15 @@ else{
 
         }else{
             include '../Models/USUARIO_Model.php';
-            $Usuario = new USUARIO_Model($_POST['email'],$_POST['nombre'],$_POST['desc'], $_POST['telf']);
+            $Usuario = new USUARIO_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telf'],$_POST['email'],$_POST['password'],$_POST['fecha'],$_POST['tipo']);
 
-            $respuesta = $USUARIO->Exists();
+            $respuesta = $Usuario->Register();
             if($respuesta === true)
             {
-                $Usuario->ADD();
-                $respuesta = 'Inserción realizada con éxito';
+                $respuesta = $Usuario->ADD();
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Usuario_Controller.php?accion=ADD');
+                new MESSAGE($respuesta, './Usuario_Controller.php?accion=SHOWALL');
 
-            }else{
-                include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Usuario_Controller.php?accion=ADD');
             }
         }
     }
@@ -60,7 +56,7 @@ else{
 
         }else{
             include '../Models/USUARIO_Model.php';
-            $Usuario = new USUARIO_Model($_POST['email'],$_POST['nombre'],$_POST['desc'], $_POST['telf']);
+            $Usuario = new USUARIO_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],'',$_POST['fecha'],$_POST['tipo']);
             $datos = $Usuario->SEARCH();
             if(is_array($datos) === true){
                 include '../Views/Usuario_Views/USUARIO_SHOWALL.php';
@@ -103,7 +99,7 @@ else{
 
         }else{
             include '../Models/USUARIO_Model.php';
-            $Usuario = new USUARIO_Model($_POST['email'],$_POST['nombre'],$_POST['desc'], $_POST['telf']);
+            $Usuario = new USUARIO_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telf'],$clave,$_POST['password'],$_POST['fecha'],$_POST['tipo']);
             $respuesta = $Usuario->Edit($clave);
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Usuario_Controller.php?accion=SHOWALL');

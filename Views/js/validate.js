@@ -337,7 +337,7 @@ function comprobarForm(form){
     }
 }
 
-//Función para comprobar formularios
+//Función para comprobar formularios de add de contactos
 //form: formulario a validar
 function comprobarFormAddCon(form){
     document.getElementById("invalidform").style.display = "none";
@@ -377,6 +377,39 @@ function comprobarArchivo(campo)
     {
         //Párrafo que muestra el error
         document.getElementById("invalid".campo.name).style.display = 'block';
+        return false;
+    }
+}
+//Función para comprobar formularios de add de contactos
+//form: formulario a validar
+function comprobarFormAddUser(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[1],
+        form.elements[2],
+        form.elements[3],
+        form.elements[4],
+        form.elements[5],
+        form.elements[6]
+    ];
+
+    //comprueba que no sean vacíos
+    for(var i=0;i<7;i++)
+    {
+        if(comprobarVacio(array[i]) === false)
+        {
+            //Párrafo que muestra el error
+            document.getElementById("invalidform").style.display = "block";
+
+            return false;
+        }
+    }
+    //comprueba su formato
+    if(comprobarAlfabetico(array[0],30) === false || comprobarAlfabetico(array[1],50) || comprobarTelf(array[2]) ===false || comprobarCorreo(array[3], 60) === false || comprobarAlfaNum(array[4],20))
+    {
         return false;
     }
 }
