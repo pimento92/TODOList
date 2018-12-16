@@ -1,36 +1,33 @@
 <?php
-class TAREA_Model {
+class FASE_Model {
 
-  	var $prioridad;
-    var $id;
+		var $tarea;
+		var $id;
     var $fecha;
     var $estado;
     var $descripcion;
-    var $creador;
-    var $categoria;
 
   //Constructor de la clase
   //
-  function __construct($prioridad, $id, $fecha, $estado, $descripcion, $creador, $categoria){
-    $this->prioridad = $prioridad;
+  function __construct($tarea, $id, $fecha, $estado, $descripcion){
+    $this->tarea = $tarea;
     $this->id = $id;
     $this->fecha = $fecha;
     $this->estado = $estado;
     $this->descripcion = $descripcion;
-    $this->creador = $creador;
-    $this->categoria = $categoria;
+
     include_once '../Models/Access_DB.php';
     $this->mysqli = ConnectDB();
   }
 
   function Exists(){
 
-		$sql = "select * from TAREA where `desc_tar` = '".$this->descripcion."'";
+		$sql = "select * from FASE where `id_fas` = '".$this->id."'";
 
 		$result = $this->mysqli->query($sql);
 
 		if ($result->num_rows == 1){  // existe el usuario
-				return 'La tarea ya existe';
+				return 'La fase ya existe';
 			}
 		else{
 	    		return true; //no existe el usuario
@@ -39,14 +36,14 @@ class TAREA_Model {
 	}
 
   function ADD(){
-    $sql = "SELECT * FROM TAREA WHERE(`id_tar` = '$this->id')";
+    $sql = "SELECT * FROM FASE WHERE(`id_tar` = '$this->id')";
     $result;
     if(!$result = $this->mysqli->query($sql)){
       return 'No es posible conectarse a la BD';
     }
     else{
       if($result->num_rows == 0){
-        $sql = "INSERT INTO TAREA(`pri_tar`, `fecha_tar`, `estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`)
+        $sql = "INSERT INTO FASE(`pri_tar`, `fecha_tar`, `estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`)
         VALUES ('".$this->prioridad."', '".$this->fecha."', '".$this->estado."',
           '".$this->descripcion."', '".$this->creador."', '".$this->categoria."')";
           if (!$this->mysqli->query($sql)) {
@@ -152,9 +149,9 @@ class TAREA_Model {
 	
   $opt = implode(' AND ', $stmt);
 	//sentencia creada
-	$sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt;
+	$sql = "SELECT * FROM `FASE` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt;
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND "){
+	if($sql == "SELECT * FROM `FASE` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND "){
 		return $this->SHOWALL();
 	}else{
     $result = $this->mysqli->query($sql);
@@ -176,7 +173,7 @@ class TAREA_Model {
 }
 
   function Edit(){
-    $sql = "UPDATE TAREA SET `pri_tar` = '$this->prioridad',
+    $sql = "UPDATE FASE SET `pri_tar` = '$this->prioridad',
             `estado_tar` = '$this->estado', `desc_tar` = '$this->descripcion',
 					 `cat_tar` = '$this->categoria'
             WHERE(`id_tar` = '$this->id');";
@@ -188,7 +185,7 @@ class TAREA_Model {
     }
   }
   function Showall(){
-    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat`";
+    $sql = "SELECT * FROM `FASE` f, `tarea` t WHERE f.`tarea_fas`= t.`id_tar` AND t.id_tar = '$this->tarea'";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
@@ -200,7 +197,7 @@ class TAREA_Model {
   }
 
   function Delete(){
-    $sql = "DELETE FROM TAREA WHERE `id_tar` = '$this->id'";
+    $sql = "DELETE FROM FASE WHERE `id_tar` = '$this->id'";
   	if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}

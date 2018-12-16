@@ -47,7 +47,7 @@
                 <?php }?>
 
 
-                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+                <?php if($datos['nom_cat'] == 'SIN CATEGORIA'){?>
 
                 <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>
@@ -61,7 +61,7 @@
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Categoria_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_cat']?>';"><i class="fas fa-eye"></i></button></td>
             </tr>
             <?php endforeach;}else{?>
-                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+                <?php if($datos['nom_cat'] == 'SIN CATEGORIA'){?>
                     <td><?php echo $strings[$datos['nom_cat']]."\n"; ?></td>
                     <td><?php echo $strings[$datos['desc_cat']]."\n"; ?></td>
                 <?php }else{?>
@@ -70,7 +70,7 @@
                 <?php }?>
 
 
-                <?php if($datos['nom_cat'] == 'SIN CATEGORÍA'){?>
+                <?php if($datos['nom_cat'] == 'SIN CATEGORIA'){?>
 
                 <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn disable"><button class="editbtn disable" role="link"><i class="fas fa-trash-alt"></i></button></td>

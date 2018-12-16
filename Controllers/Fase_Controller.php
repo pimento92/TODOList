@@ -137,17 +137,17 @@ else{
     }
 
     //método que muestra todos los boletos
-    function SHOWALL(){
+    function SHOWALL($clave){
         
-            include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model('','','','','','','');
+            include '../Models/FASE_MODEL.php';
+            $Tarea = new FASE_Model($clave,'','','','');
             $datos = $Tarea->Showall();
             if(sizeof($datos) != 0)
             {
-                include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new  Tarea_SHOWALL($datos);
+                include '../Views/Fase_Views/Fase_SHOWALL.php';
+                new  Fase_SHOWALL($datos);
             }else{
-                $mens = "No hay Tareas registrados";
+                $mens = "No hay fases registradas";
                 include '../Views/MESSAGE.php';
                 new MESSAGE($mens, '../Controllers/Index_Controller.php');
             }
