@@ -109,7 +109,10 @@ array(
 	'Creador' => 'Creador',
 	'Fecha' => 'Fecha',
 	'Abierta' => 'Aberta',
-	'Cerrada' => 'Pechada'
+	'Cerrada' => 'Pechada',
+	'No hay archivos adjuntos' => 'Non hai arquivos adxuntos',
+	'No hay contactos adjuntos' => 'Non hai contactos adxuntos',
+	'No hay fases creadas' => 'Non hai fases creadas'
 
 ) 
 ;

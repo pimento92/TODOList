@@ -135,9 +135,14 @@ else{
      function SHOWCURRENT($clave){
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('', $clave,'','','','','');
-            $datos = $Tarea->SEARCH();
+            $datost = $Tarea->SEARCH();
+            include '../Models/FASE_Model.php';
+            $fase = new FASE_Model($clave,'','','','');
+            $datosf = $fase->SEARCH();
+            $contactos = $Tarea->ShowAllCont();
+            $files = $Tarea->ShowAllFiles();
             include '../Views/Tarea_Views/Tarea_SHOWCURRENT.php';
-            new Tarea_SHOWCURRENT($datos);
+            new Tarea_SHOWCURRENT($datost, $datosf, $contactos, $files);
     }
 
     //método que muestra todos los boletos

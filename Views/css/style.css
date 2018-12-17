@@ -272,8 +272,8 @@ tr{
 }
 
 tr:hover td{
-    border-top: 3px solid rgb(53, 53, 53);
-    border-bottom: 3px solid rgb(53, 53, 53);
+    border-top: 3px solid rgb(226, 72, 0);
+    border-bottom: 3px solid rgb(226, 72, 0);
     transition-duration: 0.2s;
 }
 
@@ -284,10 +284,7 @@ td{
     padding-right:10px;
     background-color: rgb(156, 156, 156);
 }
-td:hover{
-    background-color: rgb(226, 72, 0);
-    transition-duration: 0.4s;
-}
+
 
 th{
     color: white;
@@ -591,4 +588,8 @@ border: none;
 }
 .disable:hover .fas{
     color: rgb(53, 53, 53);
+}
+
+.mini{
+    margin-bottom: 20px;
 }

@@ -62,23 +62,19 @@ class FASE_Model {
   function Search(){
   	//datos introducidos
 	$datos=[
-		'desc' =>$this->descripcion,
-		'pri' =>$this->prioridad,
-		'cat' =>$this->categoria,
-		'creador' =>$this->creador,
+		'tarea' =>$this->tarea,
+		'id' =>$this->id,
+		'fecha' =>$this->fecha,
 		'estado' =>$this->estado,
-    'fecha' =>$this->fecha,
-    'id'  =>$this->id
+		'desc' =>$this->descripcion
 	];
 	//datos introducidos no vacíos
 	$datosNotNull=[
-		'desc' =>  '',
-		'pri' =>  '',
-		'cat' =>   '',
-		'creador' =>   '',
+		'tarea' =>  '',
+		'id' =>  '',
+		'fecha' =>   '',
 		'estado' =>   '',
-    'fecha' =>   '',
-    'id'  => ''
+		'desc' =>   ''
 	];
 	//meter los post no vacíos en el array de no vacíos
 	foreach($datos as $dat => $valor)
@@ -92,73 +88,59 @@ class FASE_Model {
 	//crear lasentencia con los datos no vacíos, LIKE para datos parciales
 	$stmt = array();
 
-	if($datosNotNull['desc']!= '')
+	if($datosNotNull['tarea']!= '')
 	{
-		$des = array();
-		array_push($des, "`desc_tar` LIKE '%");
-		array_push($des, $datosNotNull['desc']);
-		array_push($des, "%'");
-		array_push($stmt, implode("", $des));
+		$tar = array();
+		array_push($tar, "`tarea_fas` LIKE '%");
+		array_push($tar, $datosNotNull['tarea']);
+		array_push($tar, "%'");
+		array_push($stmt, implode("", $tar));
 	}
-	if($datosNotNull['pri']!= '')
+	if($datosNotNull['id']!= '')
 	{
-		$pr = array();
-		array_push($pr, "`nom_pri` LIKE '%");
-		array_push($pr, $datosNotNull['pri']);
-		array_push($pr, "%'");
-		array_push($stmt, implode("", $pr));
+		$fid = array();
+		array_push($fid, "`id_fas` LIKE '%");
+		array_push($fid, $datosNotNull['id']);
+		array_push($fid, "%'");
+		array_push($stmt, implode("", $fid));
 	}
-	if($datosNotNull['cat']!= '')
+	if($datosNotNull['fecha']!= '')
 	{
-		$ca=array();
-		array_push($ca, "`nom_cat` LIKE '%");
-		array_push($ca, $datosNotNull['cat']);
-		array_push($ca, "%'");
-		array_push($stmt, implode("",$ca));
-	}
-	if($datosNotNull['creador']!= '')
-	{
-		$cre = array();
-		array_push($cre, "`creador_tar` LIKE '%");
-		array_push($cre, $datosNotNull['creador']);
-		array_push($cre, "%'");
-		array_push($stmt, implode("", $cre));
+		$fec=array();
+		array_push($fec, "`fecha_fas` LIKE '%");
+		array_push($fec, $datosNotNull['fecha']);
+		array_push($fec, "%'");
+		array_push($stmt, implode("",$fec));
 	}
 	if($datosNotNull['estado']!= '')
 	{
 		$est = array();
-		array_push($est, "`estado_tar` LIKE '%");
+		array_push($est, "`estado_fas` LIKE '%");
 		array_push($est, $datosNotNull['estado']);
 		array_push($est, "%'");
 		array_push($stmt, implode("", $est));
-	}if($datosNotNull['fecha']!= '')
+	}
+	if($datosNotNull['desc']!= '')
 	{
-		$fec = array();
-		array_push($fec, "`fecha_tar` LIKE '%");
-		array_push($fec, $datosNotNull['fecha']);
-		array_push($fec, "%'");
-		array_push($stmt, implode("", $fec));
-  }if($datosNotNull['id']!= '')
-	{
-		$ide = array();
-		array_push($ide, "`id_tar` LIKE '%");
-		array_push($ide, $datosNotNull['id']);
-		array_push($ide, "%'");
-		array_push($stmt, implode("", $ide));
-  }
+		$desc = array();
+		array_push($desc, "`desc_fas` LIKE '%");
+		array_push($desc, $datosNotNull['desc']);
+		array_push($desc, "%'");
+		array_push($stmt, implode("", $desc));
+	}
 	
   $opt = implode(' AND ', $stmt);
 	//sentencia creada
-	$sql = "SELECT * FROM `FASE` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt;
+	$sql = "SELECT * FROM `FASE` f WHERE  " . $opt . "ORDER BY `id_fas`";
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM `FASE` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND "){
+	if($sql == "SELECT * FROM `FASE` f WHERE ORDER BY `id_fas`"){
 		return $this->SHOWALL();
 	}else{
     $result = $this->mysqli->query($sql);
 	//Si no hay coincidencias devuelve un mensaje
 		if(mysqli_num_rows(mysqli_query($this->mysqli, $sql)) ==0)
 		{
-			return "No se han encontrado coincidencias";
+			return "No hay fases creadas";
 		}else{
 			if(mysqli_num_rows(mysqli_query($this->mysqli, $sql)) ==1)
 			{

@@ -210,10 +210,34 @@ class TAREA_Model {
 		$toRet = $this->mysqli->query($sql);
 		return $toRet;
 	}
+
+	function ShowAllCont(){
+
+		$sql = "SELECT DISTINCT c.`nom_con` FROM `posee` p, `fase` f, `tarea` t, `contacto` c WHERE p.`id_fas`=f.`id_fas` AND f.`tarea_fas`=$this->id AND p.`email_con`=c.`email_con`";
+		$toRet = $this->mysqli->query($sql);
+		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
+			return "No hay contactos adjuntos";
+		}else{
+			$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
+			return $toRet;
+		}
+	}
 	
 	function CountArch(){
 		$sql="SELECT Count(a.`id_arch`), t.`id_tar` FROM `adjunta` a, `fase` f, `tarea` t WHERE f.`id_fas`=a.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
 		$toRet = $this->mysqli->query($sql);
+		return $toRet;
+	}
+
+	function ShowAllFiles(){
+		$sql = "SELECT DISTINCT ar.`url_arch` FROM `adjunta` a, `fase` f, `tarea` t, `archivo` ar WHERE a.`id_fas`=f.`id_fas` AND f.`tarea_fas`=$this->id AND ar.`id_arch`=a.`id_arch` ";
+		$toRet = $this->mysqli->query($sql);
+		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
+			return "No hay archivos adjuntos";
+		}else{
+			$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
+			return $toRet;
+		}
 		return $toRet;
 	}
 
