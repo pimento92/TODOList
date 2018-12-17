@@ -43,9 +43,9 @@
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-eye"></i></button></td>
             </tr>
             <?php endforeach;}else{?>
                 <td><?php echo $datos['desc_fas']."\n"; ?></td>

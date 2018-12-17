@@ -188,7 +188,7 @@ class TAREA_Model {
     }
   }
   function Showall(){
-    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat`";
+    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` ORDER BY t.`fecha_tar`";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
@@ -197,7 +197,25 @@ class TAREA_Model {
       $result =  mysqli_fetch_all($resultado, MYSQLI_ASSOC);
       return $result;
     }
-  }
+	}
+	
+	function CountFas(){
+		$sql="SELECT Count(f.`id_fas`), t.`id_tar` FROM `fase` f, `tarea` t WHERE f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$toRet = $this->mysqli->query($sql);
+		return $toRet;
+	}
+	
+	function CountCont(){
+		$sql="SELECT Count(p.`email_con`), t.`id_tar` FROM `posee` p, `fase` f, `tarea` t WHERE f.`id_fas`=p.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$toRet = $this->mysqli->query($sql);
+		return $toRet;
+	}
+	
+	function CountArch(){
+		$sql="SELECT Count(a.`id_arch`), t.`id_tar` FROM `adjunta` a, `fase` f, `tarea` t WHERE f.`id_fas`=a.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$toRet = $this->mysqli->query($sql);
+		return $toRet;
+	}
 
   function Delete(){
     $sql = "DELETE FROM TAREA WHERE `id_tar` = '$this->id'";

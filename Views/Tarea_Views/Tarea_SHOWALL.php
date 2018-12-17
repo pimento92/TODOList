@@ -7,11 +7,11 @@
 	class Tarea_SHOWALL{
 
 
-		function __construct($datos){	
-			$this->render($datos);
+		function __construct($datos, $contfas, $contcon, $contarch){	
+			$this->render($datos, $contfas, $contcon, $contarch);
 		}
 
-		function render($datos){
+		function render($datos, $contfas, $contcon, $contarch){
             include '../Views/Header.php';?>
 <div class="col-md-2"></div>
 <div class="col-md-8 contenido articulo">
@@ -26,86 +26,160 @@
         <table>
         <thead>
         <tr>
-                <!-- Títulos de tabla -->
-                <th><?php echo $strings['Prioridad'];?></th>
+                <!-- Títulos de la -->
                 <th><?php echo $strings['Categoría'];?></th>
                 <th><?php echo $strings['Descripción'];?></th>
-                <th><?php echo $strings['Fecha'];?></th>
-                <th><?php echo $strings['Creador'];?></th>
-                <th><?php echo $strings['Estado'];?></th>
+                <th><?php echo $strings['Fases'];?></th>
+                <th><?php echo $strings['Contactos'];?></th>
+                <th><?php echo $strings['Archivos'];?></th>
                 <th colspan="4"><?php echo $strings['Acción'];?></th>
         </tr>
         </thead>
+        <tr>
             <?php if ($_SESSION['tipo'] == 'ADMIN'){?>
-            <tr>
             <?php if(count($datos, COUNT_RECURSIVE)!= 14){
                     foreach($datos as $datos) :
                     ?>
-                    <td style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $datos['nom_pri']; ?></td>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_tar']."\n"; ?></td>
-                <td><?php echo $datos['fecha_tar']."\n"; ?></td>
-                <td><?php echo $datos['creador_tar']."\n"; ?></td>
-                <td><?php echo $datos['estado_tar']."\n"; ?></td>
+                     
 
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
+
+                        <!-- Comprobamos si tiene fases -->
+                        <?php foreach ($contfas as $fases){
+                            if ($fases['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contcon as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contarch as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
+                
 
                 <!-- Botones de opción de cada fila -->
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWALL&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-list-ul"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                
             </tr>
             <?php endforeach;}else{?>
-                <td style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $datos['nom_pri']; ?></td>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_tar']."\n"; ?></td>
-                <td><?php echo $datos['fecha_tar']."\n"; ?></td>
-                <td><?php echo $datos['creador_tar']."\n"; ?></td>
-                <td><?php echo $datos['estado_tar']."\n"; ?></td>
+
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
+
+                        <!-- Comprobamos si tiene fases -->
+                        <?php foreach ($contfas as $fases){
+                            if ($fases['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contcon as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contarch as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWALL&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-list-ul"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
             <?php };?>
 
             <?php }else{?>
-                <tr>
             <?php if(count($datos, COUNT_RECURSIVE)!= 14){
                     foreach($datos as $datos) :
                      if ($datos['creador_tar'] == $_SESSION['email']){?>
-                    <td style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $datos['nom_pri']; ?></td>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_tar']."\n"; ?></td>
-                <td><?php echo $datos['fecha_tar']."\n"; ?></td>
-                <td><?php echo $datos['creador_tar']."\n"; ?></td>
-                <td><?php echo $datos['estado_tar']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
+
+                        <!-- Comprobamos si tiene fases -->
+                        <?php foreach ($contfas as $fases){
+                            if ($fases['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contcon as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contarch as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWALL&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-list-ul"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
             <?php } endforeach;}else{
                 if ($datos['creador_tar'] == $_SESSION['email']){ ?>
-                <td style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $datos['nom_pri']; ?></td>
-                <td><?php echo $datos['nom_cat']."\n"; ?></td>
-                <td><?php echo $datos['desc_tar']."\n"; ?></td>
-                <td><?php echo $datos['fecha_tar']."\n"; ?></td>
-                <td><?php echo $datos['creador_tar']."\n"; ?></td>
-                <td><?php echo $datos['estado_tar']."\n"; ?></td>
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
+                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
+
+                        <!-- Comprobamos si tiene fases -->
+                        <?php foreach ($contfas as $fases){
+                            if ($fases['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contcon as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
+                        <?php foreach ($contarch as $archivos){
+                            if ($archivos['id_tar'] == $datos['id_tar']){?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">SI</td>
+                            <?php }else{?>
+                                <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;">NO</td>
+                            <?php }
+                        }?>
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=SHOWALL&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-list-ul"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
             <?php }};?>
             <?php } ?>

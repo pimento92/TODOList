@@ -36,6 +36,7 @@ array(
 	'Inicio'	=> 'Home',
 	'Tareas'	=> 'Tasks',
 	'Fases' => 'Phases',
+	'Archivos' => 'Files',
 	'Añadir tarea' => 'Add task',
 	'Buscar tarea' => 'Search task',
 	'Mostrar tareas' => 'Show tasks',

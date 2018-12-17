@@ -45,6 +45,7 @@ array(
 	'Categorías'	=> 'Categorías',
 	'Usuarios'	=> 'Usuarios',
 	'Contactos'	=> 'Contactos',
+	'Archivos' => 'Archivos',
 	'Fases' => 'Fases',
 	'Añadir tarea' => 'Añadir tarea',
 	'Añadir prioridad' => 'Añadir prioridad',

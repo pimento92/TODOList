@@ -114,7 +114,7 @@ INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('HOGAR','Tarea relativa a t
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('ESEI','Tarea relativa a trabajo en la universidad');
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('IU','Tarea relativa a trabajo en Interfaces de Usuario');
 
-INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('SIN PRIORIDAD','Tarea sin prioridad asignada', '#dddddd');
+INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('SIN PRIORIDAD','Tarea sin prioridad asignada', '#9a9a9a');
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA ALTA','Grado alto de urgencia', '#ff0000');
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA MEDIA','Grado medio de urgencia', '#ffff00');
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA BAJA','Grado bajo de urgencia', '#00ff00');

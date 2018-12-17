@@ -36,7 +36,8 @@
         </thead>
 
             <tr>
-            <?php if(count($datos, COUNT_RECURSIVE)!= 4){
+        <?php   if ($_SESSION['tipo'] == 'ADMIN'){
+                    if(count($datos, COUNT_RECURSIVE)!= 4){
                     foreach($datos as $datos) :
                     ?>
                     <td><?php echo $datos['email_con']."\n"; ?></td>
@@ -61,7 +62,35 @@
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Contacto_Controller.php?accion=EDIT&param=<?php echo $datos['email_con']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Contacto_Controller.php?accion=DELETE&param=<?php echo $datos['email_con']?>';"><i class="fas fa-trash-alt"></i></button></td>
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Contacto_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['email_con']?>';"><i class="fas fa-eye"></i></button></td>
-            <?php };?>
+            <?php }}else{
+
+                if(count($datos, COUNT_RECURSIVE)!= 4){
+                    foreach($datos as $datos) :
+                    ?>
+                    <td><?php echo $datos['email_con']."\n"; ?></td>
+                <td><?php echo $datos['nom_con']."\n"; ?></td>
+                <td><?php echo $datos['desc_con']."\n"; ?></td>
+                <td><?php echo $datos['telf_con']."\n"; ?></td>
+
+
+                <!-- Botones de opción de cada fila -->
+                <td class="tb-btn disable"><button class="editbtn disable" ><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" ><i class="fas fa-trash-alt"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Contacto_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['email_con']?>';"><i class="fas fa-eye"></i></button></td>
+            </tr>
+            <?php endforeach;}else{?>
+                <td><?php echo $datos['email_con']."\n"; ?></td>
+                <td><?php echo $datos['nom_con']."\n"; ?></td>
+                <td><?php echo $datos['desc_con']."\n"; ?></td>
+                <td><?php echo $datos['telf_con']."\n"; ?></td>
+
+
+                <!-- Botones de opción de cada fila -->
+                <td class="tb-btn disable"><button class="editbtn disable" ><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="tb-btn disable"><button class="editbtn disable" ><i class="fas fa-trash-alt"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Contacto_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['email_con']?>';"><i class="fas fa-eye"></i></button></td>
+            <?php }}?>
+
             </table>
 
         <!-- Contenedor de los iconos: aceptar, voler y vaciar-->

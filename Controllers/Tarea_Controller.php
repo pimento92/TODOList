@@ -69,7 +69,11 @@ else{
 
         }else{
             include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],$_POST['email'],$_POST['cat']);
+            if($_SESSION['tipo'] == 'ADMIN'){
+                $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],$_POST['email'],$_POST['cat']);
+            }else{
+                $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],'',$_POST['cat']);
+            }
             $datos = $Tarea->SEARCH();
             if(is_array($datos) === true){
                 include '../Views/Tarea_Views/Tarea_SHOWALL.php';
@@ -142,10 +146,13 @@ else{
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('','','','','','','');
             $datos = $Tarea->Showall();
+            $fases = $Tarea->CountFas();
+            $contactos = $Tarea->CountCont();
+            $files = $Tarea->CountArch();
             if(sizeof($datos) != 0)
             {
                 include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new  Tarea_SHOWALL($datos);
+                new  Tarea_SHOWALL($datos, $fases, $contactos, $files);
             }else{
                 $mens = "No hay Tareas registrados";
                 include '../Views/MESSAGE.php';

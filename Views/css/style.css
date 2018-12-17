@@ -264,11 +264,17 @@ a:hover{
 
 table{
     margin-top: 10px;
-    color: white;
+    color: rgb(53, 53, 53);
 }
 
 tr{
     border: 2px solid white;
+}
+
+tr:hover td{
+    border-top: 3px solid rgb(53, 53, 53);
+    border-bottom: 3px solid rgb(53, 53, 53);
+    transition-duration: 0.2s;
 }
 
 td{
@@ -284,6 +290,7 @@ td:hover{
 }
 
 th{
+    color: white;
     font-size: 18px;
     border: 1px solid white;
     padding-left: 10px;
