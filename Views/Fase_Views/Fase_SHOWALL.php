@@ -61,7 +61,6 @@
             </tr>
             <?php };?>
 
-                <tr>
 
             </table>
         <!-- Contenedor de los iconos: aceptar, voler y vaciar-->

@@ -200,13 +200,13 @@ class TAREA_Model {
 	}
 	
 	function CountFas(){
-		$sql="SELECT Count(f.`id_fas`), t.`id_tar` FROM `fase` f, `tarea` t WHERE f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT Count(f.`id_fas`) as cont, t.`id_tar` FROM `fase` f, `tarea` t WHERE f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
 		$toRet = $this->mysqli->query($sql);
 		return $toRet;
 	}
 	
 	function CountCont(){
-		$sql="SELECT Count(p.`email_con`), t.`id_tar` FROM `posee` p, `fase` f, `tarea` t WHERE f.`id_fas`=p.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT Count(p.`email_con`) as cont, t.`id_tar` FROM `posee` p, `fase` f, `tarea` t WHERE f.`id_fas`=p.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
 		$toRet = $this->mysqli->query($sql);
 		return $toRet;
 	}
@@ -224,7 +224,7 @@ class TAREA_Model {
 	}
 	
 	function CountArch(){
-		$sql="SELECT Count(a.`id_arch`), t.`id_tar` FROM `adjunta` a, `fase` f, `tarea` t WHERE f.`id_fas`=a.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT Count(a.`id_arch`) as cont, t.`id_tar` FROM `adjunta` a, `fase` f, `tarea` t WHERE f.`id_fas`=a.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
 		$toRet = $this->mysqli->query($sql);
 		return $toRet;
 	}

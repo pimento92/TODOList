@@ -36,16 +36,16 @@ class FASE_Model {
 	}
 
   function ADD(){
-    $sql = "SELECT * FROM FASE WHERE(`id_tar` = '$this->id')";
+    $sql = "SELECT * FROM FASE WHERE(`id_fas` = '$this->id')";
     $result;
     if(!$result = $this->mysqli->query($sql)){
       return 'No es posible conectarse a la BD';
     }
     else{
       if($result->num_rows == 0){
-        $sql = "INSERT INTO FASE(`pri_tar`, `fecha_tar`, `estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`)
-        VALUES ('".$this->prioridad."', '".$this->fecha."', '".$this->estado."',
-          '".$this->descripcion."', '".$this->creador."', '".$this->categoria."')";
+        $sql = "INSERT INTO FASE(`tarea_fas`, `fecha_fas`, `estado_fas`, `desc_fas`)
+        VALUES ('".$this->tarea."', '".$this->fecha."', '".$this->estado."',
+          '".$this->descripcion."')";
           if (!$this->mysqli->query($sql)) {
             return 'Error en la inserción';
           }
@@ -188,5 +188,14 @@ class FASE_Model {
   	}
   }
 
+	function Close(){
+		$sql = "UPDATE `fase` SET `estado_fas`='CERRADA' WHERE `tarea_fas`=$this->tarea AND `id_fas`=$this->id";
+		if(!$this->mysqli->query($sql)){
+  		return 'Error cerrando la fase';
+  	}
+  	else{
+  		return 'Fase cerrada con éxito';
+  	}
+	}
 }
  ?>

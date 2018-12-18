@@ -4,6 +4,8 @@
 *12-11-2018*/
 $strings = 
 array(
+	'SI' => 'SI',
+	'NO' => 'NO',
 	'TODOList' 	=> 'TODOList',
 	'Login' 	=> 'Login',
 	'Usuario no autenticado' => 'Usuario no autenticado',
@@ -45,13 +47,19 @@ array(
 	'Categorías'	=> 'Categorías',
 	'Usuarios'	=> 'Usuarios',
 	'Contactos'	=> 'Contactos',
+	'Contacto' => 'Contacto',
 	'Archivos' => 'Archivos',
+	'Archivo' => 'Archivo',
+	'Seleccionar archivo' => 'Seleccionar archivo',
 	'Fases' => 'Fases',
+	'Fase cerrada con éxito' => 'Fase cerrada con éxito',
+	'Error cerrando la fase' => 'Error cerrando la fase',
 	'Añadir tarea' => 'Añadir tarea',
 	'Añadir prioridad' => 'Añadir prioridad',
 	'Añadir categoría' => 'Añadir categoría',
 	'Añadir usuario' => 'Añadir usuario',
 	'Añadir contacto' => 'Añadir contacto',
+	'Añadir fase' => 'Añadir fase',
 	'Búsqueda de usuarios' => 'Búsqueda de usuarios',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
 	'Búsqueda de categorías' => 'Búsqueda de categorías',
@@ -107,7 +115,8 @@ array(
 	'Cerrada' => 'Cerrada',
 	'No hay archivos adjuntos' => 'No hay archivos adjuntos',
 	'No hay contactos adjuntos' => 'No hay contactos adjuntos',
-	'No hay fases creadas' => 'No hay fases creadas'
+	'No hay fases creadas' => 'No hay fases creadas',
+	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo'
 ) 
 ;
 ?>

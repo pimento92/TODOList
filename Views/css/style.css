@@ -263,6 +263,7 @@ a:hover{
 }
 
 table{
+    width: 100%;
     margin-top: 10px;
     color: rgb(53, 53, 53);
 }
@@ -405,53 +406,8 @@ table tbody tr:last-child td:last-child {
     border:none;
 }
 
-#file{
-    display:none;
-    background-color: rgba(0,0,0,0);
-    border: 4px solid red;
-    color: #f7aa10;
-}
 
-#file:hover{
-    background-image: linear-gradient(to top,white,#cc5017);
-}
 
-.upload-btn-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    height: 70px;
-  }
-  
-  .abtn {
-    border: 2px solid #cc5017;
-    color:white;
-    background-color: #eba71f;
-    padding: 1px 15px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    box-shadow: 2px 2px #cc5017;
-    margin-right: 40px;
-    margin-bottom: 5px;
-  }
-  
-  .upload-btn-wrapper:hover .abtn{
-    color:#cc5017;
-    background-color: white;
-    box-shadow: none;
-    transform: translate3d(2px,2px,2px);
-    transition-duration: 0.4s;
-
-  }
-
-  .upload-btn-wrapper input[type=file] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-  }
   select{
     background-color: #c2c2c2;
       border-radius: 5px;
@@ -593,3 +549,56 @@ border: none;
 .mini{
     margin-bottom: 20px;
 }
+
+.selectcont{
+    margin-right: 30%;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    margin-left: -1px;
+    border-top: 1px dashed #5d5d5d;
+    border-left: 1px dashed #5d5d5d;
+    border-bottom: 1px dashed #5d5d5d;
+    border-right: 1px dashed #5d5d5d;
+}
+.colselectcont1{
+    padding-right: 0px;;
+}
+
+.colselectcont2{
+    padding-left: 0px;;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow:2px 2px #464646;
+  }
+  
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .upload-btn-wrapper:hover .btn{
+    border: 2px solid black;
+    color: rgb(226, 72, 0);
+    transform: translate(2px, 2px); 
+    transition-duration: 0.4s;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }

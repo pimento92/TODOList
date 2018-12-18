@@ -23,33 +23,29 @@ else{
     if(isset($_GET["param"])){
         $param = $_GET["param"];
     }
-
+        //variable para el parámetro
+        if(isset($_GET["param2"])){
+            $param2 = $_GET["param2"];
+        }
     //función que llama a la función add del modelo
-    function ADD(){
+    function ADD($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
-            $pri = new PRIORIDAD_MODEL('','','','');
-            $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
-            $cat = new CATEGORIA_MODEL('','', '');
-            $categorias = $cat->SHOWALL();
+            include '../Models/CONTACTO_MODEL.php';
+            $contactos = new CONTACTO_MODEL('','','','');
+            $datosc = $contactos->Showall();
 
-            include '../Views/Tarea_Views/Tarea_ADD.php';
-            new Tarea_ADD($prioridades, $categorias);
+
+            include '../Views/Fase_Views/Fase_ADD.php';
+            new Fase_ADD($clave, $datosc);
 
         }else{
-            include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],$_POST['email'],$_POST['cat']);
+            include '../Models/FASE_Model.php';
+            $Tarea = new FASE_Model($clave,'',$_POST['fecha'],$_POST['estado'],$_POST['desc']);
+            $result = $Tarea->ADD();
+            include '../Views/MESSAGE.php';
+            new MESSAGE($result, "../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=$clave");
 
-            $respuesta = $Tarea->Exists();
-            if($respuesta === true)
-            {
-                $respuesta = $Tarea->ADD();
-                include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
-
-            }
         }
     }
 
@@ -58,14 +54,14 @@ else{
     function SEARCH(){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
-            $pri = new PRIORIDAD_MODEL('','','','');
-            $prioridades = $pri->SHOWALL();
+            include '../Models/FASE_MODEL.php';
+            $pri = new FASE_Model('','','','');
+            $FASEes = $pri->SHOWALL();
             include '../Models/CATEGORIA_MODEL.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
             include '../Views/Tarea_Views/Tarea_SEARCH.php';
-            new Tarea_SEARCH($prioridades, $categorias);
+            new Tarea_SEARCH($FASEes, $categorias);
 
         }else{
             include '../Models/TAREA_Model.php';
@@ -104,9 +100,9 @@ else{
      function EDIT($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
-            $pri = new PRIORIDAD_MODEL('','','','');
-            $prioridades = $pri->SHOWALL();
+            include '../Models/FASE_MODEL.php';
+            $pri = new FASE_MODEL('','','','');
+            $FASEes = $pri->SHOWALL();
             include '../Models/CATEGORIA_MODEL.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
@@ -114,7 +110,7 @@ else{
             $Tarea = new TAREA_Model('',  $clave, '','','','', '');
             $datos = $Tarea->SEARCH();
             include '../Views/Tarea_Views/Tarea_EDIT.php';
-            new Tarea_EDIT($datos, $prioridades, $categorias);
+            new Tarea_EDIT($datos, $FASEes, $categorias);
 
         }else{
             include '../Models/TAREA_Model.php';
@@ -152,13 +148,25 @@ else{
                 new MESSAGE($mens, '../Controllers/Index_Controller.php');
             }
             
-        
+        }
+    //método que cierra una fase
+    function CLOSE($clavef, $clavet){
+            include '../Models/FASE_Model.php';
+            $Fase = new FASE_Model($clavet,$clavef,'','','');
+            $result = $Fase->Close();
+            include '../Views/MESSAGE.php';
+            new MESSAGE ($result, "../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=$clavet");
+
     }
     //ejecutamos el método correspondiente
     if(!isset($param))
     {
         $accion();
     }else{
+        if(!isset($param2)){
         $accion($param);
+        }else{
+            $accion($param, $param2);
+        }
     }
 }

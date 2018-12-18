@@ -4,6 +4,8 @@
 *12-11-2018*/
 $strings = 
 array(
+	'SI' => 'YES',
+	'NO' => 'NO',
 	'TODOList' => 'TODOList',
 	'Login' => 'Login',
 	'Usuario no autenticado' => 'User not logged',
@@ -36,15 +38,21 @@ array(
 	'Inicio'	=> 'Home',
 	'Tareas'	=> 'Tasks',
 	'Fases' => 'Phases',
+	'Fase cerrada con éxito' => "Succesfull phase's closing",
+	'Error cerrando la fase' => "Phase's closing error",
 	'Archivos' => 'Files',
+	'Archivo' => 'File',
+	'Seleccionar archivo' => 'Select file',
 	'Añadir tarea' => 'Add task',
 	'Buscar tarea' => 'Search task',
 	'Mostrar tareas' => 'Show tasks',
 	'Contactos'	=> 'Contacts',
+	'Contacto' => 'Contact',
 	'Añadir contacto' => 'Add contact',
 	'Editar contacto' => 'Edit contact',
 	'Eliminar contacto' => 'Delete contact',
 	'Prioridades'	=> 'Priorities',
+	'Añadir fase' => 'Add phase',
 	'Añadir prioridad' => 'Add priority',
 	'Editar prioridad' => 'Edit priority',
 	'Eliminar prioridad' => 'Delete priority',
@@ -113,7 +121,8 @@ array(
 	'Cerrada' => 'Closed',
 	'No hay archivos adjuntos' => 'There are not attached files',
 	'No hay contactos adjuntos' => 'There are not attached contacts',
-	'No hay fases creadas' => 'There are not created phases'
+	'No hay fases creadas' => 'There are not created phases',
+	'Si no encuentra el contacto que busca puede crearlo' => 'If the contact that you need is not here, you can create it'
 	 )
 ;
  ?>

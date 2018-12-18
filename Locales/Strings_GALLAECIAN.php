@@ -4,6 +4,8 @@
 *12-11-2018*/
 $strings = 
 array(
+	'SI' => 'SI',
+	'NO' => 'NON',
 	'TODOList' => 'TODOList',
 	'Login' => 'Login',
 	'Usuario no autenticado' => 'Usuario non autenticado',
@@ -36,24 +38,30 @@ array(
 	'Inicio'	=> 'Inicio',
 	'Tareas'	=> 'Tarefas',
 	'Fases' => 'Fases',
+	'Fase cerrada con éxito' => 'Fase cerrada con éxito',
+	'Error cerrando la fase' => 'Error cerrando a fase',
 	'Archivos' => 'Arquivos',
+	'Archivo' => 'Arquivo',
+	'Seleccionar archivo' => 'Seleccionar arquivo',
+	'Contacto' => 'Contacto',
 	'Añadir tarea' => 'Engadir tarefa',
 	'Buscar tarea' => 'Buscar tarefa',
 	'Mostrar tareas' => 'Amosar tarefas',
 	'Contactos'	=> 'Contactos',
-	'Añadir contacto' => 'Añadir contacto',
+	'Añadir contacto' => 'Engadir contacto',
 	'Editar contacto' => 'Editar contacto',
 	'Eliminar contacto' => 'Eliminar contacto',
 	'Prioridades'	=> 'Prioridades',
-	'Añadir prioridad' => 'Añadir prioridade',
+	'Añadir fase' => 'Engadir fase',
+	'Añadir prioridad' => 'Engadir prioridade',
 	'Editar prioridad' => 'Editar prioridade',
 	'Eliminar prioridad' => 'Eliminar prioridade',
 	'Categorías'	=> 'Categorías',
-	'Añadir categoría' => 'Añadir categoría',
+	'Añadir categoría' => 'Engadir categoría',
 	'Editar categoría' => 'Editar categoría',
 	'Eliminar categoría' => 'Eliminar categoría',
 	'Usuarios'	=> 'Usuarios',
-	'Añadir usuario' => 'Añadir usuario',
+	'Añadir usuario' => 'Engadir usuario',
 	'Editar usuario' => 'Editar usuario',
 	'Eliminar usuario' => 'Eliminar usuario',
 	'Color' => 'Color',
@@ -112,7 +120,8 @@ array(
 	'Cerrada' => 'Pechada',
 	'No hay archivos adjuntos' => 'Non hai arquivos adxuntos',
 	'No hay contactos adjuntos' => 'Non hai contactos adxuntos',
-	'No hay fases creadas' => 'Non hai fases creadas'
+	'No hay fases creadas' => 'Non hai fases creadas',
+	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo'
 
 ) 
 ;
