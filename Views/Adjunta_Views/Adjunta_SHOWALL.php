@@ -46,7 +46,7 @@
 
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=DELETE&param=<?php echo $clavet;?>&param2=<?php echo $clavef;?>&param3=<?php echo $datos['id_arch'];?>';"><i class="fas fa-times"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Locales/Attached_files<?php echo $datos['url_arch']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Files/Attached_files/<?php echo $datos['url_arch']?>';"><i class="fas fa-eye"></i></button></td>
             </tr>
             <?php endforeach;}else{?>
                 <td><?php echo $datos['desc_arch']."\n"; ?></td>
@@ -55,7 +55,7 @@
 
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=DELETE&param=<?php echo $clavet;?>&param2=<?php echo $clavef;?>&param3=<?php echo $datos['id_arch'];?>';"><i class="fas fa-times"></i></button></td>
-                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Locales/Attached_files<?php echo $datos['url_arch']?>';"><i class="fas fa-eye"></i></button></td>
+                <td class="tb-btn"><button class="editbtn" role="link" onclick="window.location='../Files/Attached_files/<?php echo $datos['url_arch']?>';"><i class="fas fa-eye"></i></button></td>
 
             <?php }}?>
 

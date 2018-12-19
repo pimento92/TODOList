@@ -33,16 +33,15 @@ class ADJUNTA_Model {
 	}
 
   function ADD(){
-    $sql = "SELECT * FROM FASE WHERE(`id_fas` = '$this->id')";
+    $sql = "SELECT * FROM ADJUNTA WHERE(`id_arch` = '$this->archivo')";
     $result;
     if(!$result = $this->mysqli->query($sql)){
       return 'No es posible conectarse a la BD';
     }
     else{
       if($result->num_rows == 0){
-        $sql = "INSERT INTO FASE(`tarea_fas`, `fecha_fas`, `estado_fas`, `desc_fas`)
-        VALUES ('".$this->tarea."', '".$this->fecha."', '".$this->estado."',
-          '".$this->descripcion."')";
+        $sql = "INSERT INTO ADJUNTA (`tarea_fas`, `id_fas`, `id_arch`)
+        VALUES ('".$this->tarea."', '".$this->id."', '".$this->archivo."')";
           if (!$this->mysqli->query($sql)) {
             return 'Error en la inserción';
           }

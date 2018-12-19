@@ -14,7 +14,7 @@
 		function render($clavef, $clavet, $datosc){
             include '../Views/Header.php';?>
     <div class="col-md-4"></div>
-    <div class="col-md-3 contenido articulo">
+    <div class="col-md-4 contenido articulo">
 
         <form name="add" enctype="multipart/form-data" id="add" onsubmit="return comprobarFormAdjunta(this)" action='./Adjunta_Controller.php?accion=ADD&param=<?php echo $clavet;?>&param2=<?php echo $clavef;?>' method='post'>
         <legend><?php echo $strings['Añadir archivo'];?></legend>
@@ -28,10 +28,15 @@
 					<input type="file" name="file">
 					<div class="upload-btn-wrapper">
   					<button class="btn"><?php echo $strings['Seleccionar archivo'];?></button>
-  					<input type="file" name="myfile" />
-	</div>
+  					<input type="file" name="file" />
 			</div>
-                    </div>
+			</div>
+		</div>
+		<div>
+			<label><?php echo $strings['Descripción']?></label>
+
+			<input type="text" name="desc" id="desc" size="40" value="">
+		</div>
 					</div>
 			<!-- Colocamos los inputs predeterminados -->
 			<input type="text" name="email" id="email" style="display:none" value="<?php echo $_SESSION['email'];?>">

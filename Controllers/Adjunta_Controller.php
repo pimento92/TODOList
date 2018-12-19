@@ -43,11 +43,24 @@ else{
             new Adjunta_ADD($clavef, $clavet, $datosc);
 
         }else{
+            include '../Models/ADJUNTA_Model.php';
             $POSEE = new ADJUNTA_Model($clavet, $clavef,'');
             
             $respuesta = $POSEE->Exists();
             if($respuesta === true)
             {
+                if(isset($_FILES['file']))
+                    {
+                        $name_file = $_FILES['file']['name'];
+                        $tmp_name = $_FILES['file']['tmp_name'];
+                        $local_image = "../Files/Attached_files/";
+                        move_uploaded_file($tmp_name, $local_image.$name_file);
+                    }
+                include  '../Models/ARCHIVO_Model.php';
+                $archivo = new ARCHIVO_Model('', $_POST['desc'], $_FILES['file']['name']);  
+                $archivo->ADD();
+                $id = $archivo->getID();
+                $POSEE = new ADJUNTA_Model($clavet, $clavef,$id[0]);
                 $POSEE->ADD();
                 $respuesta = 'Inserción realizada con éxito';
                 include '../Views/MESSAGE.php';

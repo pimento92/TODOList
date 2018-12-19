@@ -122,7 +122,8 @@ array(
 	'No hay archivos adjuntos' => 'Non hai arquivos adxuntos',
 	'No hay contactos adjuntos' => 'Non hai contactos adxuntos',
 	'No hay fases creadas' => 'Non hai fases creadas',
-	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo'
+	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo',
+	'Edición de fase' => 'Edición de fase'
 
 ) 
 ;

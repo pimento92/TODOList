@@ -155,10 +155,8 @@ class FASE_Model {
 }
 
   function Edit(){
-    $sql = "UPDATE FASE SET `pri_tar` = '$this->prioridad',
-            `estado_tar` = '$this->estado', `desc_tar` = '$this->descripcion',
-					 `cat_tar` = '$this->categoria'
-            WHERE(`id_tar` = '$this->id');";
+    $sql = "UPDATE `fase` SET `desc_fas` = '$this->descripcion'
+						WHERE `tarea_fas` = $this->tarea AND `id_fas`=$this->id";
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
     }
