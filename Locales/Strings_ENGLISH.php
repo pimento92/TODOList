@@ -49,6 +49,7 @@ array(
 	'Contactos'	=> 'Contacts',
 	'Contacto' => 'Contact',
 	'Añadir contacto' => 'Add contact',
+	'Añadir archivo' => 'Add File',
 	'Editar contacto' => 'Edit contact',
 	'Eliminar contacto' => 'Delete contact',
 	'Prioridades'	=> 'Priorities',

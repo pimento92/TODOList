@@ -44,7 +44,7 @@
                     </tr>
                 </table>
             <div class="container-showall-btn">
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Contacto_Controller.php?accion=SHOWALL'"><i class="fas fa-arrow-left"></i>
+                <button class="form-btn" type="button" role="link" onclick="window.location='<?php echo $_SERVER['HTTP_REFERER'];?>'"><i class="fas fa-arrow-left"></i>
             </div>
         </fieldset>
 </div>

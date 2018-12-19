@@ -206,14 +206,15 @@ class TAREA_Model {
 	}
 	
 	function CountCont(){
-		$sql="SELECT Count(p.`email_con`) as cont, t.`id_tar` FROM `posee` p, `fase` f, `tarea` t WHERE f.`id_fas`=p.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT COUNT(p.`email_con`) as cont, f.`tarea_fas` as tarea FROM `posee` p, `fase` f  WHERE f.`tarea_fas`=p.`tarea_fas` GROUP BY p.`tarea_fas`";
 		$toRet = $this->mysqli->query($sql);
+		$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
 		return $toRet;
 	}
 
 	function ShowAllCont(){
 
-		$sql = "SELECT DISTINCT c.`nom_con` FROM `posee` p, `fase` f, `tarea` t, `contacto` c WHERE p.`id_fas`=f.`id_fas` AND f.`tarea_fas`=$this->id AND p.`email_con`=c.`email_con`";
+		$sql = "SELECT DISTINCT c.`nom_con`, c.`email_con` FROM `posee` p , `tarea` t, `contacto` c  WHERE p.`tarea_fas`=$this->id AND p.`email_con`=c.`email_con`";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay contactos adjuntos";
@@ -224,13 +225,14 @@ class TAREA_Model {
 	}
 	
 	function CountArch(){
-		$sql="SELECT Count(a.`id_arch`) as cont, t.`id_tar` FROM `adjunta` a, `fase` f, `tarea` t WHERE f.`id_fas`=a.`id_fas`AND f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT COUNT(a.`id_arch`) as cont, t.`id_tar` as tarea FROM `adjunta` a, `tarea` t  WHERE t.`id_tar`=a.`tarea_fas` GROUP BY a.`tarea_fas`";
 		$toRet = $this->mysqli->query($sql);
+		$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
 		return $toRet;
 	}
 
 	function ShowAllFiles(){
-		$sql = "SELECT DISTINCT ar.`url_arch` FROM `adjunta` a, `fase` f, `tarea` t, `archivo` ar WHERE a.`id_fas`=f.`id_fas` AND f.`tarea_fas`=$this->id AND ar.`id_arch`=a.`id_arch` ";
+		$sql = "SELECT DISTINCT ar.`url_arch`, ar.`desc_arch` FROM `adjunta` a , `tarea` t, `archivo` ar  WHERE a.`tarea_fas`=$this->id AND a.`id_arch`=ar.`id_arch`";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay archivos adjuntos";

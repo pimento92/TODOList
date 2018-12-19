@@ -53,6 +53,7 @@ array(
 	'Eliminar contacto' => 'Eliminar contacto',
 	'Prioridades'	=> 'Prioridades',
 	'Añadir fase' => 'Engadir fase',
+	'Añadir archivo' => 'Engadir arquivo',
 	'Añadir prioridad' => 'Engadir prioridade',
 	'Editar prioridad' => 'Editar prioridade',
 	'Eliminar prioridad' => 'Eliminar prioridade',

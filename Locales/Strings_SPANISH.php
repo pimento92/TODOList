@@ -60,6 +60,7 @@ array(
 	'Añadir usuario' => 'Añadir usuario',
 	'Añadir contacto' => 'Añadir contacto',
 	'Añadir fase' => 'Añadir fase',
+	'Añadir archivo' => 'Añadir archivo',
 	'Búsqueda de usuarios' => 'Búsqueda de usuarios',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
 	'Búsqueda de categorías' => 'Búsqueda de categorías',

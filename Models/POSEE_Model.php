@@ -3,13 +3,14 @@ class POSEE_Model {
 
 		var $email;
 		var $id;
- 
+    var $tarea;
 
   //Constructor de la clase
   //
-  function __construct($email, $id){
+  function __construct($tarea,$id, $email){
     $this->email = $email;
     $this->id = $id;
+    $this->tarea = $tarea;
 
 
     include_once '../Models/Access_DB.php';
@@ -18,12 +19,11 @@ class POSEE_Model {
 
   function Exists(){
 
-		$sql = "select * from POSEE where `email_con` = '".$this->email."'";
-
+		$sql = "SELECT * FROM POSEE WHERE `email_con` = '$this->email' AND `tarea_fas` = '$this->tarea' AND `id_fas`= $this->id";
 		$result = $this->mysqli->query($sql);
 
 		if ($result->num_rows == 1){  // existe el usuario
-				return 'La contacto ya está adjunto';
+				return 'El contacto ya está adjunto';
 			}
 		else{
 	    		return true; //no existe el usuario
@@ -32,15 +32,15 @@ class POSEE_Model {
 	}
 
   function ADD(){
-    $sql = "SELECT * FROM POSEE WHERE `email_con` = '$this->email' AND `id_fas` = '$this->id'";
+    $sql = "SELECT * FROM POSEE WHERE `email_con` = '$this->email' AND `tarea_fas` = '$this->tarea' AND `id_fas`= $this->id";
     $result;
     if(!$result = $this->mysqli->query($sql)){
       return 'No es posible conectarse a la BD';
     }
     else{
       if($result->num_rows == 0){
-        $sql = "INSERT INTO POSEE(`id_fas`, `email_con`)
-        VALUES ('".$this->email."', '".$this->id."')";
+        $sql = "INSERT INTO POSEE(`tarea_fas`,`id_fas`, `email_con`)
+        VALUES ('".$this->tarea."', '".$this->id."', '".$this->email."')";
           if (!$this->mysqli->query($sql)) {
             return 'Error en la inserción';
           }
@@ -55,7 +55,7 @@ class POSEE_Model {
   }
 
   function Delete(){
-    $sql = "DELETE FROM POSEE WHERE `email_con` = '$this->email' AND `id_fas` = '$this->id'";
+    $sql = "DELETE FROM POSEE WHERE `tarea_fas`=$this->tarea  AND `id_fas` = '$this->id' AND `email_con` = '$this->email'";
   	if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}
@@ -65,7 +65,19 @@ class POSEE_Model {
   }
 
   function Showall(){
-    $sql = "SELECT * FROM `POSEE` p, `tarea` t, `fase` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND p.id_fas = '$this->id'";
+    $sql = "SELECT DISTINCT * FROM `POSEE` p, `tarea` t, `fase` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND t.`id_tar` = '$this->tarea'";
+    $resultado = $this->mysqli->query($sql);
+    if(!($resultado = $this->mysqli->query($sql))){
+      return 'Error en la consulta';
+    }
+    else{
+      $result =  mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+      return $result;
+    }
+  }
+
+  function ShowallFase(){
+    $sql = "SELECT DISTINCT * FROM `posee` p, `contacto` c WHERE p.`tarea_fas`=$this->tarea AND p.`id_fas`=$this->id AND c.`email_con`=p.`email_con`";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';

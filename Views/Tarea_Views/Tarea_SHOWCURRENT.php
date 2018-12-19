@@ -77,27 +77,27 @@
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datos['id_fas']?>&param2=<?php echo $datost['id_tar'];?>'"><i class="fas fa-times"></i></button></td>
-                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Posee_Controller.php?accion=SHOWALL&param=<?php echo $datos['id_fas']?>&param2=<?php echo $datost['id_tar'];?>'"><i class="fas fa-user"></i></button></td>
-                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-file"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-times"></i></button></td>
+                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Posee_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-user"></i></button></td>
+                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-file"></i></button></td>
                 <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
 
 
             </tr>
             <?php endforeach;}else{?>
-                <td><?php echo $datos['desc_fas']."\n"; ?></td>
-                    <td><?php echo $datos['fecha_fas']."\n"; ?></td>
-                    <td><?php echo $datos['estado_fas']."\n"; ?></td>
+                <td><?php echo $datosf['desc_fas']."\n"; ?></td>
+                    <td><?php echo $datosf['fecha_fas']."\n"; ?></td>
+                    <td><?php echo $datosf['estado_fas']."\n"; ?></td>
 
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datos['id_fas']?>&param2=<?php echo $datost['id_tar'];?>"><i class="fas fa-times"></i></button></td>
-                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-user"></i></button></td>
-                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-file"></i></button></td>
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-times"></i></button></td>
+                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Posee_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-user"></i></button></td>
+                <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-file"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datosf['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datosf['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
 
 
  
@@ -116,9 +116,9 @@
              if(count($datosc, COUNT_RECURSIVE)!= 1){
                     foreach($datosc as $datos) :
                     ?>
-                    <li><?php echo $datos['nom_con']."\n"; ?></li>
+                    <li><a href="../Controllers/Contacto_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['email_con'];?>"><?php echo $datos['nom_con']."\n"; ?></a></li>
             <?php endforeach;}else{?>
-                <li><?php echo $datosc['nom_con']."\n"; ?></li>
+                <li><a href="../Controllers/Contacto_Controller.php?accion=SHOWCURRENT&param=<?php echo $datosc['email_con'];?>"><?php echo $datosc['nom_con']."\n"; ?></a></li>
             <?php }}?>
 
 <!-- Mostrar archivos adjuntos a las fases de la tarea -->
@@ -129,9 +129,9 @@
              if(count($datosa, COUNT_RECURSIVE)!= 1){
                     foreach($datosa as $datos) :
                     ?>
-                    <li><?php echo $datos['url_arch']."\n"; ?></li>
+                    <li><?php echo $datos['desc_arch']."\n"; ?></li>
             <?php endforeach;}else{?>
-                <li><?php echo $datosa['url_arch']."\n"; ?></li>
+                <li><?php echo $datosa['desc_arch']."\n"; ?></li>
             <?php }}?>
             <div class="container-showall-btn">
                 <button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWALL'"><i class="fas fa-arrow-left"></i>

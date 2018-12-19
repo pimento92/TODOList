@@ -44,25 +44,51 @@
                         <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['desc_tar']."\n"; ?></td>
 
                         <!-- Comprobamos si tiene fases -->
-                       <?php foreach($contfas as $fases) : 
-                           if ($fases['id_tar'] == $datos['id_tar']){ ?>
-                            
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['SI']."\n"; ?></td>
-                           <?php }else{?>
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['NO']."\n"; ?></td>
-                        <?php } endforeach;?>
-                        <?php foreach($contcon as $contactos) : 
-                           if ($contactos['id_tar'] == $datos['id_tar']){ ?>
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['SI']."\n"; ?></td>
-                           <?php }else{?>
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['NO']."\n"; ?></td>
-                        <?php } endforeach;?>
-                        <?php foreach($contarch as $archivos) : 
-                           if ($archivos['id_tar'] == $datos['id_tar']){ ?>
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['SI']."\n"; ?></td>
-                           <?php }else{?>
-                            <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $strings['NO']."\n"; ?></td>
-                        <?php } endforeach;?>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contfas as $fases) : 
+                            if ($fases['id_tar'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contcon as $contactos) : 
+                            if ($contactos['tarea'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contarch as $archivos) : 
+                            if ($archivos['tarea'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
 
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>';"><i class="fas fa-times"></i></button></td>
@@ -76,7 +102,51 @@
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
 
                         <!-- Comprobamos si tiene fases -->
-                        
+                        <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contfas as $fases) : 
+                            if ($fases['id_tar'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contcon as $contactos) : 
+                            if ($contactos['tarea'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contarch as $archivos) : 
+                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
 
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
@@ -94,7 +164,51 @@
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
 
                         <!-- Comprobamos si tiene fases -->
-                        
+                        <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contfas as $fases) : 
+                            if ($fases['id_tar'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contcon as $contactos) : 
+                            if ($contactos['tarea'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contarch as $archivos) : 
+                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
 
                 <!-- Botones de opción de cada fila -->
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-times"></i></button></td>
@@ -107,7 +221,51 @@
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
 
                         <!-- Comprobamos si tiene fases -->
-                        
+                        <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contfas as $fases) : 
+                            if ($fases['id_tar'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contcon as $contactos) : 
+                            if ($contactos['tarea'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
+                    <?php $array = []; $auxarray='NO'; $cont=0;
+                        foreach($contarch as $archivos) : 
+                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                                $array[$cont]='SI';
+                            }else{
+                                $array[$cont]='NO';
+                            }
+                            $cont++;
+                        endforeach;
+                        foreach ($array as $opt) :
+                            if ($opt == 'SI'){
+                                $auxarray = 'SI';
+                            }
+                        endforeach;?>
+                    <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
 
 
                 <!-- Botones de opción de cada fila -->

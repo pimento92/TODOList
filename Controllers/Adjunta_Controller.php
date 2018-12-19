@@ -1,7 +1,7 @@
 <?php
-/**Controlador para las vistas de la POSEE y el modelo de la POSEE
+/**Controlador para las vistas de la tabla adjunta y el modelo de la POSEE
  * autor:  Juan Márquez 
- * 12-12-2018
+ * 17-12-2018
  */
 session_start();
 include_once '../Locales/Strings_'.$_SESSION['idioma'].'.php';
@@ -36,16 +36,14 @@ else{
         if(!isset($_POST['submit']))
         {
             
-            include '../Models/CONTACTO_MODEL.php';
-            $contactos = new CONTACTO_MODEL('','','','');
-            $datosc = $contactos->Showall();
-            include '../Models/POSEE_Model.php';
-            include '../Views/POSEE_Views/POSEE_ADD.php';
-            new POSEE_ADD($clavef, $clavet, $datosc);
+            include '../Models/ADJUNTA_Model.php';
+            $archivos = new ADJUNTA_Model($clavet,$clavef,'');
+            $datosc = $archivos->Showall();
+            include '../Views/Adjunta_Views/Adjunta_ADD.php';
+            new Adjunta_ADD($clavef, $clavet, $datosc);
 
         }else{
-            include '../Models/POSEE_Model.php';
-            $POSEE = new POSEE_Model($clavet, $clavef,$_POST['con']);
+            $POSEE = new ADJUNTA_Model($clavet, $clavef,'');
             
             $respuesta = $POSEE->Exists();
             if($respuesta === true)
@@ -57,7 +55,7 @@ else{
 
             }else{
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './POSEE_Controller.php?accion=SHOWALL');
+                new MESSAGE($respuesta, './Adjunta_Controller.php?accion=SHOWALL');
             }
         }
     }
@@ -78,17 +76,17 @@ else{
     //método que muestra todos los contactos de una fase
     function SHOWALL($clavet, $clavef){
         
-            include '../Models/POSEE_Model.php';
-            $POSEE = new POSEE_Model($clavet,$clavef,'');
-            $datos = $POSEE->ShowallFase();
+            include '../Models/ADJUNTA_Model.php';
+            $archivos = new ADJUNTA_Model($clavet,$clavef,'');
+            $datos = $archivos->ShowallFase();
             if(sizeof($datos) != 0)
             {
-                include '../Views/POSEE_Views/Posee_SHOWALL.php';
-                new  Posee_SHOWALL($datos, $clavet, $clavef);
+                include '../Views/Adjunta_Views/Adjunta_SHOWALL.php';
+                new  Adjunta_SHOWALL($datos, $clavet, $clavef);
             }else{
-                $mens = "No hay contactos registrados";
-                include '../Views/POSEE_Views/Posee_SHOWALL.php';
-                new  Posee_SHOWALL($mens, $clavet, $clavef);
+                $mens = "No hay archivos registrados";
+                include '../Views/Adjunta_Views/Adjunta_SHOWALL.php';
+                new  Adjunta_SHOWALL($mens, $clavet, $clavef);
             }
             
         

@@ -26,32 +26,7 @@
 			</div>
 			<input style="display:none" type="text" name="fecha" id="fecha" value="<?php echo date('Y-m-d');?>">
 			<input style="display:none" type="text" name="estado" id="estado" value="ABIERTA">
-			<div class="campo">
-				<label><?php echo $strings['Contacto'];?></label>
-				<select name="con" id="con" onchange="return AddInput()">
-				<option value=""></option>
-					<?php foreach($datosc as $datos){?>
-					<option value="<?php echo $datos['nom_con'];?>"><?php echo $datos['nom_con'];?></option>
-					<?php }?>
-				</select>
-			</div>
-			<div class="row selectcont">
-			<div class="col-md-9 colselectcont1">
-				<p><?php echo $strings['Si no encuentra el contacto que busca puede crearlo'];?></p>
-			</div>
-			<div class="col-md-1 colselectcont2">
-				<button class="form-btn " role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=ADD&param=<?php echo $clave;?>'"><i class="mini fas fa-plus"></i>
-			</div>
-			</div>
-			<div class="campo">
-			<label><?php echo $strings['Archivo']?></label>
-			<div class="upload-btn-wrapper">
-					<input type="file" name="file">
-					<div class="upload-btn-wrapper">
-  					<button class="btn"><?php echo $strings['Seleccionar archivo'];?></button>
-  					<input type="file" name="myfile" />
-	</div>
-			</div>
+
 			<!-- Colocamos los inputs predeterminados -->
 			<input type="text" name="email" id="email" style="display:none" value="<?php echo $_SESSION['email'];?>">
 			<input type="text" name="fecha" id="fecha" style="display:none" value="<?php echo date('Y-m-d');?>">
