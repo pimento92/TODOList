@@ -92,6 +92,7 @@ array(
 	'¿Confirma el borrado de esta categoría?' => '¿Confirma el borrado de esta categoría?',
 	'¿Confirma el borrado de este contacto?' => '¿Confirma el borrado de este contacto?',
 	'¿Confirma el borrado de este usuario?' => '¿Confirma el borrado de este usuario?',
+	'¿Confirma el borrado de esta fase?' => '¿Confirma el borrado de esta fase?',
 	'Error en el borrado' => 'Error en el borrado',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'No se han encontrado coincidencias' => 'No se han encontrado coincidencias',

@@ -1,10 +1,10 @@
 <?php
 /**
- * Clase para realizar el DELETE en Tarea, recibe una tupla para mostrar y eliminar
+ * Clase para realizar el DELETE en Fase, recibe una tupla para mostrar y eliminar
  *	autor:  Juan Márquez 
- *	15/12/2018 
+ *	24/12/2018 
  */
-	class Tarea_DELETE{
+	class Fase_DELETE{
 
 
 		function __construct($datos){	
@@ -22,34 +22,22 @@
                     </thead>
                     <tr>
                         <th><?php echo $strings['Descripción'];?></th>
-                        <td><?php echo $datos['desc_tar']; ?></td>
-                    </tr>
-                    <tr>
-                        <th><?php echo $strings['Creador'];?></th>
-                        <td><?php echo $datos['creador_tar']; ?></td>
+                        <td><?php echo $datos['desc_fas']; ?></td>
                     </tr>
                     <tr>
                         <th><?php echo $strings['Fecha'];?></th>
-                        <td><?php echo $datos['fecha_tar']; ?></td>
-                    </tr>
-                    <tr>
-                        <th><?php echo $strings['Prioridad'];?></th>
-                        <td style="background-color:<?php echo $datos['codcolor_pri']; ?>"><?php echo $datos['nom_pri']; ?></td>
-                    </tr>
-                    <tr>
-                        <th><?php echo $strings['Categoría'];?></th>
-                        <td><?php echo $datos['nom_cat']; ?></td>
+                        <td><?php echo $datos['fecha_fas']; ?></td>
                     </tr>
                     <tr>
                         <th><?php echo $strings['Estado'];?></th>
-                        <td><?php echo $datos['estado_tar']; ?></td>
+                        <td><?php echo $datos['estado_fas']; ?></td>
                     </tr>
                 </table>
             <div class="container-showall-btn">
-                <p><?php echo $strings['¿Confirma el borrado de esta categoría?'];?><p>
-                <form id="delete"action='./Tarea_Controller.php?accion=delete&param=<?php echo $datos['id_tar'];?>' method='post'>
+                <p><?php echo $strings['¿Confirma el borrado de esta fase?'];?><p>
+                <form id="delete"action='./Fase_Controller.php?accion=delete&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_fas'];?>' method='post'>
                 <button name="submit" class="form-btn" type="submit"><i class="fas fa-check"></i></button>
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
+                <button class="form-btn" type="button" role="link" onclick="window.location='./Fase_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
             </div>
         </fieldset>
 </div>

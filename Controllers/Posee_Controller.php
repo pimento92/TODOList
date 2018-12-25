@@ -86,7 +86,7 @@ else{
                 include '../Views/POSEE_Views/Posee_SHOWALL.php';
                 new  Posee_SHOWALL($datos, $clavet, $clavef);
             }else{
-                $mens = "No hay contactos registrados";
+                $mens = "No hay contactos adjuntos";
                 include '../Views/POSEE_Views/Posee_SHOWALL.php';
                 new  Posee_SHOWALL($mens, $clavet, $clavef);
             }

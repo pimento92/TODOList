@@ -1,5 +1,5 @@
 <?php
-/**Controlador para las vistas de la tabla adjunta y el modelo de la POSEE
+/**Controlador para las vistas de la tabla adjunta y el modelo de la ADJUNTA
  * autor:  Juan Márquez 
  * 17-12-2018
  */
@@ -44,9 +44,9 @@ else{
 
         }else{
             include '../Models/ADJUNTA_Model.php';
-            $POSEE = new ADJUNTA_Model($clavet, $clavef,'');
+            $ADJUNTA = new ADJUNTA_Model($clavet, $clavef,'');
             
-            $respuesta = $POSEE->Exists();
+            $respuesta = $ADJUNTA->Exists();
             if($respuesta === true)
             {
                 if(isset($_FILES['file']))
@@ -60,8 +60,8 @@ else{
                 $archivo = new ARCHIVO_Model('', $_POST['desc'], $_FILES['file']['name']);  
                 $archivo->ADD();
                 $id = $archivo->getID();
-                $POSEE = new ADJUNTA_Model($clavet, $clavef,$id[0]);
-                $POSEE->ADD();
+                $ADJUNTA = new ADJUNTA_Model($clavet, $clavef,$id[0]);
+                $ADJUNTA->ADD();
                 $respuesta = 'Inserción realizada con éxito';
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, "./Tarea_Controller.php?accion=SHOWCURRENT&param=$clavet");
@@ -77,12 +77,12 @@ else{
 
      //método muestra pantalla de confirmación de borrado 
      //$clave: PK de la tupla
-     function DELETE($clavet, $clavef, $email){
-        include '../Models/POSEE_Model.php';
-        $POSEE = new POSEE_Model($clavet, $clavef, $email);
-        $respuesta = $POSEE->DELETE();
+     function DELETE($clavet, $clavef, $id){
+        include '../Models/ADJUNTA_Model.php';
+        $ADJUNTA = new ADJUNTA_Model($clavet, $clavef, $id);
+        $respuesta = $ADJUNTA->DELETE();
         include '../Views/MESSAGE.php';
-        new MESSAGE($respuesta, "./POSEE_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
+        new MESSAGE($respuesta, "./ADJUNTA_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
 
     }
 

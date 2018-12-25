@@ -80,7 +80,7 @@ class ADJUNTA_Model {
   }
 
   function Delete(){
-    $sql = "DELETE FROM FASE WHERE `id_tar` = '$this->id'";
+    $sql = "DELETE FROM ADJUNTA WHERE `id_fas` = '$this->id' AND `tarea_fas`='$this->tarea' AND `id_arch` = '$this->archivo'";
   	if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}

@@ -94,6 +94,7 @@ array(
 	'¿Confirma el borrado de esta categoría?' => "Confirm category's delete?",
 	'¿Confirma el borrado de este contacto?' => "Confirm contact's delete?",
 	'¿Confirma el borrado de este usuario?' => "Confirm user's delete?",
+	'¿Confirma el borrado de esta fase?' => "Confirm phase's delete?",
 	'Error en el borrado' => 'Deleting error',
 	'Borrado realizado con éxito' => 'Successfull delete',
 	'Búsqueda de prioridades' => "Priority's search",

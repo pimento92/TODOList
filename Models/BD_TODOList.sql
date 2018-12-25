@@ -110,8 +110,8 @@ CREATE TABLE IF NOT EXISTS `ADJUNTA` (
 --
 
 INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('jmrod92@gmail.com','calacu2018','Juan','Márquez Rodríguez','1992-02-21','669811012','ADMIN');
-INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('admin@gmail.com','admin','Usuario','Administrador','1995-02-21','677777777','ADMIN');
-INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('basico@gmail.com','basico','Usuario','Regular','1997-02-21','666666666','BASICO');
+INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('admin@gmail.com','admin','Pepita','Administrador','1995-02-21','677777777','ADMIN');
+INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('basico@gmail.com','basico','Marta','Regular','1997-02-21','666666666','BASICO');
 
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('SIN CATEGORIA','Tarea sin categoria asignada');
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('HOGAR','Tarea relativa a trabajo en el hogar');
@@ -123,21 +123,88 @@ INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA A
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA MEDIA','Grado medio de urgencia', '#ffff00');
 INSERT INTO PRIORIDAD (`nom_pri`,`desc_pri`, `codcolor_pri`) VALUES ('URGENCIA BAJA','Grado bajo de urgencia', '#00ff00');
 
-INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('/porn/BBW/gordibuena.wmv','Archivo íntimo de uso recreativo');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('UI.jpg','Prototipo falso de la interfaz');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('DefinicionEntregaET4.pdf','ET4');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('DefinicionEntregaET5.pdf','ET5');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('DefinicionEvaluacionQA4.pdf','QA4');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('DefinicionEvaluacionQA5.pdf','QA5');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('camaejemplo.jpg','Ejemplo de cama bien hecha');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('listacompra.png','Lista de la compra');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('Receta.jpg','Receta del famoso plato');
+INSERT INTO ARCHIVO (`url_arch`,`desc_arch`) VALUES ('mere.png','Ejemplo MERE');
 
-INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('jriglesias@esei.uvigo.es','Javier Rodeiro', 'Superior supremo del Imperio interestelar', '696969696');
-INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('vader@lord.es','Anakin Skywalker', 'Mano derecha del lord comandante', '656565655');
-INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('juan@palomo.com','Juan Palomo', 'Yo me lo sigo yo me lo como', '696559696');
 
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-08','ABIERTA', 'Pajilla nocturna con gordibuenas', 'jmrod92@gmail.com', '1', '1');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-15','ABIERTA', 'Pajilla nocturna con asiáticas', 'basico@gmail.com', '1', '1');
+INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('jriglesias@esei.uvigo.es','Javier Rodeiro', 'Profesor al cargo de Interfaces', '696969696');
+INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('orge@esei.uvigo.es','Jose Luis Orge', 'Mano derecha del lord comandante', '656565655');
+INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('jmrod92@gmail.com','Juan Marquez Rodriguez', 'Alumno estrella de interfaces', '696559696');
+INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('abuela@gmail.com','Mitica abuela', 'Asesora en tareas del hogar', '655443322');
 
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Pillar lubricante del bueno en la farmacia de la dependienta cachonda', '1');
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Ponerse comodo en cama', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-08','ABIERTA', 'Desarrollo de la ET4', 'basico@gmail.com', '4', '2');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-07','ABIERTA', 'Desarrollo de la ET5', 'basico@gmail.com', '4', '3');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','CERRADA', 'Evaluacion QA4', 'basico@gmail.com', '4', '4');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-18','ABIERTA', 'Evaluacion QA5', 'basico@gmail.com', '4', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-19','ABIERTA', 'Hacer la cama', 'basico@gmail.com', '2', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','ABIERTA', 'Pasear a los perros', 'basico@gmail.com', '1', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-11','ABIERTA', 'Hacer la cena', 'jmrod92@gmail.com', '1', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-10','ABIERTA', 'Acabar bases de datos', 'jmrod92@gmail.com', '1', '3');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Elaborar acta de constitucion', '1');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Crear plantillas MVC', '1');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Implementar CRUDs', '1');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Pruebas globales', '1');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Acuerdo de modelo de evaluacion', '2');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Crear individualmente las evaluaciones', '2');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Unificar evaluaciones', '2');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Descargar .rar', '3');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Evaluar .rar', '3');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Descargar .rar', '4');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Evaluar .rar', '4');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Airear la ropa', '5');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Doblar la ropa', '5');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Coger correas', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Coger bolsas fecales', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Salir a la calle', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Volver a casa', '6');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Comprar ingredientes', '7');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Elaborar receta', '7');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Comer la cena', '7');
+
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Realizar MERE', '8');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Realizar MR', '8');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Implementar SQL', '8');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Pruebas globales', '8');
 
 INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('1','1','jriglesias@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('1','1','orge@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('1','2','jriglesias@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('1','3','orge@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('2','1','jmrod92@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('3','2','jriglesias@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('4','2','jriglesias@esei.uvigo.es');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('5','2','abuela@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('6','1','jmrod92@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('7','1','abuela@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('7','2','abuela@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('8','1','jmrod92@gmail.com');
+INSERT INTO POSEE (`tarea_fas`,`id_fas`,`email_con`) VALUES ('8','2','jmrod92@gmail.com');
 
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('1','2','2');
 INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('1','1','1');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('2','2','3');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('3','2','4');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('4','2','5');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('5','2','6');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('7','1','7');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('7','2','8');
+INSERT INTO ADJUNTA(`tarea_fas`,`id_fas`,`id_arch`) VALUES ('8','1','8');
+
+
 
 --
 -- Índices para tablas volcadas

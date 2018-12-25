@@ -177,8 +177,8 @@ class FASE_Model {
   }
 
   function Delete(){
-    $sql = "DELETE FROM FASE WHERE `id_tar` = '$this->id'";
-  	if(!$this->mysqli->query($sql)){
+    $sql = "DELETE FROM FASE WHERE `id_fas` = '$this->id' AND `tarea_fas`='$this->tarea'";
+		if(!$this->mysqli->query($sql)){
   		return 'Error en el borrado';
   	}
   	else{
@@ -195,5 +195,30 @@ class FASE_Model {
   		return 'Fase cerrada con éxito';
   	}
 	}
+
+	function getCont(){
+		$sql = "SELECT * FROM `posee` p, `contacto` c WHERE c.`email_con`=p.`email_con` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
+		$toRet = $this->mysqli->query($sql);
+		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
+			return "No hay contactos adjuntos";
+		}else{
+			$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
+			return $toRet;
+		}
+	}
+
+	function getArch(){
+		$sql = "SELECT * FROM `adjunta` a, `archivo` ar WHERE a.`id_arch`=ar.`id_arch` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
+		$toRet = $this->mysqli->query($sql);
+		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
+			return "No hay archivos adjuntos";
+		}else{
+			$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
+			return $toRet;
+		}
+	}
+
+
 }
  ?>
+

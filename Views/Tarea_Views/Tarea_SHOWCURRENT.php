@@ -63,7 +63,7 @@
                 <th><?php echo $strings['Descripción'];?></th>
                 <th><?php echo $strings['Fecha'];?></th>
                 <th><?php echo $strings['Estado'];?></th>
-                <th colspan="7"><?php echo $strings['Acción'];?></th>
+                <th colspan="5"><?php echo $strings['Acción'];?></th>
         </tr>
         </thead>
             <tr>
@@ -71,9 +71,9 @@
             <?php if(count($datosf, COUNT_RECURSIVE)!= 5){
                     foreach($datosf as $datos) :
                     ?>
-                    <td><?php echo $datos['desc_fas']."\n"; ?></td>
-                    <td><?php echo $datos['fecha_fas']."\n"; ?></td>
-                    <td><?php echo $datos['estado_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['desc_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['fecha_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['estado_fas']."\n"; ?></td>
 
 
                 <!-- Botones de opción de cada fila -->
@@ -86,18 +86,18 @@
 
             </tr>
             <?php endforeach;}else{?>
-                <td><?php echo $datosf['desc_fas']."\n"; ?></td>
-                    <td><?php echo $datosf['fecha_fas']."\n"; ?></td>
-                    <td><?php echo $datosf['estado_fas']."\n"; ?></td>
+                <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datosf['tarea_fas'];?>&param2=<?php echo $datosf['id_fas'];?>'"><?php echo $datosf['desc_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datosf['tarea_fas'];?>&param2=<?php echo $datosf['id_fas'];?>'"><?php echo $datosf['fecha_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datosf['tarea_fas'];?>&param2=<?php echo $datosf['id_fas'];?>'"><?php echo $datosf['estado_fas']."\n"; ?></td>
 
 
 
                 <!-- Botones de opción de cada fila -->
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-times"></i></button></td>
+                <td  class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=CLOSE&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-times"></i></button></td>
                 <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Posee_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-user"></i></button></td>
                 <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datosf['id_fas'];?>'"><i class="fas fa-file"></i></button></td>
                 <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datost['id_tar'];?>&param2=<?php echo $datosf['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datosf['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datosf['tarea_fas']?>&param2=<?php echo $datosf['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
 
 
  
