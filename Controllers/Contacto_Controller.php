@@ -41,11 +41,11 @@ else{
                 $Contacto->ADD();
                 $respuesta = 'Inserción realizada con éxito';
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Contacto_Controller.php?accion=SHOWALL');
+                new MESSAGE($respuesta, $_SERVER['HTTP_REFERER']);
 
             }else{
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Contacto_Controller.php?accion=SHOWALL');
+                new MESSAGE($respuesta, $_SERVER['HTTP_REFERER']);
             }
         }
     }

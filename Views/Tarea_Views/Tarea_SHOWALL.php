@@ -156,8 +156,7 @@
             <?php }?>
 
             <?php }else{?>
-            <?php if ($datos['creador_tar'] == $_SESSION['email']){ 
-             if(count($datos, COUNT_RECURSIVE)!= 14){
+            <?php   if(count($datos, COUNT_RECURSIVE)!= 14){
                     foreach($datos as $datos) :
                      if ($datos['creador_tar'] == $_SESSION['email']){?>
                     <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
@@ -196,7 +195,7 @@
                     <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
                     <?php $array = []; $auxarray='NO'; $cont=0;
                         foreach($contarch as $archivos) : 
-                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                            if ($archivos['tarea'] == $datos['id_tar']){ 
                                 $array[$cont]='SI';
                             }else{
                                 $array[$cont]='NO';
@@ -215,7 +214,7 @@
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
-            <?php } endforeach;}else{
+            <?php }endforeach;}else{
                 ?>
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><?php echo $datos['nom_cat']."\n"; ?></td>
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;;"><?php echo $datos['desc_tar']."\n"; ?></td>
@@ -273,7 +272,7 @@
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-pencil-alt"></i></button></td>
                 <td class="tb-btn" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>;"><button class="editbtn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=DELETE&param=<?php echo $datos['id_tar']?>';"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
-            <?php }};?>
+            <?php };?>
             <?php } ?>
             </table>
         <!-- Contenedor de los iconos: aceptar, voler y vaciar-->

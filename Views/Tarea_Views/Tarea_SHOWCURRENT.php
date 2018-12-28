@@ -71,9 +71,9 @@
             <?php if(count($datosf, COUNT_RECURSIVE)!= 5){
                     foreach($datosf as $datos) :
                     ?>
-                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['desc_fas']."\n"; ?></td>
-                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['fecha_fas']."\n"; ?></td>
-                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_tar'];?>'"><?php echo $datos['estado_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_fas'];?>'"><?php echo $datos['desc_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_fas'];?>'"><?php echo $datos['fecha_fas']."\n"; ?></td>
+                    <td onclick="location='../Controllers/Fase_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_fas'];?>'"><?php echo $datos['estado_fas']."\n"; ?></td>
 
 
                 <!-- Botones de opción de cada fila -->
@@ -81,7 +81,7 @@
                 <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Posee_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-user"></i></button></td>
                 <td class="n"><button class="editbtn" role="link" onclick="window.location='../Controllers/Adjunta_Controller.php?accion=SHOWALL&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>'"><i class="fas fa-file"></i></button></td>
                 <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=EDIT&param=<?php echo $datost['id_tar'];?>&param2=<?php echo $datos['id_fas']?>';"><i class="fas fa-pencil-alt"></i></button></td>
-                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datos['id_fas']?>';"><i class="fas fa-trash-alt"></i></button></td>
+                <td class="n mini"><button class="editbtn" role="link" onclick="window.location='../Controllers/Fase_Controller.php?accion=DELETE&param=<?php echo $datost['id_tar']?>&param2=<?php echo $datos['id_fas'];?>';"><i class="fas fa-trash-alt"></i></button></td>
 
 
             </tr>
