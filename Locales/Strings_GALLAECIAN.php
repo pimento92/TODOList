@@ -124,7 +124,11 @@ array(
 	'No hay contactos adjuntos' => 'Non hai contactos adxuntos',
 	'No hay fases creadas' => 'Non hai fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo',
-	'Edición de fase' => 'Edición de fase'
+	'Edición de fase' => 'Edición de fase',
+	'Tareas abiertas' => 'Tarefas abertas',
+	'Tareas cerradas' => 'Tarefas pechadas',
+	'Tarea cerrada con éxito' => 'Tarefa pechada con éxito',
+	'Error cerrando la tarea' => 'Error pechando a tarefa'
 
 ) 
 ;

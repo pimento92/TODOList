@@ -162,10 +162,31 @@ else{
                 $mens = "No hay Tareas registrados";
                 include '../Views/MESSAGE.php';
                 new MESSAGE($mens, '../Controllers/Index_Controller.php');
+            }   
+    }
+
+    function CLOSE($clavet){
+        include '../Models/FASE_Model.php';
+        $Fase = new FASE_Model($clavet,'','','','');
+        $datos = $Tarea->Showall();
+        $aux = false;
+        if(sizeof($datos) != 0){
+        }else{ 
+            foreach($datos as $datos){
+                if ($datos['estado_fas'] == 'ABIERTA'){
+                    $aux = true;
+                }
             }
-            
+        }
+
+        if($aux == false){
+            include '../Models/TAREA_Model.php';
+            $Tarea = new TAREA_Model('',$clavet,'','','','');
+        }
+
         
     }
+
     //ejecutamos el método correspondiente
     if(!isset($param))
     {

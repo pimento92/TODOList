@@ -253,5 +253,15 @@ class TAREA_Model {
   	}
   }
 
+
+	function Close(){
+		$sql = "UPDATE `tarea` SET `estado_tar`='CERRADA' WHERE `id_tar`=$this->id";
+		if(!$this->mysqli->query($sql)){
+  		return 'Error cerrando la tarea';
+  	}
+  	else{
+  		return 'Tarea cerrada con éxito';
+  	}
+	}
 }
  ?>

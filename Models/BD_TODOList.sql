@@ -142,9 +142,9 @@ INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('ab
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-08','ABIERTA', 'Desarrollo de la ET4', 'basico@gmail.com', '4', '2');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-07','ABIERTA', 'Desarrollo de la ET5', 'basico@gmail.com', '4', '3');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','CERRADA', 'Evaluacion QA4', 'basico@gmail.com', '4', '4');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-18','ABIERTA', 'Evaluacion QA5', 'basico@gmail.com', '4', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-18','CERRADA', 'Evaluacion QA5', 'basico@gmail.com', '4', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-19','ABIERTA', 'Hacer la cama', 'basico@gmail.com', '2', '1');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','ABIERTA', 'Pasear a los perros', 'basico@gmail.com', '1', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','CERRADA', 'Pasear a los perros', 'basico@gmail.com', '1', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-11','ABIERTA', 'Hacer la cena', 'jmrod92@gmail.com', '1', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-10','ABIERTA', 'Acabar bases de datos', 'jmrod92@gmail.com', '1', '3');
 
