@@ -50,7 +50,7 @@
         <!-- Contenedor de los iconos: aceptar, voler y vaciar-->
         <div class="container-btn">
             <button name="submit" value="upload" class="form-btn" type="submit"><i class="fas fa-check"></i> </button>
-			<button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
+			<button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWALL&param=fecha'"><i class="fas fa-times"></i></button>
             <button class="form-btn" type="reset"><i class="fas fa-undo-alt"></i></button>
         </div>
         

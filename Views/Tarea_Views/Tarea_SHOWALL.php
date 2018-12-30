@@ -7,11 +7,11 @@
 	class Tarea_SHOWALL{
 
 
-		function __construct($datos, $contfas, $contcon, $contarch){	
-			$this->render($datos, $contfas, $contcon, $contarch);
+		function __construct($datos, $contfas, $contcon, $contarch, $orden){	
+			$this->render($datos, $contfas, $contcon, $contarch, $orden);
 		}
 
-		function render($datos, $contfas, $contcon, $contarch){
+		function render($datos, $contfas, $contcon, $contarch, $orden){
             include '../Views/Header.php';?>
 <div class="col-md-2"></div>
 <div class="col-md-8 contenido articulo">
@@ -23,7 +23,7 @@
             <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SEARCH'"><i class="fas fa-search"></i> 
             <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=ADD'"><i class="fas fa-plus"></i></button>
             <div class="ml-auto">
-                <p><b><?php echo $strings['Ordenar por:'];?> &nbsp &nbsp</b><a href="">Fecha de alta</a> | <a href="">Prioridad</a> | <a href="">Categoría</a></p>
+                <p><b><?php echo $strings['Ordenar por:'];?> &nbsp &nbsp</b><a <?php if ($orden == 'fecha'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=fecha">Fecha de alta</a> | <a <?php if ($orden == 'prioridad'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=prioridad">Prioridad</a> | <a <?php if ($orden == 'categoria'){ echo 'class="activo"';}?> href="./Tarea_Controller.php?accion=SHOWALL&param=categoria">Categoría</a></p>
             </div>
         </div>
         <table>

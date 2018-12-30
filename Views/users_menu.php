@@ -9,7 +9,7 @@ include_once '../Functions/Authentication.php';
 		<ul class="nav">
 
 				<li class="nav-item ">
-					<a class="nav-link"  href="../Controllers/Tarea_Controller.php?accion=SHOWALL"><?php echo $strings['Tareas']; ?></a>	
+					<a class="nav-link"  href="../Controllers/Tarea_Controller.php?accion=SHOWALL&param=fecha"><?php echo $strings['Tareas']; ?></a>	
 				</li>	
 				<li class="nav-item ">
 				<a class="nav-link " href="../Controllers/Contacto_Controller.php?accion=SHOWALL"><?php echo $strings['Contactos']; ?></a>

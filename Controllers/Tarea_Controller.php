@@ -76,8 +76,7 @@ else{
             }
             $datos = $Tarea->SEARCH();
             if(is_array($datos) === true){
-                include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new Tarea_SHOWALL($datos);
+                showall('fecha');
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($datos, './Tarea_Controller.php?accion=SEARCH');
@@ -98,8 +97,7 @@ else{
         }else{
             $respuesta = $Tarea->DELETE($clave);
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
-
+                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL&param=fecha');
         }
     }
 
@@ -125,7 +123,7 @@ else{
             $Tarea = new TAREA_Model($_POST['pri'],$clave,'','',$_POST['desc'],'',$_POST['cat']);
             $respuesta = $Tarea->Edit($clave);
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
+                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL&param=fecha');
          
         }
     }
@@ -146,18 +144,18 @@ else{
     }
 
     //método que muestra todos los boletos
-    function SHOWALL(){
+    function SHOWALL($orden){
         
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('','','','','','','');
-            $datos = $Tarea->Showall();
+            $datos = $Tarea->Showall($orden);
             $fases = $Tarea->CountFas();
             $contactos = $Tarea->CountCont();
             $files = $Tarea->CountArch();
             if(sizeof($datos) != 0)
             {
                 include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new  Tarea_SHOWALL($datos, $fases, $contactos, $files);
+                new  Tarea_SHOWALL($datos, $fases, $contactos, $files, $orden);
             }else{
                 $mens = "No hay Tareas registrados";
                 include '../Views/MESSAGE.php';

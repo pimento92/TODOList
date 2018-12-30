@@ -13,7 +13,7 @@ if (!IsAuthenticated()){
 }
 //esta autenticado
 else{
-	header ("Location: ../Controllers/Tarea_Controller.php?accion=SHOWALL");
+	header ("Location: ../Controllers/Tarea_Controller.php?accion=SHOWALL&param=fecha");
 }
 
 ?>

@@ -602,3 +602,7 @@ border: none;
     top: 0;
     opacity: 0;
   }
+
+  .activo{
+      color: #f1a27d;
+  }

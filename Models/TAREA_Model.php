@@ -155,7 +155,7 @@ class TAREA_Model {
 	$sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt;
 	//Si no se introducen campos devuelve todas las tuplas
 	if($sql == "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND "){
-		return $this->SHOWALL();
+		return $this->SHOWALL('fecha');
 	}else{
     $result = $this->mysqli->query($sql);
 	//Si no hay coincidencias devuelve un mensaje
@@ -187,8 +187,17 @@ class TAREA_Model {
       return 'Edición realizada con éxito';
     }
   }
-  function Showall(){
-    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` ORDER BY t.`fecha_tar`";
+  function Showall($orden){
+		if ($orden == 'fecha'){
+			$aux = 't.`fecha_tar`';
+		}
+		if ($orden == 'categoria'){
+			$aux = 'c.`id_cat`';
+		}
+		if ($orden == 'prioridad'){
+			$aux = 'p.`id_pri`';
+		}
+    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` ORDER BY $aux";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
