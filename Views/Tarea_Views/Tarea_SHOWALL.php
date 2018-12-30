@@ -19,9 +19,12 @@
         <legend><?php echo $strings['Tareas abiertas'];?></legend>  
     
         <!--Contenedor con botones de adición y búsqueda  -->
-        <div class="container-showall-btn">
+        <div class="container-showall-btn d-flex align-items-baseline">
             <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SEARCH'"><i class="fas fa-search"></i> 
-            <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=ADD'"><i class="fas fa-plus"></i>
+            <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=ADD'"><i class="fas fa-plus"></i></button>
+            <div class="ml-auto">
+                <p><b><?php echo $strings['Ordenar por:'];?> &nbsp &nbsp</b><a href="">Fecha de alta</a> | <a href="">Prioridad</a> | <a href="">Categoría</a></p>
+            </div>
         </div>
         <table>
         <thead>
@@ -294,8 +297,8 @@
     
     <!--Contenedor con botones de adición y búsqueda  -->
     <div class="container-showall-btn">
-        <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SEARCH'"><i class="fas fa-search"></i> 
     </div>
+    
     <table>
     <thead>
     <tr>
@@ -426,7 +429,7 @@
         <?php   if(count($datos2, COUNT_RECURSIVE)!= 14){
                 foreach($datos2 as $datos) :
                  if ($datos['creador_tar'] ==$_SESSION['email']){
-                    if ($datos['estado_tar'] = 'CERRADA'){?>   
+                    if ($datos['estado_tar'] == 'CERRADA'){?>   
 
                 <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" ><?php echo $datos['nom_cat']."\n"; ?></td>
             <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar']?>'" ><?php echo $datos['desc_tar']."\n"; ?></td>

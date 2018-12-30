@@ -94,6 +94,7 @@ array(
 	'¿Confirma el borrado de este usuario?' => '¿Confirma el borrado de este usuario?',
 	'¿Confirma el borrado de esta fase?' => '¿Confirma el borrado de esta fase?',
 	'Error en el borrado' => 'Error en el borrado',
+	'¿Confirma el borrado de esta tarea?' => '¿Confirma el borrado de esta tarea?',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'No se han encontrado coincidencias' => 'No se han encontrado coincidencias',
 	'No es posible conectarse a la BD' => 'No es posible conectarse a la BD',
@@ -123,7 +124,9 @@ array(
 	'Tareas abiertas' => 'Tareas abiertas',
 	'Tareas cerradas' => 'Tareas cerradas',
 	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',
-	'Error cerrando la tarea' => 'Error cerrando la tarea'
+	'Error cerrando la tarea' => 'Error cerrando la tarea',
+	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
+	'Ordenar por:' => 'Ordenar por:'
 ) 
 ;
 ?>

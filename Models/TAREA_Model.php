@@ -177,7 +177,7 @@ class TAREA_Model {
 
   function Edit(){
     $sql = "UPDATE TAREA SET `pri_tar` = '$this->prioridad',
-            `estado_tar` = '$this->estado', `desc_tar` = '$this->descripcion',
+            `desc_tar` = '$this->descripcion',
 					 `cat_tar` = '$this->categoria'
             WHERE(`id_tar` = '$this->id');";
     if(!$this->mysqli->query($sql)){

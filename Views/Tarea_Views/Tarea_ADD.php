@@ -45,7 +45,6 @@
 			<input type="text" name="email" id="email" style="display:none" value="<?php echo $_SESSION['email'];?>">
 			<input type="text" name="fecha" id="fecha" style="display:none" value="<?php echo date('Y-m-d');?>">
 			<input type="text" name="estado" id="estado" style="display:none" value="ABIERTA">
-			<div class="campo">
 
 
         <!-- Contenedor de los iconos: aceptar, voler y vaciar-->

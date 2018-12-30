@@ -122,7 +122,7 @@ else{
 
         }else{
             include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model($_POST['pri'],$clave,'',$_POST['estado'],$_POST['desc'],'',$_POST['cat']);
+            $Tarea = new TAREA_Model($_POST['pri'],$clave,'','',$_POST['desc'],'',$_POST['cat']);
             $respuesta = $Tarea->Edit($clave);
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
@@ -168,9 +168,9 @@ else{
     function CLOSE($clavet){
         include '../Models/FASE_Model.php';
         $Fase = new FASE_Model($clavet,'','','','');
-        $datos = $Tarea->Showall();
+        $datos = $Fase->Showall();
         $aux = false;
-        if(sizeof($datos) != 0){
+        if(sizeof($datos) == 0){
         }else{ 
             foreach($datos as $datos){
                 if ($datos['estado_fas'] == 'ABIERTA'){
@@ -181,7 +181,14 @@ else{
 
         if($aux == false){
             include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model('',$clavet,'','','','');
+            $Tarea = new TAREA_Model('',$clavet,'','','','','');
+            $mensaje = $Tarea->Close();
+            include '../Views/MESSAGE.php';
+            new MESSAGE($mensaje, $_SERVER['HTTP_REFERER']);
+        }else{
+            $mensaje = 'La tarea aún tiene fases abiertas';
+            include '../Views/MESSAGE.php';
+            new MESSAGE($mensaje, $_SERVER['HTTP_REFERER']);
         }
 
         

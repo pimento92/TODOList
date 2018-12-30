@@ -95,6 +95,7 @@ array(
 	'¿Confirma el borrado de este contacto?' => '¿Confirma o borrado deste contacto?',
 	'¿Confirma el borrado de este usuario?' => '¿Confirma o borrado deste usuario?',
 	'¿Confirma el borrado de esta fase?' => '¿Confirma o borrado desta fase?',
+	'¿Confirma el borrado de esta tarea?' => '¿Confirma el borrado de esta tarefa?',
 	'Error en el borrado' => 'Error no borrado',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
@@ -128,8 +129,9 @@ array(
 	'Tareas abiertas' => 'Tarefas abertas',
 	'Tareas cerradas' => 'Tarefas pechadas',
 	'Tarea cerrada con éxito' => 'Tarefa pechada con éxito',
-	'Error cerrando la tarea' => 'Error pechando a tarefa'
-
+	'Error cerrando la tarea' => 'Error pechando a tarefa',
+	'La tarea aún tiene fases abiertas' => 'A tarefe aínde ten fases abertas',
+	'Ordenar por:' => 'Ordear por:'
 ) 
 ;
 ?>

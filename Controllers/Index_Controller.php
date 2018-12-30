@@ -13,8 +13,7 @@ if (!IsAuthenticated()){
 }
 //esta autenticado
 else{
-	include '../Views/users_index_View.php';
-	new Index();
+	header ("Location: ../Controllers/Tarea_Controller.php?accion=SHOWALL");
 }
 
 ?>

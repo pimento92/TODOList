@@ -45,15 +45,7 @@
 					</select>
 			</div>
 
-			<div class="campo">
-				<label><?php echo $strings['Estado'];?></label>
-				<select name="estado" id="estado">
-					<option value="<?php echo $datos['estado_tar'];?>"><?php echo $datos['estado_tar'];?></option>
-					<option value="ABIERTA"><?php echo $strings["Abierta"];?></option>
-					<option value="CERRADA"><?php echo $strings["Cerrada"];?></option>
-				</select>
-				<p class="invalid" id="invalidemail"><?php echo $strings['E-mail incorrecto'];?></p>
-			</div>
+
 			<div class="campo">
 				<!-- Contenedor de los iconos: aceptar, volver-->
 				<div class="container-btn">
