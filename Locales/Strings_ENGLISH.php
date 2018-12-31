@@ -125,7 +125,10 @@ array(
 	'No hay contactos adjuntos' => 'There are not attached contacts',
 	'No hay fases creadas' => 'There are not created phases',
 	'Si no encuentra el contacto que busca puede crearlo' => 'If the contact that you need is not here, you can create it',
-	'Edición de fase' => "Phase's edition"
+	'Edición de fase' => "Phase's edition",
+	'Teléfono incorrecto' =>'Wrong phone number', 
+	'Selecciona categoria' => 'Choose the priority',
+	'Selecciona prioridad' => 'Choose the category',
 	 )
 ;
  ?>

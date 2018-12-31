@@ -22,7 +22,7 @@
 
        <div class="bloque">
 				<label><?php echo $strings['Nombre'];?></label>
-				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '' placeholder = '<?php echo $strings['Sólo letras']?> 'onblur="comprobarAlfabético(this,30)" >
+				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '' placeholder = '<?php echo $strings['Sólo letras']?> 'onblur="comprobarAlfabetico(this,30)" >
 				<p class="invalid" id="invalidnombre"><?php echo $strings['Formato no válido'];?></p>
             </div>
 			<div class="campo">

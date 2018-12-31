@@ -119,8 +119,11 @@ array(
 	'No hay contactos adjuntos' => 'No hay contactos adjuntos',
 	'No hay fases creadas' => 'No hay fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo',
-	'Edición de fase' => 'Edición de fase'
-) 
+	'Edición de fase' => 'Edición de fase',
+	'Teléfono incorrecto' => 'Teléfono incorrecto',
+	'Selecciona categoria' => 'Selecciona una categoria',
+	'Selecciona prioridad' => 'Selecciona una prioridad',
+) 	
 ;
 ?>
  

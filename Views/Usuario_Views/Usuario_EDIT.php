@@ -21,7 +21,7 @@
 		<p class="invalid iform" id="invalidform"><?php echo $strings['Debe rellenar todos los campos'];?></p>
         <div class="bloque">
 				<label><?php echo $strings['Nombre'];?></label>
-				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '<?php echo $datos['nom_usr'];?>' placeholder = '<?php echo $strings['Sólo letras']?> 'onblur="comprobarAlfabético(this,30)" >
+				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '<?php echo $datos['nom_usr'];?>' placeholder = '<?php echo $strings['Sólo letras']?> 'onblur="comprobarAlfabetico(this,30)" >
 				<p class="invalid" id="invalidnombre"><?php echo $strings['Formato no válido'];?></p>
             </div>
 			<div class="campo">
