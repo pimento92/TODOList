@@ -126,7 +126,8 @@ array(
 	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',
 	'Error cerrando la tarea' => 'Error cerrando la tarea',
 	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
-	'Ordenar por:' => 'Ordenar por:'
+	'Ordenar por:' => 'Ordenar por:',
+	'Fecha de alta' => 'Fecha de alta'
 ) 
 ;
 ?>

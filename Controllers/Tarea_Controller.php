@@ -74,9 +74,14 @@ else{
             }else{
                 $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],'',$_POST['cat']);
             }
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH($_POST['orden']);
             if(is_array($datos) === true){
-                showall('fecha');
+                include '../Views/Tarea_Views/Tarea_SHOWALL.php';
+                $Tarea = new TAREA_Model('','','','','','','');
+              $fases = $Tarea->CountFas();
+              $contactos = $Tarea->CountCont();
+             $files = $Tarea->CountArch();
+                new Tarea_SHOWALL($datos, $fases, $contactos, $files, 'fecha');
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($datos, './Tarea_Controller.php?accion=SEARCH');

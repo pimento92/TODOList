@@ -22,9 +22,12 @@
         <div class="container-showall-btn d-flex align-items-baseline">
             <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=SEARCH'"><i class="fas fa-search"></i> 
             <button class="form-btn" role="link" onclick="window.location='../Controllers/Tarea_Controller.php?accion=ADD'"><i class="fas fa-plus"></i></button>
+            <?php if ($_SERVER['REQUEST_URI'] != '/todolist/Controllers/Tarea_Controller.php?accion=SEARCH'){?>
             <div class="ml-auto">
-                <p><b><?php echo $strings['Ordenar por:'];?> &nbsp &nbsp</b><a <?php if ($orden == 'fecha'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=fecha">Fecha de alta</a> | <a <?php if ($orden == 'prioridad'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=prioridad">Prioridad</a> | <a <?php if ($orden == 'categoria'){ echo 'class="activo"';}?> href="./Tarea_Controller.php?accion=SHOWALL&param=categoria">Categoría</a></p>
+                <p><b><?php echo $strings['Ordenar por:'];?> &nbsp &nbsp</b><a <?php if ($orden == 'fecha'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=fecha"><?php echo $strings['Fecha de alta'];?></a> | <a <?php if ($orden == 'prioridad'){ echo 'class="activo"';}?>href="./Tarea_Controller.php?accion=SHOWALL&param=prioridad"><?php echo $strings['Prioridad'];?></a> | <a <?php if ($orden == 'categoria'){ echo 'class="activo"';}?> href="./Tarea_Controller.php?accion=SHOWALL&param=categoria"><?php echo $strings['Categoría'];?></a></p>
             </div>
+            <?php }?>
+
         </div>
         <table>
         <thead>

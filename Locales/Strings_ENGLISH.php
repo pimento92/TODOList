@@ -132,7 +132,8 @@ array(
 	'Tarea cerrada con éxito' => 'Succesfull task closing',
 	'Error cerrando la tarea' => 'Closing task error',
 	'La tarea aún tiene fases abiertas' => 'The task still has opened phases',
-	'Ordenar por:' => 'Order by:'
+	'Ordenar por:' => 'Order by:',
+	'Fecha de alta' => 'Creation date'
 	 )
 ;
  ?>
