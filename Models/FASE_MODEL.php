@@ -165,7 +165,7 @@ class FASE_Model {
     }
   }
   function Showall(){
-    $sql = "SELECT * FROM `FASE` f, `tarea` t WHERE f.`tarea_fas`= t.`id_tar` AND t.id_tar = '$this->tarea'";
+		$sql = "SELECT * FROM `FASE` f WHERE f.`tarea_fas`= '$this->tarea'";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';

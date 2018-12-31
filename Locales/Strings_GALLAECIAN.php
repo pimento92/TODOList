@@ -95,6 +95,7 @@ array(
 	'¿Confirma el borrado de este contacto?' => '¿Confirma o borrado deste contacto?',
 	'¿Confirma el borrado de este usuario?' => '¿Confirma o borrado deste usuario?',
 	'¿Confirma el borrado de esta fase?' => '¿Confirma o borrado desta fase?',
+	'¿Confirma el borrado de esta tarea?' => '¿Confirma el borrado de esta tarefa?',
 	'Error en el borrado' => 'Error no borrado',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'Búsqueda de prioridades' => 'Búsqueda de prioridades',
@@ -125,9 +126,18 @@ array(
 	'No hay fases creadas' => 'Non hai fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo',
 	'Edición de fase' => 'Edición de fase',
+<<<<<<< HEAD
 	'Teléfono incorrecto' => 'Teléfono incorrecto',
 	'Selecciona categoria' => 'Selecciona unha categoria',
 	'Selecciona prioridad' => 'Selecciona unha prioridade',
+=======
+	'Tareas abiertas' => 'Tarefas abertas',
+	'Tareas cerradas' => 'Tarefas pechadas',
+	'Tarea cerrada con éxito' => 'Tarefa pechada con éxito',
+	'Error cerrando la tarea' => 'Error pechando a tarefa',
+	'La tarea aún tiene fases abiertas' => 'A tarefe aínde ten fases abertas',
+	'Ordenar por:' => 'Ordear por:'
+>>>>>>> 8af99cfe7d90969f7774118ccf0f360c6628e927
 ) 
 ;
 ?>

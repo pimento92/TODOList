@@ -95,6 +95,7 @@ array(
 	'¿Confirma el borrado de este contacto?' => "Confirm contact's delete?",
 	'¿Confirma el borrado de este usuario?' => "Confirm user's delete?",
 	'¿Confirma el borrado de esta fase?' => "Confirm phase's delete?",
+	'¿Confirma el borrado de esta tarea?' => "Confirm task's delete?",
 	'Error en el borrado' => 'Deleting error',
 	'Borrado realizado con éxito' => 'Successfull delete',
 	'Búsqueda de prioridades' => "Priority's search",
@@ -126,9 +127,18 @@ array(
 	'No hay fases creadas' => 'There are not created phases',
 	'Si no encuentra el contacto que busca puede crearlo' => 'If the contact that you need is not here, you can create it',
 	'Edición de fase' => "Phase's edition",
+<<<<<<< HEAD
 	'Teléfono incorrecto' =>'Wrong phone number', 
 	'Selecciona categoria' => 'Choose the priority',
 	'Selecciona prioridad' => 'Choose the category',
+=======
+	'Tareas abiertas' => 'Opened tasks',
+	'Tareas cerradas' => 'Closed tasks',
+	'Tarea cerrada con éxito' => 'Succesfull task closing',
+	'Error cerrando la tarea' => 'Closing task error',
+	'La tarea aún tiene fases abiertas' => 'The task still has opened phases',
+	'Ordenar por:' => 'Order by:'
+>>>>>>> 8af99cfe7d90969f7774118ccf0f360c6628e927
 	 )
 ;
  ?>

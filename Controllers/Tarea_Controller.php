@@ -76,8 +76,7 @@ else{
             }
             $datos = $Tarea->SEARCH();
             if(is_array($datos) === true){
-                include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new Tarea_SHOWALL($datos);
+                showall('fecha');
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($datos, './Tarea_Controller.php?accion=SEARCH');
@@ -98,8 +97,7 @@ else{
         }else{
             $respuesta = $Tarea->DELETE($clave);
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
-
+                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL&param=fecha');
         }
     }
 
@@ -122,10 +120,10 @@ else{
 
         }else{
             include '../Models/TAREA_Model.php';
-            $Tarea = new TAREA_Model($_POST['pri'],$clave,'',$_POST['estado'],$_POST['desc'],'',$_POST['cat']);
+            $Tarea = new TAREA_Model($_POST['pri'],$clave,'','',$_POST['desc'],'',$_POST['cat']);
             $respuesta = $Tarea->Edit($clave);
                 include '../Views/MESSAGE.php';
-                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL');
+                new MESSAGE($respuesta, './Tarea_Controller.php?accion=SHOWALL&param=fecha');
          
         }
     }
@@ -146,26 +144,54 @@ else{
     }
 
     //método que muestra todos los boletos
-    function SHOWALL(){
+    function SHOWALL($orden){
         
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('','','','','','','');
-            $datos = $Tarea->Showall();
+            $datos = $Tarea->Showall($orden);
             $fases = $Tarea->CountFas();
             $contactos = $Tarea->CountCont();
             $files = $Tarea->CountArch();
             if(sizeof($datos) != 0)
             {
                 include '../Views/Tarea_Views/Tarea_SHOWALL.php';
-                new  Tarea_SHOWALL($datos, $fases, $contactos, $files);
+                new  Tarea_SHOWALL($datos, $fases, $contactos, $files, $orden);
             }else{
                 $mens = "No hay Tareas registrados";
                 include '../Views/MESSAGE.php';
                 new MESSAGE($mens, '../Controllers/Index_Controller.php');
+            }   
+    }
+
+    function CLOSE($clavet){
+        include '../Models/FASE_Model.php';
+        $Fase = new FASE_Model($clavet,'','','','');
+        $datos = $Fase->Showall();
+        $aux = false;
+        if(sizeof($datos) == 0){
+        }else{ 
+            foreach($datos as $datos){
+                if ($datos['estado_fas'] == 'ABIERTA'){
+                    $aux = true;
+                }
             }
-            
+        }
+
+        if($aux == false){
+            include '../Models/TAREA_Model.php';
+            $Tarea = new TAREA_Model('',$clavet,'','','','','');
+            $mensaje = $Tarea->Close();
+            include '../Views/MESSAGE.php';
+            new MESSAGE($mensaje, $_SERVER['HTTP_REFERER']);
+        }else{
+            $mensaje = 'La tarea aún tiene fases abiertas';
+            include '../Views/MESSAGE.php';
+            new MESSAGE($mensaje, $_SERVER['HTTP_REFERER']);
+        }
+
         
     }
+
     //ejecutamos el método correspondiente
     if(!isset($param))
     {

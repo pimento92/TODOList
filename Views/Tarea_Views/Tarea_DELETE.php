@@ -46,7 +46,7 @@
                     </tr>
                 </table>
             <div class="container-showall-btn">
-                <p><?php echo $strings['¿Confirma el borrado de esta categoría?'];?><p>
+                <p><?php echo $strings['¿Confirma el borrado de esta tarea?'];?><p>
                 <form id="delete"action='./Tarea_Controller.php?accion=delete&param=<?php echo $datos['id_tar'];?>' method='post'>
                 <button name="submit" class="form-btn" type="submit"><i class="fas fa-check"></i></button>
                 <button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>

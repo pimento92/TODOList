@@ -37,7 +37,7 @@
                 <p><?php echo $strings['¿Confirma el borrado de esta fase?'];?><p>
                 <form id="delete"action='./Fase_Controller.php?accion=delete&param=<?php echo $datos['tarea_fas'];?>&param2=<?php echo $datos['id_fas'];?>' method='post'>
                 <button name="submit" class="form-btn" type="submit"><i class="fas fa-check"></i></button>
-                <button class="form-btn" type="button" role="link" onclick="window.location='./Fase_Controller.php?accion=SHOWALL'"><i class="fas fa-times"></i></button>
+                <button class="form-btn" type="button" role="link" onclick="window.location='./Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['tarea_fas'];?>'"><i class="fas fa-times"></i></button>
             </div>
         </fieldset>
 </div>

@@ -7,13 +7,9 @@ include_once '../Functions/Authentication.php';
 <div class="menu">
 	<nav>
 		<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link" href='../Controllers/Index_Controller.php'>
-						<?php echo $strings['Inicio']; ?>
-					</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link"  href="../Controllers/Tarea_Controller.php?accion=SHOWALL"><?php echo $strings['Tareas']; ?></a>	
+
+				<li class="nav-item ">
+					<a class="nav-link"  href="../Controllers/Tarea_Controller.php?accion=SHOWALL&param=fecha"><?php echo $strings['Tareas']; ?></a>	
 				</li>	
 				<li class="nav-item ">
 				<a class="nav-link " href="../Controllers/Contacto_Controller.php?accion=SHOWALL"><?php echo $strings['Contactos']; ?></a>

@@ -141,10 +141,10 @@ INSERT INTO CONTACTO (`email_con`,`nom_con`, `desc_con`, `telf_con`) VALUES ('ab
 
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-08','ABIERTA', 'Desarrollo de la ET4', 'basico@gmail.com', '4', '2');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-07','ABIERTA', 'Desarrollo de la ET5', 'basico@gmail.com', '4', '3');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','CERRADA', 'Evaluacion QA4', 'basico@gmail.com', '4', '4');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-18','ABIERTA', 'Evaluacion QA5', 'basico@gmail.com', '4', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','ABIERTA', 'Evaluacion QA4', 'basico@gmail.com', '4', '4');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-18','CERRADA', 'Evaluacion QA5', 'basico@gmail.com', '4', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-19','ABIERTA', 'Hacer la cama', 'basico@gmail.com', '2', '1');
-INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','ABIERTA', 'Pasear a los perros', 'basico@gmail.com', '1', '1');
+INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-13','CERRADA', 'Pasear a los perros', 'basico@gmail.com', '1', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-11','ABIERTA', 'Hacer la cena', 'jmrod92@gmail.com', '1', '1');
 INSERT INTO TAREA (`fecha_tar`,`estado_tar`, `desc_tar`, `creador_tar`, `cat_tar`, `pri_tar`) VALUES ('2018-12-10','ABIERTA', 'Acabar bases de datos', 'jmrod92@gmail.com', '1', '3');
 
@@ -160,16 +160,16 @@ INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('20
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Descargar .rar', '3');
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Evaluar .rar', '3');
 
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Descargar .rar', '4');
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Evaluar .rar', '4');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Descargar .rar', '4');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Evaluar .rar', '4');
 
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Airear la ropa', '5');
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Doblar la ropa', '5');
 
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Coger correas', '6');
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Coger bolsas fecales', '6');
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Salir a la calle', '6');
-INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Volver a casa', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Coger correas', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Coger bolsas fecales', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Salir a la calle', '6');
+INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','CERRADA', 'Volver a casa', '6');
 
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Comprar ingredientes', '7');
 INSERT INTO FASE (`fecha_fas`,`estado_fas`, `desc_fas`, `tarea_fas`) VALUES ('2018-12-08','ABIERTA', 'Elaborar receta', '7');

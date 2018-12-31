@@ -94,6 +94,7 @@ array(
 	'¿Confirma el borrado de este usuario?' => '¿Confirma el borrado de este usuario?',
 	'¿Confirma el borrado de esta fase?' => '¿Confirma el borrado de esta fase?',
 	'Error en el borrado' => 'Error en el borrado',
+	'¿Confirma el borrado de esta tarea?' => '¿Confirma el borrado de esta tarea?',
 	'Borrado realizado con éxito' => 'Borrado realizado con éxito',
 	'No se han encontrado coincidencias' => 'No se han encontrado coincidencias',
 	'No es posible conectarse a la BD' => 'No es posible conectarse a la BD',
@@ -120,10 +121,20 @@ array(
 	'No hay fases creadas' => 'No hay fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo',
 	'Edición de fase' => 'Edición de fase',
+<<<<<<< HEAD
 	'Teléfono incorrecto' => 'Teléfono incorrecto',
 	'Selecciona categoria' => 'Selecciona una categoria',
 	'Selecciona prioridad' => 'Selecciona una prioridad',
 ) 	
+=======
+	'Tareas abiertas' => 'Tareas abiertas',
+	'Tareas cerradas' => 'Tareas cerradas',
+	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',
+	'Error cerrando la tarea' => 'Error cerrando la tarea',
+	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
+	'Ordenar por:' => 'Ordenar por:'
+) 
+>>>>>>> 8af99cfe7d90969f7774118ccf0f360c6628e927
 ;
 ?>
  
