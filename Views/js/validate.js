@@ -22,7 +22,7 @@ function comprobarVacio(campo){
     //variable que almacena el valor del input     
     var aux = campo.value;
     //Si el campo está vacio devuelve false;
-    if(aux === "" || aux === null){
+    if(aux === '' || aux === null){
         return false;
     }
 }
@@ -59,7 +59,7 @@ function comprobarDNI(campo)
     //Expresión regular que comprueba que tiene 8 dígitos y una letra
     var regex = /^[0-9]{8,8}[A-Za-z]$/g;
     //Si la expresión regular no coincide con el valor del campo y el largo, devuelve falso
-    if(comprobarExpresionRegular(campo, regex, size) === false && comprobarVacio(campo) != false)
+    if(comprobarExpresionRegular(campo, regex, size) === false || comprobarVacio(campo) === false)
     {
        //Párrafo que muestra el error
        document.getElementById("invalid"+campo.name).style.display = "block";
@@ -100,7 +100,7 @@ function comprobarAlfanum(campo,size)
     //Expresión regular que comprueb que tienen al menos una mayúsucla, una minúscula, un caracter especial y un número, y tiene un tamaño de 8 a 20 caracteres (seguridad fuerte)
     var regex = /^[a-zA-Z0-9]*$/g;
     //Si la expresión regular no coincide con el valor del campo y el largo, devuelve falso
-    if(comprobarExpresionRegular(campo, regex, size) === false && comprobarVacio(campo) != false)
+    if(comprobarExpresionRegular(campo, regex, size) === false || comprobarVacio(campo) === false)
     {
 
        //Párrafo que muestra el error
@@ -125,7 +125,7 @@ function comprobarAlfabetico(campo, size){
     //variable que almacena la expresión regular requerida
     var regex = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']*[\s])*([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
     //si la expresión regular no coincide con el valor del campo, o el campo es más largo de lo requerido devuelve false
-    if(comprobarExpresionRegular(campo, regex, size) === false && comprobarVacio(campo) != false)
+    if(comprobarExpresionRegular(campo, regex, size) === false || comprobarVacio(campo) === false)
     {
 
         //Párrafo que muestra el error 
@@ -151,7 +151,7 @@ function comprobarCorreo(campo, size)
     //Expresión regular que comprueba el formato de correo "ejemplo@ejemplo.com"
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*[.]{1}[a-z]+$/g;
     //Si la expresión regular no coincide con el valor del campo y el largo, devuelvela alerta, borra el campo y o enfoca
-    if(comprobarExpresionRegular(campo, regex, size) === false && comprobarVacio(campo) != false)
+    if(comprobarExpresionRegular(campo, regex, size) === false || comprobarVacio(campo) === false)
     {
        //Párrafo que muestra el error
        document.getElementById("invalid"+campo.name).style.display = "block";       //color del input inválido
@@ -230,15 +230,12 @@ function comprobarReal(campo, dec, min, max)
     regex.replace(re, dec);
     //Si la expresión regular no coincide con el valor mínimo o máximo del campo y el largo, devuelve falso
     var size = max + 1+ dec;
-    if(parseFloat(document.getElementById(campo).value) > parseFloat(max) && comprobarVacio(campo) != false){
+    if(parseFloat(document.getElementById(campo).value) > parseFloat(max) ||
+       parseFloat(document.getElementById(campo).value) < parseFloat(min) ||
+       comprobarExpresionRegular(campo, regex, size) === false || comprobarVacio(campo) === false){
         return false;
     }
-    if(parseFloat(document.getElementById(campo).value) < parseFloat(min) && comprobarVacio(campo) != false){
-        return false;
-    }
-    if(comprobarExpresionRegular(campo, regex, size) === false && comprobarVacio(campo) != false){
-        return false;
-    }
+   
 }
 
 //función para comprobar telefono español
@@ -249,7 +246,7 @@ function comprobarTelf(campo)
     //Expresión regular que comprueba que tiene 8 dígitos y una letra
     var regex = /^(\+34|0034|34)?[6|7|9][0-9]{8}$/g;
     //Si la expresión regular no coincide con el valor del campo y el largo, devuelve falso
-    if(comprobarExpresionRegular(campo, regex, size) === false  && comprobarVacio(campo) != false){
+    if(comprobarExpresionRegular(campo, regex, size) === false  || comprobarVacio(campo) === false){
 
        //Párrafo que muestra el error
        document.getElementById("invalid"+campo.name).style.display = "block";
@@ -264,6 +261,7 @@ function comprobarTelf(campo)
        campo.value = campo.value.toUpperCase();
     }
 }
+
 
 //Función para comprobar el registro de datos
 //form: formulario que se desea validar
@@ -393,11 +391,12 @@ function comprobarFormAddUser(form){
         form.elements[3],
         form.elements[4],
         form.elements[5],
-        form.elements[6]
+        form.elements[6],
+        form.elements[7],
     ];
 
     //comprueba que no sean vacíos
-    for(var i=0;i<7;i++)
+    for(var i=0;i<8;i++)
     {
         if(comprobarVacio(array[i]) === false)
         {
@@ -410,6 +409,26 @@ function comprobarFormAddUser(form){
     //comprueba su formato
     if(comprobarAlfabetico(array[0],30) === false || comprobarAlfabetico(array[1],50) || comprobarTelf(array[2]) ===false || comprobarCorreo(array[3], 60) === false || comprobarAlfaNum(array[4],20))
     {
+        return false;
+    }
+}
+//Función para comprobar el formulario de Tareas
+//form: formulario a validar
+function comprobarFormTarea(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[1],
+        form.elements[2],              
+    ];
+
+    //comprueba que no sean vacíos
+    //comprueba su formato
+    if(comprobarAlfabetico(array[0],50) === false)
+    {
+        document.getElementById("invalidform").style.display = "block";
         return false;
     }
 }

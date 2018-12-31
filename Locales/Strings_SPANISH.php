@@ -121,6 +121,12 @@ array(
 	'No hay fases creadas' => 'No hay fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo',
 	'Edición de fase' => 'Edición de fase',
+<<<<<<< HEAD
+	'Teléfono incorrecto' => 'Teléfono incorrecto',
+	'Selecciona categoria' => 'Selecciona una categoria',
+	'Selecciona prioridad' => 'Selecciona una prioridad',
+) 	
+=======
 	'Tareas abiertas' => 'Tareas abiertas',
 	'Tareas cerradas' => 'Tareas cerradas',
 	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',
@@ -129,6 +135,7 @@ array(
 	'Ordenar por:' => 'Ordenar por:',
 	'Fecha de alta' => 'Fecha de alta'
 ) 
+>>>>>>> 8af99cfe7d90969f7774118ccf0f360c6628e927
 ;
 ?>
  
