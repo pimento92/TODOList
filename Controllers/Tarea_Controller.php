@@ -138,7 +138,7 @@ else{
      function SHOWCURRENT($clave){
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('', $clave,'','','','','');
-            $datost = $Tarea->SEARCH();
+            $datost = $Tarea->SEARCH('fecha');
             include '../Models/FASE_Model.php';
             $fase = new FASE_Model($clave,'','','','');
             $datosf = $fase->SEARCH();

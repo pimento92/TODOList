@@ -143,7 +143,7 @@
                     <td onclick="location='../Controllers/Tarea_Controller.php?accion=SHOWCURRENT&param=<?php echo $datos['id_tar'];?>'" style="background-color:<?php echo $datos['codcolor_pri']."\n"; ?>"><?php echo $auxarray."\n"; ?></td>
                     <?php $array = []; $auxarray='NO'; $cont=0;
                         foreach($contarch as $archivos) : 
-                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                            if ($archivos['tarea'] == $datos['id_tar']){ 
                                 $array[$cont]='SI';
                             }else{
                                 $array[$cont]='NO';
