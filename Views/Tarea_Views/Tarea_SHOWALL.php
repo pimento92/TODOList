@@ -213,7 +213,7 @@
                 </td>
                 <?php $array = []; $auxarray='NO'; $cont=0;
                         foreach($contarch as $archivos) : 
-                            if ($archivos['tarea_fas'] == $datos['id_tar']){ 
+                            if ($archivos['tarea'] == $datos['id_tar']){ 
                                 $array[$cont]='SI';
                             }else{
                                 $array[$cont]='NO';

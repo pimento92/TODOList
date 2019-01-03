@@ -74,9 +74,14 @@ else{
             }else{
                 $Tarea = new TAREA_Model($_POST['pri'],'',$_POST['fecha'],$_POST['estado'],$_POST['desc'],'',$_POST['cat']);
             }
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH($_POST['orden']);
             if(is_array($datos) === true){
-                showall('fecha');
+                include '../Views/Tarea_Views/Tarea_SHOWALL.php';
+                $Tarea = new TAREA_Model('','','','','','','');
+              $fases = $Tarea->CountFas();
+              $contactos = $Tarea->CountCont();
+             $files = $Tarea->CountArch();
+                new Tarea_SHOWALL($datos, $fases, $contactos, $files, 'fecha');
             }else{
                 include '../Views/MESSAGE.php';
                 new MESSAGE($datos, './Tarea_Controller.php?accion=SEARCH');
@@ -91,7 +96,7 @@ else{
         $Tarea = new TAREA_Model('', $clave,'','', '','', '');
         if(!isset($_POST['submit']))
         {
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_DELETE.php';
             new Tarea_DELETE($datos);
         }else{
@@ -114,7 +119,7 @@ else{
             $categorias = $cat->SHOWALL();
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('',  $clave, '','','','', '');
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_EDIT.php';
             new Tarea_EDIT($datos, $prioridades, $categorias);
 
@@ -197,8 +202,10 @@ else{
     {
         if($accion=='SHOWALL'){
             $accion('fecha');
+        }else{
+            $accion();
         }
-        $accion();
+        
     }else{
         $accion($param);
     }

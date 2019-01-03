@@ -28,7 +28,7 @@
 			</div>
 	   		<div class="campo">
 				<label><?php echo $strings['Nombre'];?></label>
-				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '' onblur="comprobarAlfabético(this,20)" >
+				<input type = 'text' name = 'nombre' id = 'nombre' size = '20' value = '' onblur="comprobarAlfabetico(this,20)" >
 				<p class="invalid" id="invalidnombre"><?php echo $strings['Formato no válido'];?></p>
             </div>
 			<div class="campo">

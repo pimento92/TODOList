@@ -73,6 +73,17 @@
             </div>
         </div>
 
+        <div class="bloque">
+            <div class="campo">
+                <label><?php echo $strings['Ordenar por:'];?></label>
+                <select name="orden" id="orden">
+                    <option value="fecha"><?php echo $strings['Fecha de alta'];?></option>
+                    <option value="prioridad"><?php echo $strings['Prioridad'];?></option>
+                    <option value="categoria"><?php echo $strings['Categoría'];?></option>
+                </select>
+            </div>
+        </div>
+
             <!-- Contenedor de los iconos: aceptar, voler y vaciar-->
             <div class="container-btn col-md-12">
                 <button class="form-btn" name="submit" type="submit"><i class="fas fa-search"></i> 

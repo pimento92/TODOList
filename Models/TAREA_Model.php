@@ -159,10 +159,10 @@ class TAREA_Model {
 	
   $opt = implode(' AND ', $stmt);
 	//sentencia creada
-	$sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt;
+	$sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt . "ORDER BY $aux";
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND "){
-		return $this->SHOWALL('fecha');
+	if($sql == "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND ORDER BY $aux"){
+		return $this->SHOWALL($orden);
 	}else{
     $result = $this->mysqli->query($sql);
 	//Si no hay coincidencias devuelve un mensaje

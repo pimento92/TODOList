@@ -126,12 +126,17 @@ array(
 	'No hay fases creadas' => 'Non hai fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Se non atopa o contacto que busca pode crealo',
 	'Edición de fase' => 'Edición de fase',
+	'Teléfono incorrecto' => 'Teléfono incorrecto',
+	'Selecciona categoria' => 'Selecciona unha categoria',
+	'Selecciona prioridad' => 'Selecciona unha prioridade',
 	'Tareas abiertas' => 'Tarefas abertas',
 	'Tareas cerradas' => 'Tarefas pechadas',
 	'Tarea cerrada con éxito' => 'Tarefa pechada con éxito',
 	'Error cerrando la tarea' => 'Error pechando a tarefa',
 	'La tarea aún tiene fases abiertas' => 'A tarefe aínde ten fases abertas',
-	'Ordenar por:' => 'Ordear por:'
+	'Ordenar por:' => 'Ordear por:',
+	'Fecha de alta' => 'Fecha de alta'
+
 ) 
 ;
 ?>

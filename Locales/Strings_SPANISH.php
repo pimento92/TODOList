@@ -120,19 +120,17 @@ array(
 	'No hay contactos adjuntos' => 'No hay contactos adjuntos',
 	'No hay fases creadas' => 'No hay fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo',
-	'Edición de fase' => 'Edición de fase',
-<<<<<<< Updated upstream
-=======
+	'Edición de fase' => 'Edición de fase',	
 	'Teléfono incorrecto' => 'Teléfono incorrecto',
 	'Selecciona categoria' => 'Selecciona una categoria',
 	'Selecciona prioridad' => 'Selecciona una prioridad',
->>>>>>> Stashed changes
 	'Tareas abiertas' => 'Tareas abiertas',
 	'Tareas cerradas' => 'Tareas cerradas',
 	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',
 	'Error cerrando la tarea' => 'Error cerrando la tarea',
 	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
-	'Ordenar por:' => 'Ordenar por:'
+	'Ordenar por:' => 'Ordenar por:',
+	'Fecha de alta' => 'Fecha de alta'
 ) 
 ;
 ?>
