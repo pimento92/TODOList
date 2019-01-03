@@ -96,7 +96,7 @@ else{
         $Tarea = new TAREA_Model('', $clave,'','', '','', '');
         if(!isset($_POST['submit']))
         {
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_DELETE.php';
             new Tarea_DELETE($datos);
         }else{
@@ -119,7 +119,7 @@ else{
             $categorias = $cat->SHOWALL();
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('',  $clave, '','','','', '');
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_EDIT.php';
             new Tarea_EDIT($datos, $prioridades, $categorias);
 
@@ -200,7 +200,7 @@ else{
     //ejecutamos el método correspondiente
     if(!isset($param))
     {
-        $accion();
+        $accion('fecha');
     }else{
         $accion($param);
     }
