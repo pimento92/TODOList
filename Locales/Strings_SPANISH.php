@@ -121,6 +121,12 @@ array(
 	'No hay fases creadas' => 'No hay fases creadas',
 	'Si no encuentra el contacto que busca puede crearlo' => 'Si no encuentra el contacto que busca puede crearlo',
 	'Edición de fase' => 'Edición de fase',
+<<<<<<< Updated upstream
+=======
+	'Teléfono incorrecto' => 'Teléfono incorrecto',
+	'Selecciona categoria' => 'Selecciona una categoria',
+	'Selecciona prioridad' => 'Selecciona una prioridad',
+>>>>>>> Stashed changes
 	'Tareas abiertas' => 'Tareas abiertas',
 	'Tareas cerradas' => 'Tareas cerradas',
 	'Tarea cerrada con éxito' => 'Tarea cerrada con éxito',

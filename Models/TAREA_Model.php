@@ -62,7 +62,14 @@ class TAREA_Model {
     }
   }
 
-  function Search(){
+  function Search($orden){		
+		$aux = 't.`fecha_tar`';		
+		if ($orden == 'categoria'){
+			$aux = 'c.`id_cat`';
+		}
+		if ($orden == 'prioridad'){
+			$aux = 'p.`id_pri`';
+		}
   	//datos introducidos
 	$datos=[
 		'desc' =>$this->descripcion,
@@ -188,9 +195,7 @@ class TAREA_Model {
     }
   }
   function Showall($orden){
-		if ($orden == 'fecha'){
-			$aux = 't.`fecha_tar`';
-		}
+		$aux = 't.`fecha_tar`';		
 		if ($orden == 'categoria'){
 			$aux = 'c.`id_cat`';
 		}

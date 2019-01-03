@@ -133,10 +133,10 @@ else{
      function SHOWCURRENT($clave){
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('', $clave,'','','','','');
-            $datost = $Tarea->SEARCH();
+            $datost = $Tarea->SEARCH('fecha');
             include '../Models/FASE_Model.php';
             $fase = new FASE_Model($clave,'','','','');
-            $datosf = $fase->SEARCH();
+            $datosf = $fase->SEARCH('fecha');
             $contactos = $Tarea->ShowAllCont();
             $files = $Tarea->ShowAllFiles();
             include '../Views/Tarea_Views/Tarea_SHOWCURRENT.php';
@@ -195,6 +195,9 @@ else{
     //ejecutamos el método correspondiente
     if(!isset($param))
     {
+        if($accion=='SHOWALL'){
+            $accion('fecha');
+        }
         $accion();
     }else{
         $accion($param);
