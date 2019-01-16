@@ -82,7 +82,7 @@ else{
         $ADJUNTA = new ADJUNTA_Model($clavet, $clavef, $id);
         $respuesta = $ADJUNTA->DELETE();
         include '../Views/MESSAGE.php';
-        new MESSAGE($respuesta, "./ADJUNTA_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
+        new MESSAGE($respuesta, "./Adjunta_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
 
     }
 

@@ -59,7 +59,7 @@ else{
             $Usuario = new USUARIO_Model($_POST['nombre'],$_POST['apellidos'],$_POST['telefono'],$_POST['email'],'',$_POST['fecha'],$_POST['tipo']);
             $datos = $Usuario->SEARCH();
             if(is_array($datos) === true){
-                include '../Views/Usuario_Views/USUARIO_SHOWALL.php';
+                include '../Views/Usuario_Views/Usuario_SHOWALL.php';
                 new Usuario_SHOWALL($datos);
             }else{
                 include '../Views/MESSAGE.php';

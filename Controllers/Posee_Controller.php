@@ -36,11 +36,11 @@ else{
         if(!isset($_POST['submit']))
         {
             
-            include '../Models/CONTACTO_MODEL.php';
-            $contactos = new CONTACTO_MODEL('','','','');
+            include '../Models/CONTACTO_Model.php';
+            $contactos = new CONTACTO_Model('','','','');
             $datosc = $contactos->Showall();
             include '../Models/POSEE_Model.php';
-            include '../Views/POSEE_Views/POSEE_ADD.php';
+            include '../Views/Posee_Views/Posee_ADD.php';
             new POSEE_ADD($clavef, $clavet, $datosc);
 
         }else{
@@ -71,7 +71,7 @@ else{
         $POSEE = new POSEE_Model($clavet, $clavef, $email);
         $respuesta = $POSEE->DELETE();
         include '../Views/MESSAGE.php';
-        new MESSAGE($respuesta, "./POSEE_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
+        new MESSAGE($respuesta, "./Posee_Controller.php?accion=SHOWALL&param=$clavet&param2=$clavef");
 
     }
 
@@ -83,11 +83,11 @@ else{
             $datos = $POSEE->ShowallFase();
             if(sizeof($datos) != 0)
             {
-                include '../Views/POSEE_Views/Posee_SHOWALL.php';
+                include '../Views/Posee_Views/Posee_SHOWALL.php';
                 new  Posee_SHOWALL($datos, $clavet, $clavef);
             }else{
                 $mens = "No hay contactos adjuntos";
-                include '../Views/POSEE_Views/Posee_SHOWALL.php';
+                include '../Views/Posee_Views/Posee_SHOWALL.php';
                 new  Posee_SHOWALL($mens, $clavet, $clavef);
             }
             

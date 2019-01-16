@@ -161,9 +161,9 @@ class TAREA_Model {
 	
   $opt = implode(' AND ', $stmt);
 	//sentencia creada
-	$sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt . "ORDER BY $aux";
+	$sql = "SELECT * FROM `TAREA` t, `PRIORIDAD` p, `CATEGORIA` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND " . $opt . "ORDER BY $aux";
 	//Si no se introducen campos devuelve todas las tuplas
-	if($sql == "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND ORDER BY $aux"){
+	if($sql == "SELECT * FROM `TAREA` t, `PRIORIDAD` p, `CATEGORIA` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` AND ORDER BY $aux"){
 		return $this->SHOWALL($orden);
 	}else{
     $result = $this->mysqli->query($sql);
@@ -206,7 +206,7 @@ class TAREA_Model {
 		if ($orden == 'prioridad'){
 			$aux = 'p.`id_pri`';
 		}
-    $sql = "SELECT * FROM `tarea` t, `prioridad` p, `categoria` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` ORDER BY $aux";
+    $sql = "SELECT * FROM `TAREA` t, `PRIORIDAD` p, `CATEGORIA` c WHERE t.`pri_tar`= p.`id_pri` AND t.`cat_tar`=c.`id_cat` ORDER BY $aux";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
@@ -218,13 +218,13 @@ class TAREA_Model {
 	}
 	
 	function CountFas(){
-		$sql="SELECT Count(f.`id_fas`) as cont, t.`id_tar` FROM `fase` f, `tarea` t WHERE f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
+		$sql="SELECT Count(f.`id_fas`) as cont, t.`id_tar` FROM `FASE` f, `TAREA` t WHERE f.`tarea_fas`=t.`id_tar` GROUP BY t.`id_tar`";
 		$toRet = $this->mysqli->query($sql);
 		return $toRet;
 	}
 	
 	function CountCont(){
-		$sql="SELECT COUNT(p.`email_con`) as cont, f.`tarea_fas` as tarea FROM `posee` p, `fase` f  WHERE f.`tarea_fas`=p.`tarea_fas` GROUP BY p.`tarea_fas`";
+		$sql="SELECT COUNT(p.`email_con`) as cont, f.`tarea_fas` as tarea FROM `POSEE` p, `FASE` f  WHERE f.`tarea_fas`=p.`tarea_fas` GROUP BY p.`tarea_fas`";
 		$toRet = $this->mysqli->query($sql);
 		$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
 		return $toRet;
@@ -232,7 +232,7 @@ class TAREA_Model {
 
 	function ShowAllCont(){
 
-		$sql = "SELECT DISTINCT c.`nom_con`, c.`email_con` FROM `posee` p , `tarea` t, `contacto` c  WHERE p.`tarea_fas`=$this->id AND p.`email_con`=c.`email_con`";
+		$sql = "SELECT DISTINCT c.`nom_con`, c.`email_con` FROM `POSEE` p , `TAREA` t, `CONTACTO` c  WHERE p.`tarea_fas`=$this->id AND p.`email_con`=c.`email_con`";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay contactos adjuntos";
@@ -243,14 +243,14 @@ class TAREA_Model {
 	}
 	
 	function CountArch(){
-		$sql="SELECT COUNT(a.`id_arch`) as cont, t.`id_tar` as tarea FROM `adjunta` a, `tarea` t  WHERE t.`id_tar`=a.`tarea_fas` GROUP BY a.`tarea_fas`";
+		$sql="SELECT COUNT(a.`id_arch`) as cont, t.`id_tar` as tarea FROM `ADJUNTA` a, `TAREA` t  WHERE t.`id_tar`=a.`tarea_fas` GROUP BY a.`tarea_fas`";
 		$toRet = $this->mysqli->query($sql);
 		$toRet = mysqli_fetch_all($toRet, MYSQLI_ASSOC);
 		return $toRet;
 	}
 
 	function ShowAllFiles(){
-		$sql = "SELECT DISTINCT ar.`url_arch`, ar.`desc_arch` FROM `adjunta` a , `tarea` t, `archivo` ar  WHERE a.`tarea_fas`=$this->id AND a.`id_arch`=ar.`id_arch`";
+		$sql = "SELECT DISTINCT ar.`url_arch`, ar.`desc_arch` FROM `ADJUNTA` a , `TAREA` t, `ARCHIVO` ar  WHERE a.`tarea_fas`=$this->id AND a.`id_arch`=ar.`id_arch`";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay archivos adjuntos";
@@ -273,7 +273,7 @@ class TAREA_Model {
 
 
 	function Close(){
-		$sql = "UPDATE `tarea` SET `estado_tar`='CERRADA' WHERE `id_tar`=$this->id";
+		$sql = "UPDATE `TAREA` SET `estado_tar`='CERRADA' WHERE `id_tar`=$this->id";
 		if(!$this->mysqli->query($sql)){
   		return 'Error cerrando la tarea';
   	}

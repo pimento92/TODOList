@@ -143,7 +143,6 @@ class CONTACTO_Model {
         `desc_con` = '$this->desc',
         `telf_con` = '$this->telf'
 						WHERE(`email_con` = '$this->email');";
-						echo $sql;
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
     }

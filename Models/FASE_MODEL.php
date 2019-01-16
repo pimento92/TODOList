@@ -1,8 +1,8 @@
 <?php
 class FASE_Model {
 
-		var $tarea;
-		var $id;
+    var $tarea;
+    var $id;
     var $fecha;
     var $estado;
     var $descripcion;
@@ -155,7 +155,7 @@ class FASE_Model {
 }
 
   function Edit(){
-    $sql = "UPDATE `fase` SET `desc_fas` = '$this->descripcion'
+    $sql = "UPDATE `FASE` SET `desc_fas` = '$this->descripcion'
 						WHERE `tarea_fas` = $this->tarea AND `id_fas`=$this->id";
     if(!$this->mysqli->query($sql)){
       return 'Error en la edición';
@@ -187,7 +187,7 @@ class FASE_Model {
   }
 
 	function Close(){
-		$sql = "UPDATE `fase` SET `estado_fas`='CERRADA' WHERE `tarea_fas`=$this->tarea AND `id_fas`=$this->id";
+		$sql = "UPDATE `FASE` SET `estado_fas`='CERRADA' WHERE `tarea_fas`=$this->tarea AND `id_fas`=$this->id";
 		if(!$this->mysqli->query($sql)){
   		return 'Error cerrando la fase';
   	}
@@ -197,7 +197,7 @@ class FASE_Model {
 	}
 
 	function getCont(){
-		$sql = "SELECT * FROM `posee` p, `contacto` c WHERE c.`email_con`=p.`email_con` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
+		$sql = "SELECT * FROM `POSEE` p, `CONTACTO` c WHERE c.`email_con`=p.`email_con` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay contactos adjuntos";
@@ -208,7 +208,7 @@ class FASE_Model {
 	}
 
 	function getArch(){
-		$sql = "SELECT * FROM `adjunta` a, `archivo` ar WHERE a.`id_arch`=ar.`id_arch` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
+		$sql = "SELECT * FROM `ADJUNTA` a, `ARCHIVO` ar WHERE a.`id_arch`=ar.`id_arch` AND `tarea_fas` = '$this->tarea' AND `id_fas`  = '$this->id'";
 		$toRet = $this->mysqli->query($sql);
 		if (mysqli_num_rows(mysqli_query($this->mysqli, $sql)) == 0){
 			return "No hay archivos adjuntos";

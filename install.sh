@@ -1,8 +1,8 @@
 #!/bin/bash
 #Cambiar permisos
-chmod -R 777 /var/www/html
+chmod -R 777 .;
 #Instalar mysql
-sudo apt-get install mysql-server
-sudo mysql_secure_installation
+apt-get install -y mysql-server;
 #Instalar BD
-mysql -u root -p TODOLISTDB < /var/www/html/Models/BD_TODOLIST.sql
+mysql -uroot -piu < ./Models/BD_TODOList.sql;
+exit;

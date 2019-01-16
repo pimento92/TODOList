@@ -28,10 +28,10 @@ else{
     function ADD(){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
+            include '../Models/PRIORIDAD_Model.php';
             $pri = new PRIORIDAD_MODEL('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
 
@@ -58,10 +58,10 @@ else{
     function SEARCH(){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
+            include '../Models/PRIORIDAD_Model.php';
             $pri = new PRIORIDAD_MODEL('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
             include '../Views/Tarea_Views/Tarea_SEARCH.php';
@@ -111,10 +111,10 @@ else{
      function EDIT($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
-            $pri = new PRIORIDAD_MODEL('','','','');
+            include '../Models/PRIORIDAD_Model.php';
+            $pri = new PRIORIDAD_Model('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
             include '../Models/TAREA_Model.php';
