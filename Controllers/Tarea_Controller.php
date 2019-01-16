@@ -141,7 +141,7 @@ else{
             $datost = $Tarea->SEARCH('fecha');
             include '../Models/FASE_Model.php';
             $fase = new FASE_Model($clave,'','','','');
-            $datosf = $fase->SEARCH();
+            $datosf = $fase->SEARCH('fecha');
             $contactos = $Tarea->ShowAllCont();
             $files = $Tarea->ShowAllFiles();
             include '../Views/Tarea_Views/Tarea_SHOWCURRENT.php';
@@ -200,7 +200,12 @@ else{
     //ejecutamos el método correspondiente
     if(!isset($param))
     {
-        $accion('fecha');
+        if($accion=='SHOWALL'){
+            $accion('fecha');
+        }else{
+            $accion();
+        }
+        
     }else{
         $accion($param);
     }

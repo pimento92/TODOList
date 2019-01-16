@@ -14,7 +14,7 @@
 		function render(){
             include '../Views/Header.php';?>
     <div class="col-md-4"></div>
-    <div class="col-md-4 contenido articulo">
+    <div class="col-md-4 table-responsive contenido">
 
         <form name="add" enctype="multipart/form-data" id="add" onsubmit="return comprobarFormAddUser(this)" action='./Usuario_Controller.php?accion=ADD' method='post'>
         <legend><?php echo $strings['Añadir usuario'];?></legend>

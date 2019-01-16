@@ -6,9 +6,10 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 12px;
     background-color: rgb(189, 189, 189);
+    align-items: center;
 }
 header{
-    min-height: 100px;
+    min-height: 120px;
     height:10%;
     background-color: #ffffff;
     color: rgb(53, 53, 53);
@@ -51,13 +52,17 @@ footer{
     box-shadow: 3px 3px rgb(121, 121, 121);
 }
 .contenido{
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: white;
     color: rgb(53, 53, 53);
     border: 2px solid rgb(53, 53, 53);
     border-radius: 5px;
     font-size: 18px;
-    padding: 30px;
+    
+    max-width: 80%;
 }
 
 .bloque{
@@ -105,6 +110,11 @@ input:focus{
     text-shadow: 2px 2px rgb(121, 121, 121);
 }
 
+.fa-language{
+   color: none;
+   text-shadow: none; 
+}
+
 .fas:hover{
     color: #f7aa10;
     transition-duration: 0.4s;
@@ -133,7 +143,6 @@ a:hover{
     background-color: white;
     padding-left: 0;
     margin-top: 5px;
-    height: 43px;
     box-shadow: 3px 3px rgb(121, 121, 121);
 
 }

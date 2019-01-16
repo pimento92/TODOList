@@ -14,7 +14,7 @@
 		function render(){
             include '../Views/Header.php';?>
 <div class="col-md-4"></div>
-<div class="col-md-4 contenido articulo">
+<div class="col-md-4 table-responsive contenido">
     <form name="search" id="search"  action='../Controllers/Usuario_Controller.php?accion=SEARCH' method='post' >
         <legend><?php echo $strings['Búsqueda de usuarios'];?></legend>
         <div class="bloque">
