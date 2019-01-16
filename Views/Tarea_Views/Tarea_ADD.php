@@ -14,7 +14,7 @@
 		function render($datp, $datc){
             include '../Views/Header.php';?>
     <div class="col-md-4"></div>
-    <div class="col-md-4 contenido articulo">
+    <div class="col-md-4 container-fluid contenido">
 
         <form name="add" enctype="multipart/form-data" id="add" onsubmit="return comprobarFormTarea(this)" action='./Tarea_Controller.php?accion=ADD' method='post'>
         <legend><?php echo $strings['Añadir tarea'];?></legend>

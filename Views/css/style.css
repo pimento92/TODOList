@@ -53,7 +53,9 @@ footer{
 }
 .contenido{
     margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 10%;
+    margin-right: 10%;
     background-color: white;
     color: rgb(53, 53, 53);
     border: 2px solid rgb(53, 53, 53);

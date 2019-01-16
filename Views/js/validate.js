@@ -335,6 +335,95 @@ function comprobarForm(form){
     }
 }
 
+//Función para comprobar formularios de categoria
+//form: formulario a validar
+function comprobarFormCat(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[1],
+       
+    ];
+
+    //comprueba que no sean vacíos
+    for(var i=0;i<2;i++)
+    {
+        if(comprobarVacio(array[i]) === false)
+        {
+            //Párrafo que muestra el error
+            document.getElementById("invalidform").style.display = "block";
+
+            return false;
+        }
+    }
+    //comprueba su formato
+    if( comprobarAlfabetico(array[0],30) === false || comprobarAlfabetico(array[1],40) ===false )
+    {
+        return false;
+    }
+}
+//Función para comprobar formularios de Prioridad
+//form: formulario a validar
+function comprobarFormPrio(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[2],
+
+       
+    ];
+
+    //comprueba que no sean vacíos
+    for(var i=0;i<2;i++)
+    {
+        if(comprobarVacio(array[i]) === false)
+        {
+            //Párrafo que muestra el error
+            document.getElementById("invalidform").style.display = "block";
+
+            return false;
+        }
+    }
+    //comprueba su formato
+    if( comprobarAlfabetico(array[0],30) === false || comprobarAlfabetico(array[2],40) ===false )
+    {
+        return false;
+    }
+}
+//Función para comprobar formularios de Adjunta
+//form: formulario a validar
+function comprobarFormAdjunta(form){
+    document.getElementById("invalidform").style.display = "none";
+
+    //array con los elementos a comprobar del formulario
+    var array=[
+        form.elements[0],
+        form.elements[1],
+
+       
+    ];
+
+    //comprueba que no sean vacíos
+    for(var i=0;i<2;i++)
+    {
+        if(comprobarVacio(array[i]) === false)
+        {
+            //Párrafo que muestra el error
+            document.getElementById("invalidform").style.display = "block";
+
+            return false;
+        }
+    }
+    //comprueba su formato
+    
+    
+        return comprobarAlfanum(array[1],40);
+    
+}
 //Función para comprobar formularios de add de contactos
 //form: formulario a validar
 function comprobarFormAddCon(form){

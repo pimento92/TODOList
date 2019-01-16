@@ -14,11 +14,12 @@
 		function render($datos){
             include '../Views/Header.php';?>
             <div class="col-md-3"></div>
-            <div class="col-md-6 contenido articulo">
+            <div class="col-md-6 container-fluid contenido">
             <fieldset class="sc">
             <legend><?php echo $strings['Confirmación de borrado'];?></legend>  
             <!--Contenedor con botones de adición y búsqueda  -->
-                    <table class="tab-twocol shadow showtable delete">
+            <div class="table-responsive">
+                    <table class="table tab-twocol shadow showtable delete">
                     </thead>
                     <tr>
                         <th><?php echo $strings['Descripción'];?></th>
@@ -45,6 +46,7 @@
                         <td><?php echo $datos['estado_tar']; ?></td>
                     </tr>
                 </table>
+                </div>
             <div class="container-showall-btn">
                 <p><?php echo $strings['¿Confirma el borrado de esta tarea?'];?><p>
                 <form id="delete"action='./Tarea_Controller.php?accion=delete&param=<?php echo $datos['id_tar'];?>' method='post'>

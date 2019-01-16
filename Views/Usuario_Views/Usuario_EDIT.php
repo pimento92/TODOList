@@ -14,7 +14,7 @@
 		function render($datos){
             include '../Views/Header.php';?>
             <div class="col-md-4"></div>
-        <div class="col-md-4 contenido articulo">
+        <div class="col-md-4 table-responsive contenido">
 
         <form name="edit" id="edit" enctype="multipart/form-data" onsubmit="return comprobarFormAddUser(this)" action='./Usuario_Controller.php?accion=EDIT&param=<?php echo $datos['email_usr'];?>' method='post'>
         <legend><?php echo $strings['Edición de usuario'];?></legend>

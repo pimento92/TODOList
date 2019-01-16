@@ -14,7 +14,7 @@
 		function render($datos, $clavet, $clavef){
             include '../Views/Header.php';?>
 <div class="col-md-3"></div>
-<div class="col-md-5 contenido articulo">
+<div class="col-md-5 table-responsive contenido">
     <fieldset id="showall">
         <legend><?php echo $strings['Archivos'];?></legend>  
     

@@ -14,7 +14,7 @@
 		function render($datos){
             include '../Views/Header.php';?>
             <div class="col-md-3"></div>
-            <div class="col-md-6 contenido articulo">
+            <div class="col-md-6 table-responsive contenido">
             <fieldset class="sc">
             <legend><?php echo $strings['Confirmación de borrado'];?></legend>  
             <!--Contenedor con botones de adición y búsqueda  -->

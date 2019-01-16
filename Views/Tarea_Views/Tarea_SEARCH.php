@@ -14,7 +14,7 @@
 		function render($datp, $datc){
             include '../Views/Header.php';?>
         <div class="col-md-3"></div>
-        <div class="col-md-6 contenido articulo">
+        <div class=" table-responsive col-md-6 contenido ">
         <form name="search" id="search"  action='../Controllers/Tarea_Controller.php?accion=SEARCH' method='post' >
         <legend><?php echo $strings['Búsqueda de tareas'];?></legend>
         <div class="bloque">
