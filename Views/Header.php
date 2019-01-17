@@ -54,7 +54,7 @@
 	<header>
 		<div class="d-flex align-items-center">
 			<div class="p-2 flex-grow-1">
-				<img src="../Views/img/intro/logo3.png" height="80">
+				<img src="../Views/img/Intro/logo3.png" height="80">
 			</div>
 
 

@@ -171,7 +171,7 @@ function comprobarLogin(form)
 {
     document.getElementById("invalidform").style.display = 'none';
     //extrae los inputs para el login y su password
-    var log = form['login'];
+    var log = form['email'];
     var pass = form['password'];
 
     //compruba los vacíos
@@ -271,16 +271,12 @@ function comprobarRegistro(form)
 
     //array con los elementos a comprobar
     var array=[ 
-        form['log'],
+        form['email'],
         form['password'],
         form['nombre'],
         form['apellidos'],
-        form['DNI'],
-        form['fecha'],
         form['telefono'],
-        form['email'],
-        form['file'],
-        form['sexo']
+        form['fecha']
     ];
    
     //comprueba los vacíos
@@ -294,7 +290,7 @@ function comprobarRegistro(form)
         }
     }
     //comprueba los formatos
-   if (comprobarAlfanum(array[0],15) === false || comprobarAlfanum(array[1],20) === false || comprobarAlfabetico(array[2],25) === false || comprobarAlfabetico(array[3], 50) === false || comprobarDNI(array[4]) === false || comprobarCorreo(array[7],60) === false || comprobarTelf(array[6] === false) ){
+   if (comprobarCorreo(array[0],60) === false || comprobarAlfanum(array[1],20) === false || comprobarAlfabetico(array[2],25) === false || comprobarAlfabetico(array[3], 50) === false ||  comprobarTelf(array[4] === false) ){
        return false;
    }
 }
