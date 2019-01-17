@@ -31,8 +31,8 @@ else{
     function ADD($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/CONTACTO_MODEL.php';
-            $contactos = new CONTACTO_MODEL('','','','');
+            include '../Models/CONTACTO_Model.php';
+            $contactos = new CONTACTO_Model('','','','');
             $datosc = $contactos->Showall();
             include '../Views/Fase_Views/Fase_ADD.php';
             new Fase_ADD($clave, $datosc);
@@ -72,15 +72,15 @@ else{
      function EDIT($clavet, $clavef){
         if(!isset($_POST['submit']))
         {
-            include '../Models/FASE_MODEL.php';
-            $fase = new FASE_MODEL($clavet,$clavef,'','','');
+            include '../Models/FASE_Model.php';
+            $fase = new FASE_Model($clavet,$clavef,'','','');
             $result = $fase->SEARCH();
             include '../Views/Fase_Views/Fase_EDIT.php';
             new Fase_EDIT($clavet, $clavef, $result);
 
         }else{
-            include '../Models/FASE_MODEL.php';
-            $fase = new FASE_MODEL($clavet,$clavef,'','',$_POST['desc']);
+            include '../Models/FASE_Model.php';
+            $fase = new FASE_Model($clavet,$clavef,'','',$_POST['desc']);
             $respuesta = $fase->Edit();
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, "./Tarea_Controller.php?accion=SHOWCURRENT&param=$clavet");
@@ -103,7 +103,7 @@ else{
     //método que muestra todos los boletos
     function SHOWALL($clave){
         
-            include '../Models/FASE_MODEL.php';
+            include '../Models/FASE_Model.php';
             $Tarea = new FASE_Model($clave,'','','','');
             $datos = $Tarea->Showall();
             if(sizeof($datos) != 0)

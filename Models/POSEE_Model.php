@@ -65,7 +65,7 @@ class POSEE_Model {
   }
 
   function Showall(){
-    $sql = "SELECT DISTINCT * FROM `POSEE` p, `tarea` t, `fase` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND t.`id_tar` = '$this->tarea'";
+    $sql = "SELECT DISTINCT * FROM `POSEE` p, `TAREA` t, `FASE` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND t.`id_tar` = '$this->tarea'";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
@@ -77,7 +77,7 @@ class POSEE_Model {
   }
 
   function ShowallFase(){
-    $sql = "SELECT DISTINCT * FROM `posee` p, `contacto` c WHERE p.`tarea_fas`=$this->tarea AND p.`id_fas`=$this->id AND c.`email_con`=p.`email_con`";
+    $sql = "SELECT DISTINCT * FROM `POSEE` p, `CONTACTO` c WHERE p.`tarea_fas`=$this->tarea AND p.`id_fas`=$this->id AND c.`email_con`=p.`email_con`";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';

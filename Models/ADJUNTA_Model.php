@@ -56,7 +56,7 @@ class ADJUNTA_Model {
   }
 
   function Showall(){
-    $sql = "SELECT DISTINCT * FROM `POSEE` p, `tarea` t, `fase` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND t.`id_tar` = '$this->tarea'";
+    $sql = "SELECT DISTINCT * FROM `POSEE` p, `TAREA` t, `FASE` f WHERE f.`tarea_fas`= t.`id_tar` AND p.`id_fas`=f.`id_fas` AND t.`id_tar` = '$this->tarea'";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';
@@ -68,7 +68,7 @@ class ADJUNTA_Model {
   }
 
   function ShowallFase(){
-    $sql = "SELECT DISTINCT * FROM `adjunta` a, `archivo` ar WHERE a.`tarea_fas`=$this->tarea AND a.`id_fas`=$this->id AND ar.`id_arch`= a.`id_arch`";
+    $sql = "SELECT DISTINCT * FROM `ADJUNTA` a, `ARCHIVO` ar WHERE a.`tarea_fas`=$this->tarea AND a.`id_fas`=$this->id AND ar.`id_arch`= a.`id_arch`";
     $resultado = $this->mysqli->query($sql);
     if(!($resultado = $this->mysqli->query($sql))){
       return 'Error en la consulta';

@@ -135,7 +135,8 @@ array(
 	'Error cerrando la tarea' => 'Error pechando a tarefa',
 	'La tarea aún tiene fases abiertas' => 'A tarefe aínde ten fases abertas',
 	'Ordenar por:' => 'Ordear por:',
-	'Fecha de alta' => 'Fecha de alta'
+	'Fecha de alta' => 'Fecha de alta',
+		'Edición de prioridad' => 'Edición de Prioridade',
 
 ) 
 ;

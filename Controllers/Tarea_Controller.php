@@ -28,10 +28,10 @@ else{
     function ADD(){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
+            include '../Models/PRIORIDAD_Model.php';
             $pri = new PRIORIDAD_MODEL('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
 
@@ -58,10 +58,10 @@ else{
     function SEARCH(){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
+            include '../Models/PRIORIDAD_Model.php';
             $pri = new PRIORIDAD_MODEL('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
             include '../Views/Tarea_Views/Tarea_SEARCH.php';
@@ -96,7 +96,7 @@ else{
         $Tarea = new TAREA_Model('', $clave,'','', '','', '');
         if(!isset($_POST['submit']))
         {
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_DELETE.php';
             new Tarea_DELETE($datos);
         }else{
@@ -111,15 +111,15 @@ else{
      function EDIT($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/PRIORIDAD_MODEL.php';
-            $pri = new PRIORIDAD_MODEL('','','','');
+            include '../Models/PRIORIDAD_Model.php';
+            $pri = new PRIORIDAD_Model('','','','');
             $prioridades = $pri->SHOWALL();
-            include '../Models/CATEGORIA_MODEL.php';
+            include '../Models/CATEGORIA_Model.php';
             $cat = new CATEGORIA_MODEL('','', '');
             $categorias = $cat->SHOWALL();
             include '../Models/TAREA_Model.php';
             $Tarea = new TAREA_Model('',  $clave, '','','','', '');
-            $datos = $Tarea->SEARCH();
+            $datos = $Tarea->SEARCH('fecha');
             include '../Views/Tarea_Views/Tarea_EDIT.php';
             new Tarea_EDIT($datos, $prioridades, $categorias);
 
@@ -200,7 +200,7 @@ else{
     //ejecutamos el método correspondiente
     if(!isset($param))
     {
-        $accion();
+        $accion('fecha');
     }else{
         $accion($param);
     }

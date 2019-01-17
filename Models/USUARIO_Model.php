@@ -209,7 +209,7 @@ function DELETE($clave)
 // funcion RellenaDatos: recupera todos los atributos de una tupla a partir de su clave
 function RellenaDatos($clave)
 {
-	$sql = "SELECT * FROM usuario WHERE `email_usr` = '$clave'";
+	$sql = "SELECT * FROM USUARIO WHERE `email_usr` = '$clave'";
     $result = $this->mysqli->query($sql);
 	$data = mysqli_fetch_assoc($result);
 	return $data;

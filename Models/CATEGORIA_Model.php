@@ -31,7 +31,7 @@ class CATEGORIA_Model {
 
 	}
   function ADD(){
-    $sql = "SELECT * FROM categoria WHERE(`nom_cat` = '$this->nombre')";
+    $sql = "SELECT * FROM CATEGORIA WHERE(`nom_cat` = '$this->nombre')";
 		$result;
 		
     if(!$result = $this->mysqli->query($sql)){

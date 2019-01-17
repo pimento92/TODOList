@@ -32,8 +32,8 @@ else{
             new Categoria_ADD();
 
         }else{
-            include '../Models/Categoria_Model.php';
-            $Categoria = new Categoria_Model('',$_POST['nombre'],$_POST['desc']);
+            include '../Models/CATEGORIA_Model.php';
+            $Categoria = new CATEGORIA_Model('',$_POST['nombre'],$_POST['desc']);
 
             $respuesta = $Categoria->Exists();
             if($respuesta === true)
@@ -59,8 +59,8 @@ else{
             new Categoria_SEARCH();
 
         }else{
-            include '../Models/Categoria_Model.php';
-            $boleto = new Categoria_Model('',$_POST['nombre'],$_POST['desc']);
+            include '../Models/CATEGORIA_Model.php';
+            $boleto = new CATEGORIA_Model('',$_POST['nombre'],$_POST['desc']);
             $datos = $boleto->SEARCH();
             if(is_array($datos) === true){
                 include '../Views/Categoria_Views/Categoria_SHOWALL.php';
@@ -75,8 +75,8 @@ else{
      //método muestra pantalla de confirmación de borrado 
      //$clave: PK de la tupla
      function DELETE($clave){
-        include '../Models/Categoria_Model.php';
-        $Categoria = new Categoria_Model($clave,'','');
+        include '../Models/CATEGORIA_Model.php';
+        $Categoria = new CATEGORIA_Model($clave,'','');
         if(!isset($_POST['submit']))
         {
             $datos = $Categoria->SEARCH();
@@ -95,15 +95,15 @@ else{
      function EDIT($clave){
         if(!isset($_POST['submit']))
         {
-            include '../Models/Categoria_Model.php';
-            $categoria = new Categoria_Model($clave, '','');
+            include '../Models/CATEGORIA_Model.php';
+            $categoria = new CATEGORIA_Model($clave, '','');
             $datos = $categoria->SEARCH();
             include '../Views/Categoria_Views/Categoria_EDIT.php';
             new Categoria_EDIT($datos);
 
         }else{
-            include '../Models/Categoria_Model.php';
-            $categoria = new Categoria_Model($_POST['id'],$_POST['nombre'],$_POST['desc']);
+            include '../Models/CATEGORIA_Model.php';
+            $categoria = new CATEGORIA_Model($_POST['id'],$_POST['nombre'],$_POST['desc']);
             $respuesta = $categoria->Edit($clave);
                 include '../Views/MESSAGE.php';
                 new MESSAGE($respuesta, './Categoria_Controller.php?accion=SHOWALL');
@@ -114,8 +114,8 @@ else{
      //método muestra la información de una tupla 
      //$clave: PK de la tupla
      function SHOWCURRENT($clave){
-            include '../Models/Categoria_Model.php';
-            $Categoria = new Categoria_Model($clave,'','');
+            include '../Models/CATEGORIA_Model.php';
+            $Categoria = new CATEGORIA_Model($clave,'','');
             $datos = $Categoria->SEARCH();
             include '../Views/Categoria_Views/Categoria_SHOWCURRENT.php';
             new Categoria_SHOWCURRENT($datos);
@@ -124,8 +124,8 @@ else{
     //método que muestra todos los boletos
     function SHOWALL(){
         
-            include '../Models/Categoria_Model.php';
-            $Categoria = new Categoria_Model('','','');
+            include '../Models/CATEGORIA_Model.php';
+            $Categoria = new CATEGORIA_Model('','','');
             $datos = $Categoria->Showall();
             if(sizeof($datos) != 0)
             {
