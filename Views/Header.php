@@ -54,7 +54,7 @@
 	<header>
 		<div class="d-flex align-items-center">
 			<div class="p-2 flex-grow-1">
-				<img src="../Locales/images/logo3.png" height="80">
+				<img src="../Views/img/intro/logo3.png" height="80">
 			</div>
 
 
@@ -105,15 +105,15 @@
 					</button>
 					<div class="dropdown-menu" aria-labelledby="languageDropdown">
 						<form class="idioma" name='idiomaform' action="../Functions/CambioIdioma.php" method="post">
-							<button class="langbtn" name="idioma" value="ENGLISH"><img src="../Views/images/Language/English.png" onclick='this.form.submit()'
+							<button class="langbtn" name="idioma" value="ENGLISH"><img src="../Views/img/Language/English.png" onclick='this.form.submit()'
 								 style="width:30"></button>
 						</form>
 						<form class="idioma" name='idiomaform' action="../Functions/CambioIdioma.php" method="post">
-							<button class="langbtn" name="idioma" value="SPANISH"><img src="../Views/images/Language/Spanish.png" onclick='this.form.submit()'
+							<button class="langbtn" name="idioma" value="SPANISH"><img src="../Views/img/Language/Spanish.png" onclick='this.form.submit()'
 								 style="width:30"></button>
 						</form>
 						<form class="idioma" name='idiomaform' action="../Functions/CambioIdioma.php" method="post">
-							<button class="langbtn" name="idioma" value="GALLAECIAN"><img src="../Views/images/Language/Galician.png"
+							<button class="langbtn" name="idioma" value="GALLAECIAN"><img src="../Views/img/Language/Galician.png"
 								 onclick='this.form.submit()' style="width:30"></button>
 						</form>
 

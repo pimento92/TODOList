@@ -130,7 +130,8 @@ array(
 	'Error cerrando la tarea' => 'Error cerrando la tarea',
 	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
 	'Ordenar por:' => 'Ordenar por:',
-	'Fecha de alta' => 'Fecha de alta'
+	'Fecha de alta' => 'Fecha de alta',
+	'Búsqueda de contactos' => 'Búsqueda de contactos'
 ) 
 ;
 ?>

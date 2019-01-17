@@ -72,6 +72,7 @@
         
     </form> 
 </div>
+</div>
    
 <?php
 			include '../Views/Footer.php';

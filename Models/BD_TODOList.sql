@@ -109,9 +109,11 @@ CREATE TABLE IF NOT EXISTS `ADJUNTA` (
 -- creamos a los admins e inserciones de prueba
 --
 
-INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('jmrod92@gmail.com','calacu2018','Juan','Márquez Rodríguez','1992-02-21','669811012','ADMIN');
+INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('jmrod92@gmail.com','calacu2018','Juan','Marquez Rodriguez','1992-02-21','669811012','ADMIN');
 INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('admin@gmail.com','admin','Pepita','Administrador','1995-02-21','677777777','ADMIN');
-INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('basico@gmail.com','basico','Marta','Regular','1997-02-21','666666666','BASICO');
+INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('basico@gmail.com','basico','Marta','Castro','1997-02-21','666666666','BASICO');
+INSERT INTO USUARIO (`email_usr`,`pass_usr`,`nom_usr`,`apel_usr`,`fechna_usr`,`telf_usr`,`tipo_usr`) VALUES ('test@test.com','test123','Javier','Rodeiro Iglesias','1992-02-21','689789789','BASICO');
+
 
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('SIN CATEGORIA','Tarea sin categoria asignada');
 INSERT INTO CATEGORIA (`nom_cat`,`desc_cat`) VALUES ('HOGAR','Tarea relativa a trabajo en el hogar');
