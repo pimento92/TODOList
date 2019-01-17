@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `CATEGORIA` (
 
 CREATE TABLE IF NOT EXISTS `PRIORIDAD` (
   `id_pri` MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nom_pri` varchar(20) NOT NULL ,
+  `nom_pri` varchar(20) NOT NULL,
   `desc_pri` varchar(150) NOT NULL,
   `codcolor_pri` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
