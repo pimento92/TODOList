@@ -14,7 +14,7 @@
 		function render($datos){
             include '../Views/Header.php';?>
 <div class="col-md-3"></div>
-<div class="col-md-6 contenido articulo">
+<div class="col-md-6 table-responsive contenido">
     <fieldset id="showall">
         <legend><?php echo $strings['Contactos'];?></legend>  
     

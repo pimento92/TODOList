@@ -13,7 +13,7 @@
 		function render($clavet, $clavef, $datos){
             include '../Views/Header.php';?>
     <div class="col-md-3"></div>
-    <div class="col-md-6 contenido articulo">
+    <div class="col-md-6 table-responsive contenido">
 
         <form name="edit" enctype="multipart/form-data" id="edit" onsubmit="return comprobarFormFase(this)" action='./Fase_Controller.php?accion=EDIT&param=<?php echo $clavet."&param2=".$clavef;?>' method='post'>
         <legend><?php echo $strings['Edición de fase'];?></legend>

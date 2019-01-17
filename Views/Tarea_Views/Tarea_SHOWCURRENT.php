@@ -14,7 +14,7 @@
 		function render($datost, $datosf, $datosc, $datosa){
             include '../Views/Header.php';?>
             <div class="col-md-2"></div>
-    <div class="col-md-8 contenido articulo">
+    <div class="col-md-8 table-responsive contenido ">
     <fieldset class="sc">
             <legend><?php echo $strings['Datos de tarea'];?></legend>  
             <!-- Foto de perfil -->

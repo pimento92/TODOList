@@ -14,7 +14,7 @@
 		function render($clavef, $clavet, $datosc){
             include '../Views/Header.php';?>
     <div class="col-md-4"></div>
-    <div class="col-md-4 contenido articulo">
+    <div class="col-md-4 table-responsive contenido">
 
         <form name="add" enctype="multipart/form-data" id="add" onsubmit="return comprobarFormAdjunta(this)" action='./Adjunta_Controller.php?accion=ADD&param=<?php echo $clavet;?>&param2=<?php echo $clavef;?>' method='post'>
         <legend><?php echo $strings['Añadir archivo'];?></legend>
@@ -35,7 +35,7 @@
 		<div>
 			<label><?php echo $strings['Descripción']?></label>
 
-			<input type="text" name="desc" id="desc" size="40" value="">
+			<input type="text" name="desc" id="desc" size="40" value="" onblur="comprobarAlfanum(this,150)">
 		</div>
 					</div>
 			<!-- Colocamos los inputs predeterminados -->

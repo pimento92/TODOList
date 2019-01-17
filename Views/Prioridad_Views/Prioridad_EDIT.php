@@ -14,9 +14,9 @@
 		function render($datos){
             include '../Views/Header.php';?>
             <div class="col-md-4"></div>
-        <div class="col-md-4 contenido articulo">
+        <div class="col-md-4 table-responsive contenido">
 
-        <form name="edit" id="edit" enctype="multipart/form-data" onsubmit="return comprobarForm(this)" action='./Prioridad_Controller.php?accion=EDIT&param=<?php echo $datos['id_pri'];?>' method='post'>
+        <form name="edit" id="edit" enctype="multipart/form-data" onsubmit="return comprobarFormPrio(this)" action='./Prioridad_Controller.php?accion=EDIT&param=<?php echo $datos['id_pri'];?>' method='post'>
         <legend><?php echo $strings['Edición de prioridad'];?></legend>
 		<p class="invalid iform" id="invalidform"><?php echo $strings['Debe rellenar todos los campos'];?></p>
         <div class="bloque">

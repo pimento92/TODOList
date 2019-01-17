@@ -14,7 +14,7 @@
 		function render($datos){
             include '../Views/Header.php';?>
             <div class="col-md-3"></div>
-    <div class="col-md-5 contenido articulo">
+    <div class="col-md-5 table-responsive contenido">
     <fieldset class="sc">
             <legend><?php echo $strings['Datos de categoría'];?></legend>  
             <!-- Foto de perfil -->

@@ -14,7 +14,7 @@
 		function render($datos, $datp, $datc){
             include '../Views/Header.php';?>
             <div class="col-md-4"></div>
-        <div class="col-md-4 contenido articulo">
+        <div class="col-md-4 table-responsive contenido">
 
         <form name="edit" id="edit" enctype="multipart/form-data" onsubmit="" action='./Tarea_Controller.php?accion=EDIT&param=<?php echo $datos['id_tar'];?>' method='post'>
         <legend><?php echo $strings['Edición de tarea'];?></legend>

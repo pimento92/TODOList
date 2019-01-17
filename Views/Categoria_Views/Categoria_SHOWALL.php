@@ -14,7 +14,7 @@
 		function render($datos){
             include '../Views/Header.php';?>
 <div class="col-md-4"></div>
-<div class="col-md-4 contenido articulo">
+<div class="col-md-4 table-responsive contenido">
     <fieldset id="showall">
         <legend><?php echo $strings['Categorías'];?></legend>  
     
