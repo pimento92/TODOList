@@ -16,7 +16,7 @@
 			include '../Views/Header.php';
 ?>
 		<div class="col-md-3 col-lg-4"></div>
-		<div class="col-md-5 col-lg-3 contenido">
+		<div class="col-md-5 col-lg-3 table-responsive contenido">
 			<h1><?php echo $strings['Login']; ?></h1>
 			<form class="login" name = 'Form' action='../Controllers/Login_Controller.php' method='post' onsubmit="return comprobarLogin(this);">
 				<div class="bloque">

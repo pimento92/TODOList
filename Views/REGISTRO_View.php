@@ -16,7 +16,7 @@
 			include '../Views/Header.php'; //header necesita los strings
 		?>
 			<div class="col-md-3 col-lg-4"></div>
-			<div class="col-md-6 col-lg-3 contenido">
+			<div class="col-md-6 col-lg-3 table-responsive contenido">
 				<h1><?php echo $strings['Registro']; ?></h1>
 				<form name = 'Form' enctype="multipart/form-data" action='../Controllers/Registro_Controller.php' method='post' onsubmit="return comprobarRegistro(this)">
 				<div class="bloque">

@@ -21,7 +21,7 @@ class MESSAGE{
 		include '../Views/Header.php';
 ?>
 				<div class="col-md-3"></div>
-				<div class="col-md-6 contenido articulo">
+				<div class="col-md-6 contenido table-responsive">
 				<p><H3><?php echo $strings[$this->string];?></H3></p>
 			
 		<br>
