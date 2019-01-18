@@ -131,7 +131,8 @@ array(
 	'La tarea aún tiene fases abiertas' => 'La tarea aún tiene fases abiertas',
 	'Ordenar por:' => 'Ordenar por:',
 	'Fecha de alta' => 'Fecha de alta',
-	'Búsqueda de contactos' => 'Búsqueda de contactos'
+	'Búsqueda de contactos' => 'Búsqueda de contactos',
+	'El usuario ya existe' => 'El usuario ya existe'
 ) 
 ;
 ?>

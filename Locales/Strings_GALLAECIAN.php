@@ -137,7 +137,8 @@ array(
 	'Ordenar por:' => 'Ordear por:',
 	'Fecha de alta' => 'Fecha de alta',
 		'Edición de prioridad' => 'Edición de Prioridade',
-		'Búsqueda de contactos' => 'Búsqueda de contactos'
+		'Búsqueda de contactos' => 'Búsqueda de contactos',
+		'El usuario ya existe' => 'O usuario xa existe'
 
 ) 
 ;

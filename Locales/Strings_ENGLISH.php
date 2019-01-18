@@ -137,7 +137,8 @@ array(
 	'La tarea aún tiene fases abiertas' => 'The task still has opened phases',
 	'Ordenar por:' => 'Order by:',
 	'Fecha de alta' => 'Creation date',
-	'Búsqueda de contactos' => "Contact's search"
+	'Búsqueda de contactos' => "Contact's search",
+	'El usuario ya existe' => 'User already exist'
 	 )
 ;
  ?>
