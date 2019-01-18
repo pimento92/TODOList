@@ -72,7 +72,7 @@ array(
 	'Acción' => 'Acción',
 	'La prioridad ya existe' => 'A prioridade xa existe',
 	'El contacto ya existe' => 'O contacto xa existe',
-	'La categoría ya existe' => 'A categoría xa existe',
+	'La categoria ya existe' => 'A categoría xa existe',
 	'Inserción realizada con éxito'=> 'Inserción realizada con éxito',
 	'Edición de prioridade' => 'Edición de Prioridade',
 	'Edición de contacto' => 'Edición de Contacto',

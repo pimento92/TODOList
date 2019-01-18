@@ -72,7 +72,7 @@ array(
 	'No hay prioridades registradas'	=> 'No priorities found',
 	'La prioridad ya existe' => 'Priority already exists',
 	'El contacto ya existe' => 'Contact already exists',
-	'La categoría ya existe' => 'Tag already exists',
+	'La categoria ya existe' => 'Tag already exists',
 	'Inserción realizada con éxito'=> 'Succesfull insertion',
 	'Edición de prioridad' => "Priority's edition",
 	'Edición de contacto' => "Contact`s edition",

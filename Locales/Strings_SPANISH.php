@@ -84,7 +84,7 @@ array(
 	'Datos de fase' => 'Datos de fase',
 	'La prioridad ya existe' => 'La prioridad ya existe',
 	'El contacto ya existe' => 'El contacto ya existe',
-	'La categoría ya existe' => 'La categoría ya existe',
+	'La categoria ya existe' => 'La categoria ya existe',
 	'Inserción realizada con éxito'=> 'Inserción realizada con éxito',
 	'Error en la edición' => 'Error en la edición',
 	'Edición realizada con éxito' => 'Edición realizada con éxito',
